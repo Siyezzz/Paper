@@ -161,6 +161,16 @@ Workshop targets are also sensible before a main-track push: LLM agents, AutoML,
 6. Expand to 30-50 tasks only after the pilot exposes evaluator and logging problems.
 7. Start the paper as a technical report while experiments run.
 
+## Direction Upgrade After Literature Critique
+
+After comparing against recent multi-agent, planning, workflow, and benchmark papers, the strongest version of this project is narrower:
+
+> budget-aware orchestration of LLM multi-agent workflows via typed task/artifact graph scheduling.
+
+The key change is to treat edges as artifact contracts, not just prerequisite links. Re-Opt should optimize task order, role assignment, optional-task pruning, communication cost, and verification budget together. This makes the work less like a generic multi-agent framework and more like a scheduler/evaluator that can sit underneath frameworks such as AutoGen, MetaGPT-like pipelines, or LangGraph-style workflows.
+
+See `research/re-opt-critical-review.md` for the full critique and upgraded experimental plan.
+
 ## Go / No-Go Criteria
 
 Go for arXiv/workshop when:
