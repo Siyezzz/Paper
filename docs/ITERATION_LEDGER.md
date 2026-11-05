@@ -2,7 +2,7 @@
 
 This ledger counts research-design and manuscript iterations, not hidden model updates or autonomous learning events. An iteration is counted only when a concrete decision, experiment, or manuscript artifact changes and is recorded.
 
-**Current count: 8 completed iterations (0–7).**
+**Current count: 9 completed iterations (0–8).**
 **Current manuscript status: focused methodological draft; not submission-ready.**
 
 | Iteration | Stage | Main action | Outcome | Status |
@@ -15,15 +15,15 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 | 5 | Academic drafting | Create proposal-style manuscript and claim audit | Draft had no real agent results; not a completed paper | Superseded |
 | 6 | Statistical pilot | Monte Carlo study of task dependence and paired evaluation | Cluster dependence identified as a possible evaluation issue; synthetic only | Retained as pilot |
 | 7 | Focused contribution | Narrow to cluster-aware evaluation and write reproducible simulation to GitHub | One methodological contribution selected | Previous baseline |
-| 8 | EMAS deep reading | Read EMAS full paper and official method/results/limitations/reproducibility docs; compare against our proposal | Confirmed EMAS is the closest precedent and co-authored by the user's supervisor; generic evidence-guided evolution is not novel. Cluster-aware evaluation remains a possible narrow extension, pending supervisor alignment and stronger methods comparison. | Current revision |
+| 8 | EMAS deep reading | Read EMAS paper and official method/results/limitations/reproducibility docs; compare against our proposal | Confirmed EMAS is the closest precedent and co-authored by the user's supervisor; generic evidence-guided evolution is not novel. Cluster-aware evaluation remains a possible narrow extension, pending supervisor alignment and stronger methods comparison. | Current revision |
 
 ## Writing-skill protocol from Iteration 8 onward
 
 Process guides used:
-- research-ideation: research question card, evidence needs, falsification criteria and feasibility gate.
-- ml-paper-writing: related-work and drafting modes; repository-first writing; claim ledger; abstract/introduction narrative; mathematical precision; figure-first review; verified citations.
-- paper-self-review: structure, logic, claim audit, citations, figures/tables and overclaim review.
-- citation-workflow: bibliographic verification from canonical sources; no references generated from memory.
+- `research-ideation`: research question card, evidence needs, falsification criteria and feasibility gate.
+- `ml-paper-writing`: related-work and drafting modes; repository-first writing; claim ledger; abstract/introduction narrative; mathematical precision; figure-first review; verified citations.
+- `paper-self-review`: structure, logic, claim audit, citations, figures/tables and overclaim review.
+- `citation-workflow`: bibliographic verification from canonical sources; no references generated from memory.
 
 These skills are process guidance, not proof of quality. Each paper revision must include a claim ledger and evidence links.
 
