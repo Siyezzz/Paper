@@ -22,7 +22,7 @@ The paper makes one contribution: a cluster-aware paired evaluation rule for wor
 
 ### 2.1 Self-evolving agents and financial workflows
 
-GEPA studies reflective prompt evolution from execution trajectories and candidate evaluation. EvoTS-Agent applies validation-guided evolution to financial time-series change-point detection. Steward proposes a governed multi-agent investment system with memory, outcome grading, reversible prompt learning, and protected invariants. These works establish that reflective or feedback-driven evolution is already an active research area, including in finance. The present paper does not claim otherwise.
+GEPA studies reflective prompt evolution from execution trajectories and candidate evaluation [1]. EMAS is the closest system-level precedent: it evolves a frozen-model multi-agent workflow through recurring trace-level diagnoses, localized prompt or topology revisions, paired validation against the predecessor, and persistence of accepted versions [2]. EvoTS-Agent applies validation-guided evolution to financial time-series change-point detection [3]. Steward proposes a governed multi-agent investment system with memory, outcome grading, reversible prompt learning, and protected invariants [4]. These works establish that reflective or feedback-driven evolution is already an active research area, including in finance. The present paper does not claim otherwise.
 
 Financial-agent evaluation also increasingly emphasizes verifiable tasks and leakage controls. OpenFinGym provides a multi-task environment for quantitative agents. Our focus is narrower: even if task answers are verifiable, the statistical unit used to compare candidate and baseline workflows still matters when tasks share company, sector, or regime structure.
 
@@ -160,5 +160,9 @@ This study isolates a basic issue in the evaluation of evolving financial resear
 2. Jiang, L., et al. (2026). EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection. arXiv:2608.17933. https://arxiv.org/abs/2608.17933
 3. Feng, Y., et al. (2026). Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core. arXiv:2610.30557. https://arxiv.org/abs/2610.30557
 4. Zhang, K., et al. (2026). OpenFinGym: A Verifiable, Multi-Task Gym Environment for Evaluating Quant Agents. Findings of EMNLP 2026. https://aclanthology.org/2026.findings-emnlp.2258/
+1. Agrawal, L. A., et al. (2026). GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning. ICLR 2026. https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html
+2. Fei, C., Si, Q., Liang, K., Xiao, Y., Kalnis, P., & Guo, H. (2026). EMAS: Stabilizing Multi-Agent System Evolution through Evidence-Guided Revision. arXiv:2608.07196. https://arxiv.org/abs/2608.07196
+3. Jiang, L., et al. (2026). EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection. arXiv:2608.17933. https://arxiv.org/abs/2608.17933
+4. Feng, Y., et al. (2026). Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core. arXiv:2610.30557. https://arxiv.org/abs/2610.30557
 5. Siyezzz. (2026). SEA: Self-Evolving Agent. GitHub repository. https://github.com/Siyezzz/SEA
 6. Cameron, A. C., & Miller, D. L. (2015). A practitioner's guide to cluster-robust inference. Journal of Human Resources, 50(2), 317–372. https://doi.org/10.3368/jhr.50.2.317
