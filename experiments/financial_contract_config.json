@@ -1,0 +1,15 @@
+{
+  "benchmark_version": "1.0.0",
+  "fixture_type": "constructed_test_cases_not_observed_financial_data",
+  "policy_type": "hand_written_deterministic_not_LLM_experiment",
+  "decimal_precision": 50,
+  "discovery_end": "2023-12-31",
+  "validation_end": "2024-12-31",
+  "freeze_at": "2024-12-31",
+  "admission_min_correct": 3,
+  "skill_formula": "(current.value / base.value - 1) * 100",
+  "runtime_checks": ["availability", "unit", "period"],
+  "revocation_scope": "invocation_only_recheck_each_case",
+  "policies": ["naive_frozen", "validation_only", "contract", "from_scratch_metadata_solver", "contract_no_availability", "contract_no_unit", "contract_no_period"],
+  "scoring": "correct answers / total; coverage-conditioned accuracy excludes abstentions; safe abstentions reported separately"
+}

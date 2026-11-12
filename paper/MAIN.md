@@ -157,12 +157,11 @@ This study isolates a basic issue in the evaluation of evolving financial resear
 ## References
 
 1. Agrawal, L. A., et al. (2026). GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning. ICLR 2026. https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html
-2. Jiang, L., et al. (2026). EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection. arXiv:2608.17933. https://arxiv.org/abs/2608.17933
-3. Feng, Y., et al. (2026). Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core. arXiv:2610.30557. https://arxiv.org/abs/2610.30557
-4. Zhang, K., et al. (2026). OpenFinGym: A Verifiable, Multi-Task Gym Environment for Evaluating Quant Agents. Findings of EMNLP 2026. https://aclanthology.org/2026.findings-emnlp.2258/
-1. Agrawal, L. A., et al. (2026). GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning. ICLR 2026. https://proceedings.iclr.cc/paper_files/paper/2026/hash/0e9e708b6f48e14fd0ac29e167413f76-Abstract-Conference.html
 2. Fei, C., Si, Q., Liang, K., Xiao, Y., Kalnis, P., & Guo, H. (2026). EMAS: Stabilizing Multi-Agent System Evolution through Evidence-Guided Revision. arXiv:2608.07196. https://arxiv.org/abs/2608.07196
 3. Jiang, L., et al. (2026). EvoTS-Agent: A Self-Evolving LLM Agent for Financial Time Series Change Point Detection. arXiv:2608.17933. https://arxiv.org/abs/2608.17933
 4. Feng, Y., et al. (2026). Governed Self-Evolution for Autonomous Investing: A Multi-Agent LLM System with an Invariant Core. arXiv:2610.30557. https://arxiv.org/abs/2610.30557
 5. Siyezzz. (2026). SEA: Self-Evolving Agent. GitHub repository. https://github.com/Siyezzz/SEA
 6. Cameron, A. C., & Miller, D. L. (2015). A practitioner's guide to cluster-robust inference. Journal of Human Resources, 50(2), 317–372. https://doi.org/10.3368/jhr.50.2.317
+7. Zhang, K., et al. (2026). OpenFinGym: A Verifiable, Multi-Task Gym Environment for Evaluating Quant Agents. Findings of EMNLP 2026. https://aclanthology.org/2026.findings-emnlp.2258/
+
+Bibliography audit note (2026-11-12): duplicate and conflicting reference numbers were repaired without changing the inherited bibliographic claims. Entries 1–7 remain inherited records, not newly independently verified in this iteration. The separate current primary-source audit is `docs/NOVELTY_AUDIT_2026-11-12.md`; submission requires rechecking all inherited entries and code-inspection claims.

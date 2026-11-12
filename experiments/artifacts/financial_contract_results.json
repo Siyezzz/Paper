@@ -1,0 +1,1665 @@
+{
+  "benchmark": "constructed deterministic financial skill-contract pilot",
+  "not_claimed": [
+    "observed financial data",
+    "LLM experiment",
+    "learned policy",
+    "empirical generalization",
+    "speed or cost advantage"
+  ],
+  "limitations": [
+    "small hand-written fixtures and policies",
+    "metadata solver solves all answerable cases directly",
+    "contract rejection is invocation-scoped, not permanent skill deletion",
+    "unit transfer only supports equal currency and known multiplicative scale",
+    "date-only timestamps, exact annual windows, no FX or restatement resolution"
+  ],
+  "versions": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "decimal": "python stdlib; precision=50"
+  },
+  "reproduce": "python experiments/financial_contract_pilot.py --out experiments/artifacts/financial_contract_results.json",
+  "frozen": {
+    "freeze_at": "2024-12-31",
+    "admitted": true,
+    "admission_validation_correct": 3,
+    "config_sha256": "32d17dc7480850f4a3ed53ce6b36ea29d2664a9c9e91af2b1550ca1636be4f94",
+    "discovery_sha256": "276e0a7554d5d757ca1d60bb5820de93c57260bdd71fe3a74daebf09bfeac208",
+    "validation_sha256": "b19af663c5681aa9f7845cac06e3365bbccfcd29c5208ca2279b7b0083d59f95",
+    "policy_source_sha256": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75"
+  },
+  "frozen_sha256": "3b5f91cec2a50edf1cc17ad8844a573daf1a1e7fc74f5eac15d96ae54bf1ca5b",
+  "heldout_sha256": "55b21edab218d79407657eb29d7173765f3900f71bc7b5467fa74a1c3eb53ff7",
+  "fixtures_sha256": "9431117b0543ae0cdaaa2868170a96b9cd228be27f5467c3a8e21833a8b08674",
+  "config": {
+    "benchmark_version": "1.0.0",
+    "fixture_type": "constructed_test_cases_not_observed_financial_data",
+    "policy_type": "hand_written_deterministic_not_LLM_experiment",
+    "decimal_precision": 50,
+    "discovery_end": "2023-12-31",
+    "validation_end": "2024-12-31",
+    "freeze_at": "2024-12-31",
+    "admission_min_correct": 3,
+    "skill_formula": "(current.value / base.value - 1) * 100",
+    "runtime_checks": [
+      "availability",
+      "unit",
+      "period"
+    ],
+    "revocation_scope": "invocation_only_recheck_each_case",
+    "policies": [
+      "naive_frozen",
+      "validation_only",
+      "contract",
+      "from_scratch_metadata_solver",
+      "contract_no_availability",
+      "contract_no_unit",
+      "contract_no_period"
+    ],
+    "scoring": "correct answers / total; coverage-conditioned accuracy excludes abstentions; safe abstentions reported separately"
+  },
+  "fixtures": [
+    {
+      "id": "D01",
+      "split": "discovery",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2023-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2020-01-01",
+        "end": "2020-12-31",
+        "available_at": "2021-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "expected": "20",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "D02",
+      "split": "discovery",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2023-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2020-01-01",
+        "end": "2020-12-31",
+        "available_at": "2021-03-01"
+      },
+      "current": {
+        "value": "90",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "expected": "-10",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "D03",
+      "split": "discovery",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2023-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2020-01-01",
+        "end": "2020-12-31",
+        "available_at": "2021-03-01"
+      },
+      "current": {
+        "value": "150",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "expected": "50",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "V01",
+      "split": "validation",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2024-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "expected": "20",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "V02",
+      "split": "validation",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2024-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "current": {
+        "value": "80",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "expected": "-20",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "V03",
+      "split": "validation",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2024-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "available_at": "2022-03-01"
+      },
+      "current": {
+        "value": "125",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "expected": "25",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "H01",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": "20",
+      "scenario": "safe_same_unit_growth"
+    },
+    {
+      "id": "H02",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1000",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1000",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": "20",
+      "scenario": "safe_same_unit_scaling_transfer"
+    },
+    {
+      "id": "H03",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "75",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": "-25",
+      "scenario": "safe_decline"
+    },
+    {
+      "id": "H04",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "0.12",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1000",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": "20",
+      "scenario": "convertible_mixed_scale_requires_normalization"
+    },
+    {
+      "id": "H05",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_B",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": null,
+      "scenario": "unsafe_currency_mismatch"
+    },
+    {
+      "id": "H06",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-04-01",
+        "end": "2023-06-30",
+        "available_at": "2024-03-01"
+      },
+      "expected": null,
+      "scenario": "unsafe_quarter_vs_annual"
+    },
+    {
+      "id": "H07",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2025-07-01"
+      },
+      "expected": null,
+      "scenario": "current_published_after_decision"
+    },
+    {
+      "id": "H08",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2025-07-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": null,
+      "scenario": "base_published_after_decision"
+    },
+    {
+      "id": "H09",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "fiscal_april",
+        "start": "2022-04-01",
+        "end": "2023-03-31",
+        "available_at": "2023-05-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "fiscal_april",
+        "start": "2023-04-01",
+        "end": "2024-03-31",
+        "available_at": "2024-05-01"
+      },
+      "expected": "20",
+      "scenario": "safe_consistent_fiscal_transfer"
+    },
+    {
+      "id": "H10",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "fiscal_april",
+        "start": "2023-04-01",
+        "end": "2024-03-31",
+        "available_at": "2024-05-01"
+      },
+      "expected": null,
+      "scenario": "unsafe_accounting_convention_change"
+    },
+    {
+      "id": "H11",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2025-06-01"
+      },
+      "expected": "20",
+      "scenario": "valid_future_input_published_after_freeze_before_decision"
+    },
+    {
+      "id": "H12",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_net_income",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": null,
+      "scenario": "unsafe_metric_mismatch"
+    },
+    {
+      "id": "H13",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "100",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2025-06-30"
+      },
+      "expected": "20",
+      "scenario": "publication_exactly_at_decision"
+    },
+    {
+      "id": "H14",
+      "split": "heldout",
+      "fixture_type": "constructed_test_case_not_observed_financial_data",
+      "decision_at": "2025-06-30",
+      "base": {
+        "value": "0",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2022-01-01",
+        "end": "2022-12-31",
+        "available_at": "2023-03-01"
+      },
+      "current": {
+        "value": "120",
+        "currency": "TEST_CURRENCY_A",
+        "scale": "1",
+        "metric": "constructed_revenue",
+        "convention": "calendar",
+        "start": "2023-01-01",
+        "end": "2023-12-31",
+        "available_at": "2024-03-01"
+      },
+      "expected": null,
+      "scenario": "undefined_zero_base"
+    }
+  ],
+  "results": {
+    "naive_frozen": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 7,
+        "abstentions": 1,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.9285714285714286,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 0.46153846153846156
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": "-99.8800",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "arithmetic_abstain",
+          "reasons": [],
+          "correct_answer": false
+        }
+      ]
+    },
+    "validation_only": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 7,
+        "abstentions": 1,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.9285714285714286,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 0.46153846153846156
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": "-99.8800",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "arithmetic_abstain",
+          "reasons": [],
+          "correct_answer": false
+        }
+      ]
+    },
+    "contract": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 0,
+        "abstentions": 8,
+        "safe_abstentions": 7,
+        "unnecessary_abstentions": 1,
+        "coverage": 0.42857142857142855,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 1.0
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": null,
+          "expected": "20",
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "metric"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "zero_base"
+          ],
+          "correct_answer": false
+        }
+      ]
+    },
+    "from_scratch_metadata_solver": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 7,
+        "wrong_accepted_answers": 0,
+        "abstentions": 7,
+        "safe_abstentions": 7,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.5,
+        "correct_answer_rate": 0.5,
+        "coverage_conditioned_accuracy": 1.0
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": "20.00",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "metadata_solver_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        }
+      ]
+    },
+    "contract_no_availability": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 2,
+        "abstentions": 6,
+        "safe_abstentions": 5,
+        "unnecessary_abstentions": 1,
+        "coverage": 0.5714285714285714,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 0.75
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": null,
+          "expected": "20",
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "metric"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "zero_base"
+          ],
+          "correct_answer": false
+        }
+      ]
+    },
+    "contract_no_unit": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 2,
+        "abstentions": 6,
+        "safe_abstentions": 6,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.5714285714285714,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 0.75
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": "-99.8800",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "metric"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "zero_base"
+          ],
+          "correct_answer": false
+        }
+      ]
+    },
+    "contract_no_period": {
+      "metrics": {
+        "n": 14,
+        "correct_answers": 6,
+        "wrong_accepted_answers": 2,
+        "abstentions": 6,
+        "safe_abstentions": 5,
+        "unnecessary_abstentions": 1,
+        "coverage": 0.5714285714285714,
+        "correct_answer_rate": 0.42857142857142855,
+        "coverage_conditioned_accuracy": 0.75
+      },
+      "cases": [
+        {
+          "id": "H01",
+          "scenario": "safe_same_unit_growth",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H02",
+          "scenario": "safe_same_unit_scaling_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H03",
+          "scenario": "safe_decline",
+          "answer": "-25.00",
+          "expected": "-25",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H04",
+          "scenario": "convertible_mixed_scale_requires_normalization",
+          "answer": null,
+          "expected": "20",
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H05",
+          "scenario": "unsafe_currency_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H06",
+          "scenario": "unsafe_quarter_vs_annual",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H07",
+          "scenario": "current_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H08",
+          "scenario": "base_published_after_decision",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H09",
+          "scenario": "safe_consistent_fiscal_transfer",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H10",
+          "scenario": "unsafe_accounting_convention_change",
+          "answer": "20.0",
+          "expected": null,
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "H11",
+          "scenario": "valid_future_input_published_after_freeze_before_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H12",
+          "scenario": "unsafe_metric_mismatch",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "metric"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "H13",
+          "scenario": "publication_exactly_at_decision",
+          "answer": "20.0",
+          "expected": "20",
+          "event": "skill_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "H14",
+          "scenario": "undefined_zero_base",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "zero_base"
+          ],
+          "correct_answer": false
+        }
+      ]
+    }
+  }
+}

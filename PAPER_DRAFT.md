@@ -1,7 +1,7 @@
 # When Should Financial Research Agents Accept Their Own Revisions?
 ## Cluster-Aware and Search-Aware Evaluation for Self-Evolving Workflows
 
-**Status: research draft, not submission-ready. No new experiments were executed for this draft.**
+**Status: evolving research draft, not submission-ready. The original methodological proposal is preserved in `paper/PAPER_DRAFT_before_iteration9.md`. Iteration 9 adds a separately labeled constructed deterministic contract pilot; it is not a real-LLM or observed-financial-data experiment.**
 
 ## Abstract
 
@@ -71,9 +71,9 @@ Choose the final endpoint using the registered promotion process and a fixed sto
 
 ### 4.1 Existing pilot and evidence boundary
 
-The public Paper repository contains a balanced Gaussian random-intercept simulation with 12 clusters, five tasks per cluster, multiple intracluster correlations and effect sizes, and 20,000 replications per condition. Its manuscript reports that naive task-level testing becomes anti-conservative while cluster-mean testing remains near the nominal level in that model. Those numerical results were inspected in the existing manuscript but were not independently reproduced in this session. They must be regenerated from pinned source before inclusion as verified results in a submission.
+The public Paper repository contains a balanced Gaussian random-intercept simulation with 12 clusters, five tasks per cluster, multiple intracluster correlations and effect sizes, and 20,000 replications per condition. Its manuscript reports that naive task-level testing becomes anti-conservative while cluster-mean testing remains near the nominal level in that model. These numerical results were independently reproduced on 2026-11-12 from the existing source; the retained output and pinned environment are recorded in `experiments/artifacts/baseline_reproduction.json` and `experiments/artifacts/reproduction_manifest.json`. This reproduction verifies the stated simulation configuration, not the proposed adaptive-search or real-agent extensions.
 
-The pilot tests one fixed comparison. It does not test adaptive search, repeated validation reuse, fresh-cluster confirmation, real LLM outputs, or market performance.
+The pilot tests one fixed comparison. It does not test adaptive search, repeated validation reuse, fresh-cluster confirmation, real LLM outputs, or market performance. On 2026-11-12 the original 20,000-replication configuration was independently rerun and its displayed three-decimal results reproduced; the output is `experiments/artifacts/baseline_reproduction.json`. At ICC 0.8 under the null, task-level rejection is approximately 0.212 versus 0.048 for the cluster-mean test. This remains a synthetic calibration result.
 
 ### 4.2 Dependence and sequential search
 
@@ -89,7 +89,7 @@ Construct a source-grounded benchmark from dated public financial reports. Suita
 
 Compare a frozen workflow, ungated revisions, a simple empirical paired gate, a cluster-aware gate, and the combined confirmation protocol. Keep candidate proposals identical where possible to isolate evaluation effects, then run a separate closed-loop experiment to study how different accepted histories affect subsequent proposals. Use multiple runs and disclose all failures. General world knowledge from model pretraining remains a limitation; source-grounded evaluation and numerical perturbation tests can help diagnose reliance on memorized answers.
 
-No live model experiment or financial task collection has yet been executed for this draft.
+No live model experiment or source-grounded financial task collection has yet been executed. The constructed deterministic pilot added below is an evaluator test, not a substitute for that study.
 
 ## 5. Related Work and Positioning
 
@@ -105,7 +105,7 @@ A credible negative result is possible: the protocol may reject nearly all revis
 
 ## 7. Expected Reporting Structure
 
-The final paper should contain a false-promotion calibration figure, a power-versus-independent-cluster plot, an equal-budget sequential-search comparison, a financial-task result table, and complete endpoint trajectories. Each result must link to executable code, frozen configuration, data or fixtures, raw output, and an environment manifest. The current draft supplies none of the proposed new empirical findings.
+The final paper should contain a false-promotion calibration figure, a power-versus-independent-cluster plot, an equal-budget sequential-search comparison, a financial-task result table, and complete endpoint trajectories. Each result must link to executable code, frozen configuration, data or fixtures, raw output, and an environment manifest. The proposed sequential and source-grounded financial experiments remain unexecuted. The separately completed deterministic evaluator increment, its negative solver comparison, and its evidence boundaries are reported in `paper/CONTRACT_PILOT.md`; it does not validate the sequential protocol.
 
 ## References Checked During Topic Assessment
 

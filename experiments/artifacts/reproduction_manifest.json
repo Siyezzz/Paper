@@ -1,0 +1,19 @@
+{
+  "source_parent_commit": "245c882d85d74cd90fcc324095555dc5d2dce7de",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "test_exit_code": 0,
+  "full_test_command": "python -m unittest discover -s experiments -p test_*.py -v",
+  "baseline_command": "python experiments/simulate_cluster_gate.py --out experiments/artifacts/baseline_reproduction.json",
+  "pilot_command": "python experiments/financial_contract_pilot.py --out experiments/artifacts/financial_contract_results.json",
+  "source_sha256": {
+    "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments/financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments/simulate_cluster_gate.py": "e203f7e6ea178b09a492737ea78f23e00b497dd3086ebcabc5de81efcb4f03c7",
+    "experiments/test_financial_contract.py": "5285f6dd3b2ca58c0a2c5ca460ade96aa946c3c5af2cc94746b222315ea1916d",
+    "experiments/test_simulation.py": "3211efc3fa5bf720a16ad240c8b865613b257cd68bdd6dc2f6a44a3e6551d2e5",
+    "experiments/requirements.txt": "4ac860bd00b2428fb695be3684998a657e774ea680cc8bf481b8778f94ba3cf5"
+  }
+}
