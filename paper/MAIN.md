@@ -102,7 +102,7 @@ We simulate paired workflow utility differences under:
 d_{ci}=\Delta+u_c+\epsilon_{ci},
 \]
 
-with total marginal variance normalized to one. The cluster shock and task noise are generated independently with variances rho and 1-rho. The design uses 12 independent clusters and five tasks per cluster (60 task observations). We vary rho in {0, 0.2, 0.5, 0.8} and standardized effects Delta in {0, 0.2, 0.4}. Each condition uses 20,000 Monte Carlo replications with fixed random seed 20261105. The nominal one-sided significance level is 0.05.
+with total marginal variance normalized to one. The cluster shock and task noise are independent zero-mean Gaussian variables with variances rho and 1-rho. The design uses 12 independent clusters and five tasks per cluster (60 task observations). We vary rho in {0, 0.2, 0.5, 0.8} and standardized effects Delta in {0, 0.2, 0.4}. Each condition uses 20,000 Monte Carlo replications with fixed random seed 20261105. The nominal one-sided significance level is 0.05.
 
 When Delta equals zero, the rejection frequency estimates Type-I error. When Delta is positive, it estimates power under the specified data-generating process. Both tests use exactly the same simulated paired differences.
 
