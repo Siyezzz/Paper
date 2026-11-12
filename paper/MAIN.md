@@ -131,7 +131,7 @@ The correction has a power cost. For a modest standardized effect of 0.2, cluste
 
 The simulation supports a limited methodological conclusion: **financial-agent workflow evaluation should not treat correlated company-, sector-, or regime-level tasks as independent replications.** A cluster-aware gate can reduce false promotion under the specified dependence model, but it may require substantially more independent clusters to detect modest improvements.
 
-The result does not establish universal calibration. The data-generating process is a simple exchangeable random-intercept model; real financial tasks may have unequal cluster sizes, multiple crossed dependencies, serial correlation, non-normal errors, and changing cluster definitions.
+The result does not establish universal calibration. The data-generating process is a Gaussian exchangeable random-intercept model; real financial tasks may have unequal cluster sizes, multiple crossed dependencies, serial correlation, non-normal errors, and changing cluster definitions. The cluster-mean t-test is not guaranteed to attain nominal size for very small cluster counts; the 6-cluster estimate is a finite-replication result for this specific model, not a general calibration guarantee.
 
 ### 5.4 Cluster-count sensitivity
 

@@ -1,6 +1,8 @@
 {
-  "source_parent_commit": "245c882d85d74cd90fcc324095555dc5d2dce7de",
+  "source_parent_commit": "3eb07104e46e48608b2b8ef7b06ff5735e6b0382",
+  "sensitivity_added_after_commit": "3eb07104e46e48608b2b8ef7b06ff5735e6b0382",
   "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "execution_date": "2026-11-12",
   "platform": "Windows-11-10.0.26300-SP0",
   "numpy": "2.5.4",
   "scipy": "1.18.1",

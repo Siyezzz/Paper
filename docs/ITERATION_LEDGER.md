@@ -31,8 +31,8 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 
 ### Iteration 10 evidence and critique
 
-- Parent commit: `3eb0710`; the iteration commit is the commit containing this ledger entry.
-- Evidence: `experiments/artifacts/cluster_sensitivity_6.json` and `experiments/artifacts/cluster_sensitivity_24.json`; code, seed and grid are unchanged from the baseline simulation.
+- Parent commit: `3eb0710`; the iteration commit is the commit containing this ledger entry. This is post hoc sensitivity analysis of the existing frozen model, not a pre-registered hypothesis test.
+- Evidence: `experiments/artifacts/cluster_sensitivity_6.json` and `experiments/artifacts/cluster_sensitivity_24.json`; code, seed and grid are unchanged from the baseline simulation. Environment: Python 3.13.14, NumPy 2.5.4, SciPy 1.18.1, Windows 11.
 - Manuscript increment: `paper/MAIN.md`, Section 5.4. The new paragraph reports raw rejection and power values and links both artifacts.
 - Interpretation: the calibration direction is not unique to 12 clusters in this synthetic random-intercept design, but the cluster-level power penalty is substantial with few independent clusters. This does not add real-financial or LLM evidence.
 - Checks: baseline and contract artifacts reproduced; all 15 tests pass after the change.
