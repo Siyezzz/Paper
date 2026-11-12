@@ -133,6 +133,12 @@ The simulation supports a limited methodological conclusion: **financial-agent w
 
 The result does not establish universal calibration. The data-generating process is a simple exchangeable random-intercept model; real financial tasks may have unequal cluster sizes, multiple crossed dependencies, serial correlation, non-normal errors, and changing cluster definitions.
 
+### 5.4 Cluster-count sensitivity
+
+As a pre-specified sensitivity check, we reran the same 20,000-replication grid with five tasks per cluster and 6 or 24 independent clusters, retaining the seed, ICCs, effects, and nominal level. Under the null at rho = 0.8, task-level rejection was 0.227 with 6 clusters and 0.214 with 24 clusters, while the cluster-mean test was 0.052 and 0.048, respectively. For the modest effect Delta = 0.2 at rho = 0.8, cluster-mean power was 0.115 with 6 clusters and 0.267 with 24 clusters (versus 0.413 and 0.608 for the task-level comparator). The calibration direction therefore persists across these cluster counts, while the power penalty is material when the number of independent clusters is small. These are still synthetic replications of the same model, not evidence from financial reports or an agent deployment.
+
+The raw outputs are `experiments/artifacts/cluster_sensitivity_6.json` and `experiments/artifacts/cluster_sensitivity_24.json`; both use seed 20261105 and the unchanged simulation code.
+
 ## 6. Implications for SEA
 
 SEA's current candidate-comparison interface accepts paired task-level reports and checks task identifiers, evaluator consistency, discovery/evaluation separation, and retention. The inspected implementation does not represent a task-cluster identifier in its comparison contract. The proposed extension is modest:

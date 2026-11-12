@@ -2,7 +2,7 @@
 
 This ledger counts research-design and manuscript iterations, not hidden model updates or autonomous learning events. An iteration is counted only when a concrete decision, experiment, or manuscript artifact changes and is recorded.
 
-**Current count: 10 completed iterations (0–9).**
+**Current count: 11 completed iterations (0–10).**
 **Current manuscript status: focused methodological draft; not submission-ready.**
 
 | Iteration | Stage | Main action | Outcome | Status |
@@ -16,7 +16,8 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 | 6 | Statistical pilot | Monte Carlo study of task dependence and paired evaluation | Cluster dependence identified as a possible evaluation issue; synthetic only | Retained as pilot |
 | 7 | Focused contribution | Narrow to cluster-aware evaluation and write reproducible simulation to GitHub | One methodological contribution selected | Previous baseline |
 | 8 | EMAS deep reading | Read EMAS paper and official method/results/limitations/reproducibility docs; compare against our proposal | Confirmed EMAS is the closest precedent and co-authored by the user's supervisor; generic evidence-guided evolution is not novel. Cluster-aware evaluation remains a possible narrow extension, pending supervisor alignment and stronger methods comparison. | Previous revision |
-| 9 | Reproduction and applicability pilot, 2026-11-12 | Reproduced the 20,000-replication pilot, independently verified four requested arXiv records, added fixed deterministic financial contract fixtures and seven policies, corrected bibliography numbering | Fourteen constructed evaluation cases: naive/validation-only 6 correct and 7 wrong accepted; contract 6 correct and 0 wrong accepted, with one unnecessary abstention; ordinary metadata solver 7 correct and 0 wrong accepted. All 15 final tests pass. | Current revision; not submission-ready |
+| 9 | Reproduction and applicability pilot, 2026-11-12 | Reproduced the 20,000-replication pilot, independently verified four requested arXiv records, added fixed deterministic financial contract fixtures and seven policies, corrected bibliography numbering | Fourteen constructed evaluation cases: naive/validation-only 6 correct and 7 wrong accepted; contract 6 correct and 0 wrong accepted, with one unnecessary abstention; ordinary metadata solver 7 correct and 0 wrong accepted. All 15 final tests pass. | Previous revision |
+| 10 | Cluster-count sensitivity, 2026-11-12 | Re-ran the frozen Gaussian cluster-gate grid at 6 and 24 independent clusters, retaining five tasks per cluster, 20,000 replications, seed 20261105, ICCs and effects | At rho=0.8 under the null, task-level rejection was 0.227 (6 clusters) and 0.214 (24), versus 0.052 and 0.048 for cluster means. At effect=0.2, rho=0.8, cluster-mean power was 0.115 and 0.267. Direction persists; power depends strongly on independent-cluster count. | Current revision; not submission-ready |
 
 ### Iteration 9 evidence and critique
 
@@ -27,6 +28,15 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 - Failures during development: undefined fixture value names were corrected; H09's fiscal period change originally left publication earlier than period end, causing an extra abstention. Its date was repaired for internal fixture consistency, not by tuning policy. Intermediate metrics were 5 contract / 6 solver correct before that repair. Concurrent edits also produced a transient assertion failure; the final stable 15-test run passes. These cases are author-designed, not an independently blind holdout.
 - Claim change: prioritize financial semantic applicability and safe transfer as a falsifiable evaluator direction; do not claim generic skill evolution, pruning, admission or cost control as novelty. See `docs/NOVELTY_AUDIT_2026-11-12.md`.
 - Outstanding: no observed financial benchmark, independent holdout authorship, real-LLM generated/executed skills, sequential-search simulation, or full primary-paper/code audit. Actual spend unknown; USD 10/day remains a target, not recorded expenditure.
+
+### Iteration 10 evidence and critique
+
+- Parent commit: `3eb0710`; the iteration commit is the commit containing this ledger entry.
+- Evidence: `experiments/artifacts/cluster_sensitivity_6.json` and `experiments/artifacts/cluster_sensitivity_24.json`; code, seed and grid are unchanged from the baseline simulation.
+- Manuscript increment: `paper/MAIN.md`, Section 5.4. The new paragraph reports raw rejection and power values and links both artifacts.
+- Interpretation: the calibration direction is not unique to 12 clusters in this synthetic random-intercept design, but the cluster-level power penalty is substantial with few independent clusters. This does not add real-financial or LLM evidence.
+- Checks: baseline and contract artifacts reproduced; all 15 tests pass after the change.
+- Limitations: 6 and 24 clusters are sensitivity replications of the same authored Gaussian model, not independent financial task samples; no venue-readiness claim changes.
 
 ## Writing-skill protocol from Iteration 8 onward
 

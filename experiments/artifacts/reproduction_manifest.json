@@ -6,7 +6,11 @@
   "scipy": "1.18.1",
   "test_exit_code": 0,
   "full_test_command": "python -m unittest discover -s experiments -p test_*.py -v",
-  "baseline_command": "python experiments/simulate_cluster_gate.py --out experiments/artifacts/baseline_reproduction.json",
+  "baseline_command": "python experiments/simulate_cluster_gate.py --reps 20000 --clusters 12 --tasks-per-cluster 5 --seed 20261105 --out experiments/artifacts/baseline_reproduction.json",
+  "sensitivity_commands": [
+    "python experiments/simulate_cluster_gate.py --reps 20000 --clusters 6 --tasks-per-cluster 5 --seed 20261105 --out experiments/artifacts/cluster_sensitivity_6.json",
+    "python experiments/simulate_cluster_gate.py --reps 20000 --clusters 24 --tasks-per-cluster 5 --seed 20261105 --out experiments/artifacts/cluster_sensitivity_24.json"
+  ],
   "pilot_command": "python experiments/financial_contract_pilot.py --out experiments/artifacts/financial_contract_results.json",
   "source_sha256": {
     "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",

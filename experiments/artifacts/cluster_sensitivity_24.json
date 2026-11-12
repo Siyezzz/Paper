@@ -1,0 +1,140 @@
+{
+  "seed": 20261105,
+  "model": "random-intercept paired-difference model",
+  "formula": "d_ci = effect + u_c + epsilon_ci; ICC=rho",
+  "sampling_unit": "independent task cluster",
+  "rows": [
+    {
+      "rho": 0.0,
+      "effect_sd": 0.0,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.05035,
+      "cluster_mean_rejection_rate": 0.0501,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.0,
+      "effect_sd": 0.2,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.7053,
+      "cluster_mean_rejection_rate": 0.6843,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.0,
+      "effect_sd": 0.4,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.99645,
+      "cluster_mean_rejection_rate": 0.99525,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.2,
+      "effect_sd": 0.0,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.11125,
+      "cluster_mean_rejection_rate": 0.04655,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.2,
+      "effect_sd": 0.2,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.65345,
+      "cluster_mean_rejection_rate": 0.4702,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.2,
+      "effect_sd": 0.4,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.97845,
+      "cluster_mean_rejection_rate": 0.93685,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.5,
+      "effect_sd": 0.0,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.1791,
+      "cluster_mean_rejection_rate": 0.05175,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.5,
+      "effect_sd": 0.2,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.62895,
+      "cluster_mean_rejection_rate": 0.3401,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.5,
+      "effect_sd": 0.4,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.9434,
+      "cluster_mean_rejection_rate": 0.7896,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.8,
+      "effect_sd": 0.0,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.21415,
+      "cluster_mean_rejection_rate": 0.04825,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.8,
+      "effect_sd": 0.2,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.60795,
+      "cluster_mean_rejection_rate": 0.26655,
+      "nominal_alpha": 0.05
+    },
+    {
+      "rho": 0.8,
+      "effect_sd": 0.4,
+      "clusters": 24,
+      "tasks_per_cluster": 5,
+      "total_tasks": 120,
+      "replications": 20000,
+      "naive_task_level_rejection_rate": 0.91475,
+      "cluster_mean_rejection_rate": 0.67405,
+      "nominal_alpha": 0.05
+    }
+  ]
+}
