@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "company": "Microsoft Corporation (MSFT)",
+  "retrieved_on": "2026-11-13",
+  "decimal_precision": 50,
+  "oracle_decimal_places": 12,
+  "oracle_base_million_usd": "211915",
+  "oracle_current_million_usd": "245122",
+  "oracle_growth_numerator": "3320700",
+  "oracle_growth_denominator": "211915",
+  "publication_date": "2024-07-30",
+  "publication_date_basis": "Dated FY24 Q4 company release contains both exact annual revenue values; not a claim about annual-report HTML publication time or earliest public availability.",
+  "date_rule": "available_at <= decision_at; date-only equality is an explicit convention, not intraday evidence",
+  "policies": ["naive_frozen", "contract", "from_scratch_metadata_solver"],
+  "sources": [
+    {"file": "msft_ar24.html", "url": "https://microsoft.com/investor/reports/ar24", "sha256": "2b49e38b25f3bea8634b603ad5db64ba0803f27e27f93cc406884e6990974065"},
+    {"file": "msft_fy24_income.html", "url": "https://microsoft.com/en-us/Investor/earnings/FY-2024-Q4/income-statements", "sha256": "2a7f6972bdeb213a7fede5e8774710024a231a076411d2ac77d071fb9980c88a"},
+    {"file": "msft_fy24_release.html", "url": "https://microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-webcast", "sha256": "2dd641e699f292aad771a8743ccb627ad01f9198f7789fcc4fb4ce0abc4d8b1f"}
+  ],
+  "cases": [
+    {"id": "S01", "scenario": "source_values_after_publication", "decision_at": "2024-07-31", "expected_available": true, "constructed_scale_conversion": false},
+    {"id": "S02", "scenario": "constructed_decision_before_selected_publication", "decision_at": "2024-07-29", "expected_available": false, "constructed_scale_conversion": false},
+    {"id": "S03", "scenario": "constructed_equivalent_current_unit_billion_usd", "decision_at": "2024-07-31", "expected_available": true, "constructed_scale_conversion": true}
+  ],
+  "claims_excluded": ["LLM experiment", "blind holdout", "independently authored benchmark", "observed market contract changes", "point-in-time archived web snapshots", "earliest publication proof", "population-level effectiveness"]
+}

@@ -23,9 +23,10 @@ See docs/EMAS_CRITICAL_READING.md, docs/WRITING_PROTOCOL.md, and docs/ITERATION_
 ## Current status
 
 - Methodological Monte Carlo simulation exists.
-- No live LLM-agent experiment has been run.
+- No successful, scorable live LLM-agent experiment has been run. The inherited API attempt produced only access/transport failures; see `docs/API_PILOT_AUDIT_2026-11-13.md`.
+- A one-company, source-grounded deterministic arithmetic micro-pilot now exists; see `paper/SOURCE_GROUNDED_PILOT.md`. Its decision dates and scale-change scenarios are constructed, not observed market changes.
 - No real U.S.-equity backtest has been run.
-- Results are synthetic and do not establish financial performance.
+- Gaussian results are simulated; the contract fixtures are constructed; the source-grounded micro-pilot combines observed revenue with constructed scenarios. None establishes financial performance.
 - SEA source code has been inspected; its runtime is not yet integrated.
 - Current paper is a methodological pilot, not submission-ready.
 - Iteration 9 independently rechecks Dream-RSI, RRSI, FactorMiner and SkillsBench against current primary pages; see `docs/NOVELTY_AUDIT_2026-11-12.md` for versions and inspection limits.

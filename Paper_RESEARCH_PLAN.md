@@ -65,7 +65,7 @@ The repository contains a synthetic cluster-aware paired-evaluation simulation a
 
 ### Not supported now
 
-No live LLM-agent experiment, real financial report benchmark, historical portfolio backtest, or end-to-end SEA runtime integration has been completed. No empirical claim about investment performance may be added.
+No successful scorable live LLM-agent experiment, historical portfolio backtest, or end-to-end SEA runtime integration has been completed. Iteration 11 adds a minimal source-grounded arithmetic task from one annual revenue pair reported by Microsoft, with author-designed temporal/unit scenarios; it is not an independently authored benchmark or evidence of observed drift. No empirical claim about investment performance may be added.
 
 ## Target positioning
 

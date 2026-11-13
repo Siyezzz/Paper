@@ -1,0 +1,43 @@
+{
+  "scope": "Iteration 11 resumed-environment reproduction; no live API calls",
+  "recorded_at_utc": "2026-11-13T02:25:47.547482+00:00",
+  "environment": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "tests": {
+    "command": "python -m unittest discover -s experiments -p test*.py -v",
+    "exit_code": 0,
+    "count": 27
+  },
+  "experiments": [
+    "python experiments/simulate_cluster_gate.py --reps 20000 --clusters 12 --tasks-per-cluster 5 --seed 20261105 --out experiments/artifacts/baseline_reproduction.json",
+    "python experiments/financial_contract_pilot.py --out experiments/artifacts/financial_contract_results.json",
+    "python experiments/source_grounded_pilot.py --out experiments/artifacts/source_grounded/results.json"
+  ],
+  "sha256": {
+    "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments/financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments/model_api_clients.py": "befe8ceb9c6e6b9a201d2227e2a5e37aaf26dad88edc00f5a9d2a25acbd69673",
+    "experiments/run_multi_model_api.py": "835a36360adcb4d0a9072b7a2e619a8fb641896b2f84b21770c93723c74f7eea",
+    "experiments/simulate_cluster_gate.py": "e203f7e6ea178b09a492737ea78f23e00b497dd3086ebcabc5de81efcb4f03c7",
+    "experiments/source_grounded_pilot.py": "4388ac7dc6ff8512d2272f232d98ecd680fef284de6af994ee21d522579d84ba",
+    "experiments/test_financial_contract.py": "5285f6dd3b2ca58c0a2c5ca460ade96aa946c3c5af2cc94746b222315ea1916d",
+    "experiments/test_model_api_clients.py": "d3210a8e2d2a65729d846b5e133fb08998238a44a383a8d58f4f9e1d3c97a7f0",
+    "experiments/test_run_multi_model_api_offline.py": "c8b37292434326785b4b467899d893ca5fd022d85a0abede9b8aa968f0e0f130",
+    "experiments/test_simulation.py": "3211efc3fa5bf720a16ad240c8b865613b257cd68bdd6dc2f6a44a3e6551d2e5",
+    "experiments/test_source_grounded.py": "db77082c056e471439506ae3ddd38fcd9e0648f766e56228d7a55fe4d01b7457",
+    "experiments/source_grounded_config.json": "d761891d35a612f5783d7ed15c6d196831b3eb66df5e045cfcff686ef861c6a4",
+    "experiments/artifacts/source_grounded/msft_ar24.html": "2b49e38b25f3bea8634b603ad5db64ba0803f27e27f93cc406884e6990974065",
+    "experiments/artifacts/source_grounded/msft_fy24_income.html": "2a7f6972bdeb213a7fede5e8774710024a231a076411d2ac77d071fb9980c88a",
+    "experiments/artifacts/source_grounded/msft_fy24_release.html": "2dd641e699f292aad771a8743ccb627ad01f9198f7789fcc4fb4ce0abc4d8b1f",
+    "experiments/artifacts/baseline_reproduction.json": "6ce41c50e29da3d1d6c7a1582b4483ba9a48e69ca10dff23e84e4e2ca8253373",
+    "experiments/artifacts/financial_contract_results.json": "c8fe52cfea8a933fb440a4d4134e293a220bd9d93cda1c84fc166a8ca7dd3b5f",
+    "experiments/artifacts/source_grounded/results.json": "ad6b1282d6d09e9ac8f40111a59d88660be6d2e34e179a884988ca753ed6efa6",
+    "experiments/artifacts/source_grounded/test_results.txt": "37bfc881da64447f7aedec3c63f1b135aab5b773f0a42e77fcd11f4cff1008e5"
+  },
+  "actual_spend": "unknown",
+  "caveat": "Earlier environment records remain historical; this manifest records the resumed run. Source snapshot bytes are protected by .gitattributes; text-file hashes describe this checkout."
+}

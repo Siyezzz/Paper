@@ -2,7 +2,7 @@
 
 This ledger counts research-design and manuscript iterations, not hidden model updates or autonomous learning events. An iteration is counted only when a concrete decision, experiment, or manuscript artifact changes and is recorded.
 
-**Current count: 11 completed iterations (0–10).**
+**Current count: 12 completed iterations (0–11).**
 **Current manuscript status: focused methodological draft; not submission-ready.**
 
 | Iteration | Stage | Main action | Outcome | Status |
@@ -17,7 +17,8 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 | 7 | Focused contribution | Narrow to cluster-aware evaluation and write reproducible simulation to GitHub | One methodological contribution selected | Previous baseline |
 | 8 | EMAS deep reading | Read EMAS paper and official method/results/limitations/reproducibility docs; compare against our proposal | Confirmed EMAS is the closest precedent and co-authored by the user's supervisor; generic evidence-guided evolution is not novel. Cluster-aware evaluation remains a possible narrow extension, pending supervisor alignment and stronger methods comparison. | Previous revision |
 | 9 | Reproduction and applicability pilot, 2026-11-12 | Reproduced the 20,000-replication pilot, independently verified four requested arXiv records, added fixed deterministic financial contract fixtures and seven policies, corrected bibliography numbering | Fourteen constructed evaluation cases: naive/validation-only 6 correct and 7 wrong accepted; contract 6 correct and 0 wrong accepted, with one unnecessary abstention; ordinary metadata solver 7 correct and 0 wrong accepted. All 15 final tests pass. | Previous revision |
-| 10 | Cluster-count sensitivity, 2026-11-12 | Re-ran the frozen Gaussian cluster-gate grid at 6 and 24 independent clusters, retaining five tasks per cluster, 20,000 replications, seed 20261105, ICCs and effects | At rho=0.8 under the null, task-level rejection was 0.227 (6 clusters) and 0.214 (24), versus 0.052 and 0.048 for cluster means. At effect=0.2, rho=0.8, cluster-mean power was 0.115 and 0.267. Direction persists; power depends strongly on independent-cluster count. | Current revision; not submission-ready |
+| 10 | Cluster-count sensitivity, 2026-11-12 | Re-ran the frozen Gaussian cluster-gate grid at 6 and 24 independent clusters, retaining five tasks per cluster, 20,000 replications, seed 20261105, ICCs and effects | At rho=0.8 under the null, task-level rejection was 0.227 (6 clusters) and 0.214 (24), versus 0.052 and 0.048 for cluster means. At effect=0.2, rho=0.8, cluster-mean power was 0.115 and 0.267. Direction persists; power depends strongly on independent-cluster count. | Previous revision |
+| 11 | Source-grounded applicability and API audit, 2026-11-13 | Added a source-locked Microsoft revenue micro-pilot, audited inherited API failures, rechecked requested related work, and tightened manuscript claims | Provenance improved, but ordinary metadata validation still dominates the conservative contract; no evolutionary advantage or real-model evidence | Current revision; not submission-ready |
 
 ### Iteration 9 evidence and critique
 
@@ -37,6 +38,20 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 - Interpretation: the calibration direction is not unique to 12 clusters in this synthetic random-intercept design, but the cluster-level power penalty is substantial with few independent clusters. This does not add real-financial or LLM evidence.
 - Checks: baseline and contract artifacts reproduced; all 15 tests pass after the change.
 - Limitations: 6 and 24 clusters are sensitivity replications of the same authored Gaussian model, not independent financial task samples; no venue-readiness claim changes.
+
+### Iteration 11 evidence and critique — 2026-11-13
+
+
+- Parent commit: `5fe553abb036113b728ba7561b11eb4a8b005cc9`, an inherited, unpushed API-harness commit, preserved without rewriting. Remote `main` was an ancestor at `582aebb`; fetch over SSH/443 succeeded. The iteration commit is the commit containing this entry.
+- Reproduction: all original 18 tests passed; the fixed 20,000-replication, seed-20261105 Gaussian baseline and original 14-case deterministic contract pilot reproduced without artifact differences. The expanded suite passed 25 intermediate tests and all 27 final offline tests. A resumed-environment rerun also passed all 27; its environment and commands are recorded in `experiments/artifacts/iteration11_reproduction_manifest.json`.
+- New observed input: Microsoft FY2024/FY2023 GAAP annual revenue, 245,122/211,915 million USD, corroborated across three company-hosted pages saved with hashes and excerpts. The independent arithmetic implementation gives 15.669962013071...% growth. This is one issuer and one annual pair, not independent task clusters.
+- Three explicitly designed scenarios reuse unchanged policies: naive 1 correct / 2 wrong accepted; contract 1 correct / 0 wrong accepted / 1 unnecessary abstention; ordinary metadata solver 2 correct / 0 wrong accepted / no unnecessary abstention. Decision dates and equivalent-unit representation are constructed; historical website vintages, observed drift and blind holdout are not claimed. See `paper/SOURCE_GROUNDED_PILOT.md` and `experiments/artifacts/source_grounded/results.json`.
+- Inherited API failure audit: 168 attempts, 164 HTTP 403 and 4 transport errors, zero successful/scorable outputs or usage records. These are access failures, not incorrect model answers. Original local raw output remains untouched and untracked; its SHA256 and aggregate audit are saved. No new live API call was made. The `generated_skill` identifiers currently represent prompt variants, not persisted generated skills or externally enforced contracts.
+- Reliability increment: globally stop on the first missing key, HTTP 401 or HTTP 403; record real start/end timestamps and protocol/source/prompt hashes. Offline mocks verify failure stop and successful control flow, not provider availability.
+- Literature increment: independently rechecked all four requested arXiv IDs against primary abstract/processed HTML pages; inspection is truncated, exact author spellings and full code audits remain unresolved. See `docs/NOVELTY_AUDIT_2026-11-13.md`.
+- Claim change: provenance now extends beyond synthetic financial numbers, but ordinary validation still dominates this conservative contract. No evolutionary advantage, market benefit or publication readiness is established. Original proposal text is retained; `paper/MAIN.md` Section 5.5 and linked supplements isolate the new evidence.
+- Next gate: independently authored multi-issuer, source-vintage holdout; freeze scoring and generation prompts before opening it; persist a genuinely generated skill, execute it separately, and compare ordinary validators under matched budgets. The sequential-search and stronger statistical baselines remain unexecuted.
+- Spending and access: USD 10/day is a target; actual spend remains unknown without billing. Prior project memory reports an exposed API credential: user must revoke/rotate it before any resumed live run. No key was read or used in this iteration, and no recharge/subscription was purchased.
 
 ## Writing-skill protocol from Iteration 8 onward
 

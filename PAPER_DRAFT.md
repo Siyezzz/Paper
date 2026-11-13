@@ -1,7 +1,7 @@
 # When Should Financial Research Agents Accept Their Own Revisions?
 ## Cluster-Aware and Search-Aware Evaluation for Self-Evolving Workflows
 
-**Status: evolving research draft, not submission-ready. The original methodological proposal is preserved in `paper/PAPER_DRAFT_before_iteration9.md`. Iteration 9 adds a separately labeled constructed deterministic contract pilot; it is not a real-LLM or observed-financial-data experiment.**
+**Status: evolving research draft, not submission-ready. The original methodological proposal is preserved in `paper/PAPER_DRAFT_before_iteration9.md`. Iteration 9 adds a separately labeled constructed deterministic contract pilot. Iteration 11 adds a one-company source-grounded arithmetic micro-pilot (`paper/SOURCE_GROUNDED_PILOT.md`), with explicitly constructed decision/scale scenarios; neither is a real-LLM or observed market-contract-change experiment. The failed API attempt supplies no scorable model output.**
 
 ## Abstract
 

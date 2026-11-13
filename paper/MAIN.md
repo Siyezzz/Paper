@@ -139,6 +139,12 @@ As a cluster-count sensitivity analysis, we reran the same 20,000-replication gr
 
 The raw outputs are `experiments/artifacts/cluster_sensitivity_6.json` and `experiments/artifacts/cluster_sensitivity_24.json`; both use seed 20261105 and the unchanged simulation code.
 
+### 5.5 Source-grounded applicability check (Iteration 11)
+
+A separate deterministic micro-pilot now grounds the arithmetic input in Microsoft FY2024/FY2023 reported annual revenue (245,122 and 211,915 million USD), corroborated by three company-hosted source snapshots. The dated July 30, 2024 release supplies a selected availability convention, not proof of earliest public availability. One compatible case and two explicitly constructed temporal/unit scenarios reuse the unchanged policies. Across these three dependent cases, naive reuse gives 1 correct and 2 wrong accepted answers; the contract gives 1 correct, 0 wrong accepted and 1 unnecessary abstention; the ordinary metadata solver gives 2 correct, 0 wrong accepted and no unnecessary abstention. Details, primary URLs, source locks, independent arithmetic oracle and per-case outputs are in `paper/SOURCE_GROUNDED_PILOT.md` and `experiments/artifacts/source_grounded/results.json`.
+
+This supplies source provenance, not independent-cluster evidence: there is one issuer and one annual pair, no blind holdout, no observed contract-change series and no learned evolution. The ordinary solver remains the stronger comparator. The inherited API attempt returned no scorable text, so it cannot fill the real-model evidence gap; `docs/API_PILOT_AUDIT_2026-11-13.md` records access failures and the distinction between prompt variants and actual generated/executed skills. The newly repeated related-work audit is `docs/NOVELTY_AUDIT_2026-11-13.md`; it does not establish priority from incomplete HTML inspection.
+
 ## 6. Implications for SEA
 
 SEA's current candidate-comparison interface accepts paired task-level reports and checks task identifiers, evaluator consistency, discovery/evaluation separation, and retention. The inspected implementation does not represent a task-cluster identifier in its comparison contract. The proposed extension is modest:
