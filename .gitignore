@@ -149,8 +149,13 @@ activemq-data/
 
 # Environments
 .env
+.env.*
 .envrc
 .venv
+
+# Live API experiment outputs may contain provider responses or metadata
+experiments/artifacts/multi_model_api/live/
+
 env/
 venv/
 ENV/
