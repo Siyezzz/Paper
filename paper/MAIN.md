@@ -145,6 +145,24 @@ A separate deterministic micro-pilot now grounds the arithmetic input in Microso
 
 This supplies source provenance, not independent-cluster evidence: there is one issuer and one annual pair, no blind holdout, no observed contract-change series and no learned evolution. The ordinary solver remains the stronger comparator. The inherited API attempt returned no scorable text, so it cannot fill the real-model evidence gap; `docs/API_PILOT_AUDIT_2026-11-13.md` records access failures and the distinction between prompt variants and actual generated/executed skills. The newly repeated related-work audit is `docs/NOVELTY_AUDIT_2026-11-13.md`; it does not establish priority from incomplete HTML inspection.
 
+### 5.6 Fixed-bank multiple-candidate null experiment (Iteration 12)
+
+We extended the calibration study to a frozen finite bank of independent all-null candidates, with seed 20261114, 20,000 replications, 12 clusters, five tasks per cluster, ICCs {0, 0.2, 0.5, 0.8}, and candidate budgets {1, 5, 20}. Every candidate receives a fresh independent Gaussian sample. The same saved task-level and cluster-level p-value banks supply all five comparators: unadjusted task testing, unadjusted cluster testing, task Bonferroni, cluster Bonferroni, and cluster error spending with alpha/[r(r+1)]. This is not adaptive candidate generation or repeated reuse of a validation set.
+
+At ICC 0.8 with 20 candidates, the probability of at least one false promotion was:
+
+| Rule | False-promotion probability | Pointwise 95% Wilson Monte Carlo interval |
+|---|---:|---|
+| Task-level, unadjusted | 0.99265 | [0.99137, 0.99374] |
+| Cluster-mean, unadjusted | 0.63715 | [0.63046, 0.64379] |
+| Task-level, Bonferroni | 0.85090 | [0.84590, 0.85577] |
+| Cluster-mean, Bonferroni | 0.04945 | [0.04653, 0.05254] |
+| Cluster-mean, error spending | 0.04770 | [0.04483, 0.05074] |
+
+Thus correcting only the candidate count did not repair invalid task-level p-values, and correcting only the sampling unit did not control repeated promotion. The calibrated independent Gaussian model gives exact familywise probabilities 1-(1-alpha)^K for unadjusted cluster tests and 1-(1-alpha/K)^K for cluster Bonferroni; at K=20 these are 0.641514 and 0.048830. The spending rule uses only alpha*K/(K+1)=0.047619 at K=20, so its lower observed rate is not evidence of higher power or superiority.
+
+Configuration, raw per-candidate p-values, all grid results, reproduction commands, environment and hashes are retained in `experiments/null_search_config.json` and `experiments/artifacts/iteration12_search/`. Recomputing the report from the saved p-values exactly reproduces it. These pointwise intervals describe Monte Carlo uncertainty, not financial population uncertainty or simultaneous coverage over the grid. Positive effects, shared baseline noise, adaptive proposals, validation reuse, heavy tails and crossed dependence remain untested. This controlled ablation motivates combining valid sampling-unit inference with a search-error budget; it does not validate the complete sequential protocol or establish financial skill utility.
+
 ## 6. Implications for SEA
 
 SEA's current candidate-comparison interface accepts paired task-level reports and checks task identifiers, evaluator consistency, discovery/evaluation separation, and retention. The inspected implementation does not represent a task-cluster identifier in its comparison contract. The proposed extension is modest:

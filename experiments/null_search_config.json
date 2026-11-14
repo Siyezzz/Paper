@@ -1,0 +1,23 @@
+{
+  "design": "fixed finite bank of independent all-null Gaussian candidates; no adaptive data reuse",
+  "seed": 20261114,
+  "replications": 20000,
+  "clusters": 12,
+  "tasks_per_cluster": 5,
+  "rhos": [0.0, 0.2, 0.5, 0.8],
+  "candidate_budgets": [1, 5, 20],
+  "effect": 0.0,
+  "alpha": 0.05,
+  "spending_rule": "alpha / (r * (r + 1)), r starts at 1; no renormalization",
+  "methods": ["task_unadjusted", "cluster_unadjusted", "task_bonferroni", "cluster_bonferroni", "cluster_alpha_spending"],
+  "positive_effects_executed": false,
+  "limitations": [
+    "Synthetic random-intercept paired differences only; not LLM or financial empirical evidence.",
+    "Each candidate has a fresh independent Gaussian sample; no shared baseline error, validation-data reuse, adaptive proposals, heterogeneous cluster sizes or non-Gaussian robustness.",
+    "All effects are zero; reported rejection means any false promotion within the fixed candidate prefix, not predictive performance or power.",
+    "Equal-size independent clusters make the cluster-mean t test exactly calibrated under this Gaussian null; this does not prove robustness in general settings.",
+    "Budgets are nested prefixes of one bank; methods and budgets are dependent and intervals are pointwise Monte Carlo intervals, not simultaneous uncertainty bounds.",
+    "Alpha spending spends alpha*K/(K+1) over K candidates, so its lower rate is not a power or superiority finding.",
+    "The design was fixed before this run, but was researcher-authored after seeing prior baseline results; not external preregistration."
+  ]
+}

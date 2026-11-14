@@ -27,7 +27,7 @@ The paper's novelty claim must remain narrow: this is an evaluation and governan
 
 - H1: Treating clustered task outcomes as independent inflates false promotions as intracluster correlation increases.
 - H2: A cluster-aware gate controls false promotions more effectively, but loses power when the number of independent clusters is small.
-- H3: Repeated adaptive candidate search causes naive validation selection to overestimate improvement; a complete trial ledger and search-aware correction reduce this optimism.
+- H3: Repeated candidate evaluation can inflate the probability of any false promotion; conditional validity and an explicit search-error allocation are required for control. A complete trial ledger makes the search auditable but does not itself correct selection bias. Adaptive validation reuse is a separate, stronger stress test.
 - H4: Combining cluster-aware inference with sealed-test governance is safer than either control alone.
 
 ## Minimum experiments
@@ -87,4 +87,4 @@ All citations and numerical claims must be checked against primary sources befor
 - The EMAS text explicitly uses a fixed Validation set repeatedly and acknowledges adaptive-selection risk; it also says empirical Validation rules do not guarantee improvement on held-out Test tasks. Its described acceptance rules compare total correct answers and token counts, not a stated multiplicity-adjusted statistical test. This motivates studying search-aware promotion, but does not establish that every possible implementation lacks other safeguards.
 - EMAS groups traces by a structured diagnostic key and requires recurrence across distinct samples. Its limitations note that the key can merge traces with distinct causes. Do not conflate this evidence aggregation with statistical clustering by company, sector, or market regime.
 - EvolveTrade revises prompts from decision traces and realized returns; SHARP constrains updates to auditable rubric edits with attribution and walk-forward validation; EvoTS-Agent evolves financial time-series change-point detection trajectories using validation feedback. These are close precedents. The paper's defensible gap is the statistical reliability of repeated promotion under correlated validation units, not self-evolution itself.
-- The initial check is based on public primary-source pages/abstracts and the provided EMAS text; full citation, method, and implementation audits remain necessary.
+- A primary-source recheck from 2026-11-14 reviews the visible text of Dream-RSI, RRSI, FactorMiner, and SkillsBench (`docs/NOVELTY_AUDIT_2026-11-14.md`). Relevant HTML is truncated and code was not audited; visible evidence does not verify the complete financial semantic revocation/transfer lifecycle or a particular multiplicity-adjusted cluster promotion method. Priority remains unestablished.

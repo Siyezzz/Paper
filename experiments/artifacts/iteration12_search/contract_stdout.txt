@@ -1,0 +1,79 @@
+{
+  "naive_frozen": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 7,
+    "abstentions": 1,
+    "safe_abstentions": 1,
+    "unnecessary_abstentions": 0,
+    "coverage": 0.9285714285714286,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 0.46153846153846156
+  },
+  "validation_only": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 7,
+    "abstentions": 1,
+    "safe_abstentions": 1,
+    "unnecessary_abstentions": 0,
+    "coverage": 0.9285714285714286,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 0.46153846153846156
+  },
+  "contract": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 0,
+    "abstentions": 8,
+    "safe_abstentions": 7,
+    "unnecessary_abstentions": 1,
+    "coverage": 0.42857142857142855,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 1.0
+  },
+  "from_scratch_metadata_solver": {
+    "n": 14,
+    "correct_answers": 7,
+    "wrong_accepted_answers": 0,
+    "abstentions": 7,
+    "safe_abstentions": 7,
+    "unnecessary_abstentions": 0,
+    "coverage": 0.5,
+    "correct_answer_rate": 0.5,
+    "coverage_conditioned_accuracy": 1.0
+  },
+  "contract_no_availability": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 2,
+    "abstentions": 6,
+    "safe_abstentions": 5,
+    "unnecessary_abstentions": 1,
+    "coverage": 0.5714285714285714,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 0.75
+  },
+  "contract_no_unit": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 2,
+    "abstentions": 6,
+    "safe_abstentions": 6,
+    "unnecessary_abstentions": 0,
+    "coverage": 0.5714285714285714,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 0.75
+  },
+  "contract_no_period": {
+    "n": 14,
+    "correct_answers": 6,
+    "wrong_accepted_answers": 2,
+    "abstentions": 6,
+    "safe_abstentions": 5,
+    "unnecessary_abstentions": 1,
+    "coverage": 0.5714285714285714,
+    "correct_answer_rate": 0.42857142857142855,
+    "coverage_conditioned_accuracy": 0.75
+  }
+}

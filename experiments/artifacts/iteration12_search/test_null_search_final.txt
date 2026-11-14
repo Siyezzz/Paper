@@ -1,0 +1,11 @@
+test_determinism_and_independent_null_probability (test_null_search.NullSearchTests.test_determinism_and_independent_null_probability) ... ok
+test_generate_rejects_nonzero_effect_before_sampling (test_null_search.NullSearchTests.test_generate_rejects_nonzero_effect_before_sampling) ... ok
+test_invalid_bank_rejected (test_null_search.NullSearchTests.test_invalid_bank_rejected) ... ok
+test_known_wilson_and_standard_error (test_null_search.NullSearchTests.test_known_wilson_and_standard_error) ... ok
+test_pvalues_match_independent_scipy_ttest (test_null_search.NullSearchTests.test_pvalues_match_independent_scipy_ttest) ... ok
+test_thresholds_and_strict_boundary_with_handcrafted_bank (test_null_search.NullSearchTests.test_thresholds_and_strict_boundary_with_handcrafted_bank) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.668s
+
+OK

@@ -1,0 +1,42 @@
+{
+  "scope": "post-run code safety validation; candidate_pvalues.npz and null_search_results.json were not regenerated",
+  "generate_entry_guard": "generate(config) now raises ValueError('this experiment implements only the all-null design') for any nonzero config['effect'] before RNG sampling",
+  "new_test": "test_generate_rejects_nonzero_effect_before_sampling",
+  "new_null_search_tests": 6,
+  "full_suite_tests": 33,
+  "new_test_log": "test_null_search_final.txt",
+  "full_test_log": "test_results_final.txt",
+  "raw_report_verification_log": "raw_verification_final.txt",
+  "full_suite_status": "33 tests passed",
+  "verify_only_status": "Stored p-values exactly reproduce the complete report.",
+  "formal_run": {
+    "directory": "experiments/artifacts/iteration12_search",
+    "seed": 20261114,
+    "replications": 20000,
+    "candidate_budgets": [1, 5, 20],
+    "rhos": [0.0, 0.2, 0.5, 0.8],
+    "effect": 0.0,
+    "raw_bank_sha256": "5747d75f8e6f5f1995ce92eb14cdb90c5fc87f78536df560edec5d9b60ae6be3",
+    "report_sha256": "dac5706b254c46cd5d718ee41aae16188fe6f597915b8cb495df9f3c2eb43168"
+  },
+  "failed_attempt_record": {
+    "command": "python experiments/simulate_null_search.py --config experiments/null_search_config.json --out-dir experiments/artifacts/null_search_20261114",
+    "failure": "FileNotFoundError because the requested output directory did not exist",
+    "evidence_written": false,
+    "status": "execution failure only; not experimental evidence; no seed/config change"
+  },
+  "api_calls": 0,
+  "credentials_read": false,
+  "multi_model_api": "not opened or modified",
+  "limitations": [
+    "Post-run guard/test repair does not alter the frozen all-null bank or report.",
+    "Positive effects and power for this extension remain unexecuted."
+  ],
+  "sha256": {
+    "simulate_null_search.py": "28c8e482a33db01d59c65ca9507ffa1920ea83204ff36427eb173a92fcfd8dd8",
+    "test_null_search.py": "5a9b8c87c0bf3ed6cfc6b8839e03019723f0c260979620227cde7e8ad2c4c8c0",
+    "test_null_search_final.txt": "c5012dab1013e169b111fac647a62783c1e3082c0d089062080030446538be15",
+    "test_results_final.txt": "b5715c933d0d9bd84cb68b1aee6b83df0224a85644bd2b8ef1dfbecb23962654",
+    "raw_verification_final.txt": "c9322033df9ad141dbab7ac449f1643058a242b0c552ba51cde82f7b6ffae63a"
+  }
+}

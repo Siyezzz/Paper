@@ -28,6 +28,8 @@ See docs/EMAS_CRITICAL_READING.md, docs/WRITING_PROTOCOL.md, and docs/ITERATION_
 - No real U.S.-equity backtest has been run.
 - Gaussian results are simulated; the contract fixtures are constructed; the source-grounded micro-pilot combines observed revenue with constructed scenarios. None establishes financial performance.
 - SEA source code has been inspected; its runtime is not yet integrated.
+- Iteration 12 adds a fixed independent all-null candidate-bank experiment with five matched inference/search controls, complete p-value banks and pointwise Monte Carlo intervals; see `paper/MAIN.md` Section 5.6 and `experiments/artifacts/iteration12_search/`. It does not test adaptive validation reuse, positive-effect power or real model-generated skills.
+- The latest related-work recheck and its processed-text inspection limits are in `docs/NOVELTY_AUDIT_2026-11-14.md`.
 - Current paper is a methodological pilot, not submission-ready.
 - Iteration 9 independently rechecks Dream-RSI, RRSI, FactorMiner and SkillsBench against current primary pages; see `docs/NOVELTY_AUDIT_2026-11-12.md` for versions and inspection limits.
 - A constructed deterministic financial skill-contract pilot has been executed; see `paper/CONTRACT_PILOT.md`. Its policies are hand-written, its dates and financial values are test fixtures, and it must not be described as real LLM or observed financial evidence. The ordinary metadata solver outperforms the conservative contract on one convertible-scale case.
