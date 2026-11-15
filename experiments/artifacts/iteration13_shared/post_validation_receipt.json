@@ -1,0 +1,149 @@
+{
+  "created_utc": "2026-11-15T05:35:25.131375+00:00",
+  "command_argv": [
+    "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+    "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\validate_shared_baseline.py"
+  ],
+  "independent_minimum_p_event_checks": 144,
+  "boundary_seed": 2026111501,
+  "boundary_replications": 100000,
+  "covariance_boundaries": [
+    {
+      "s": 0.0,
+      "rho": 0.0,
+      "checks": {
+        "marginal_variance": {
+          "observed": 1.001317385648602,
+          "expected": 1.0,
+          "absolute_tolerance": 0.02
+        },
+        "within_candidate_same_cluster": {
+          "observed": 0.0017942984879436223,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_task": {
+          "observed": -0.004900173466956754,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_cluster": {
+          "observed": 0.004003432777530673,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_different_clusters": {
+          "observed": 0.0008403134467836417,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        }
+      }
+    },
+    {
+      "s": 0.0,
+      "rho": 0.8,
+      "checks": {
+        "marginal_variance": {
+          "observed": 0.9986312660654872,
+          "expected": 1.0,
+          "absolute_tolerance": 0.02
+        },
+        "within_candidate_same_cluster": {
+          "observed": 0.7971369336975365,
+          "expected": 0.8,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_task": {
+          "observed": -0.0011520715139375613,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_cluster": {
+          "observed": 0.0010957448737755912,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_different_clusters": {
+          "observed": -0.0013840220316763622,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        }
+      }
+    },
+    {
+      "s": 0.5,
+      "rho": 0.0,
+      "checks": {
+        "marginal_variance": {
+          "observed": 1.0013959819213865,
+          "expected": 1.0,
+          "absolute_tolerance": 0.02
+        },
+        "within_candidate_same_cluster": {
+          "observed": -0.0006908602627691864,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_task": {
+          "observed": 0.5007477926102515,
+          "expected": 0.5,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_cluster": {
+          "observed": 0.006712800583725974,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_different_clusters": {
+          "observed": 0.00548602388801838,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        }
+      }
+    },
+    {
+      "s": 0.5,
+      "rho": 0.8,
+      "checks": {
+        "marginal_variance": {
+          "observed": 0.9960631421345746,
+          "expected": 1.0,
+          "absolute_tolerance": 0.02
+        },
+        "within_candidate_same_cluster": {
+          "observed": 0.79929562721106,
+          "expected": 0.8,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_task": {
+          "observed": 0.49909255255815177,
+          "expected": 0.5,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_same_cluster": {
+          "observed": 0.3973953764660513,
+          "expected": 0.4,
+          "absolute_tolerance": 0.02
+        },
+        "between_candidates_different_clusters": {
+          "observed": -0.001994905923325099,
+          "expected": 0.0,
+          "absolute_tolerance": 0.02
+        }
+      }
+    }
+  ],
+  "evidence_sha256": {
+    "artifacts\\iteration13_shared\\reproduction_manifest.json": "48412c43654cd2082328c1f4bb463ac710124176c7ffcd3d4bc9643f52725047",
+    "artifacts\\iteration13_shared\\shared_baseline_results.json": "bc8d78008c21143342c7ab87b15e2a8bc9de412811fa6764ed97062c54572157",
+    "artifacts\\iteration13_shared\\candidate_pvalues.npz": "d36442972a228fa7510f53140cb04f1e1ee67f11fa9ce1191f36d51a5cbb4376",
+    "validate_shared_baseline.py": "750717f96839fee143304b3fe1acf8e865803cb339093f3bcfe4d3898e147ee4"
+  },
+  "operational_incident": {
+    "source": "team-lead message, not independently observed by experiment agent",
+    "description": "One relative-path reproduction invocation from workspace root failed before producing output; exact argv unavailable to experiment agent. Subsequent formal harness invokes Python with subprocess cwd fixed to repository root.",
+    "formal_reproduction_failure": false
+  },
+  "original_frozen_evidence_modified": false,
+  "result": "passed"
+}

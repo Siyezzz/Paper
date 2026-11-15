@@ -61,11 +61,31 @@ Only after the statistical protocol is stable, connect SEA or a small determinis
 
 ### Supported now
 
-The repository contains a synthetic cluster-aware paired-evaluation simulation and an English methodological draft. The current simulation supports only the random-intercept calibration result already reported in `paper/MAIN.md`.
+The repository contains single-revision random-intercept calibration, an independent all-null candidate bank (Iteration 12), and a shared-baseline fixed-bank null/power experiment (Iteration 13). These support the sampling-unit × multiplicity ablation only under the stated Gaussian models (`paper/MAIN.md`, Sections 5.6–5.7). Shared-baseline cluster Bonferroni is conservative and underpowered for a modest effect in the high-ICC example; there is no adaptive-reuse guarantee or demonstrated financial skill advantage. Deterministic and one-issuer source-grounded pilots retain the negative finding that ordinary metadata validation outperforms the conservative contract.
+
+At s=.5 and rho=.8, the shared-baseline cluster Bonferroni null rates for K=1/5/20 are .04825/.04070/.03760 and effect-.2 powers are .17840/.17075/.16290. This negative power pattern is specific to the executed grid, not a universal decrease with candidate count or dependence. The 144-event and 20-covariance audit passes. Effect .4 was removed before frozen-bank generation; no .4 data were generated or inspected. The author-frozen configuration has no independent UTC freeze receipt.
+
+| Claim | Evidence | Status |
+|---|---|---|
+| Gaussian sampling-unit × multiplicity calibration | Reproduced simulations and saved p-value banks, `paper/MAIN.md` 5.6–5.7 | Executed; model-specific |
+| Sequential familywise error bound | Conditional validity plus an error-spending union bound | Analytic guarantee under assumptions; not an empirical adaptive-reuse result |
+| Applicability contract beats ordinary metadata validation | Constructed and one-issuer pilots favor the ordinary solver | Negative finding |
+| Adaptive validation reuse is controlled | No adaptive-reuse run | Planned; unexecuted |
+| Genuine persisted generated skills improve quality | No independent executor invocation | Planned; unexecuted |
 
 ### Not supported now
 
 No successful scorable live LLM-agent experiment, historical portfolio backtest, or end-to-end SEA runtime integration has been completed. Iteration 11 adds a minimal source-grounded arithmetic task from one annual revenue pair reported by Microsoft, with author-designed temporal/unit scenarios; it is not an independently authored benchmark or evidence of observed drift. No empirical claim about investment performance may be added.
+
+## Next financial-task falsification gate (planned, not executed)
+
+Before opening an unseen confirmation set, an independent author must assemble multi-issuer, multi-vintage tasks with source-availability dates, archived source snapshots and content hashes. Declare the target population and independence assumptions; additional tasks from an exposed issuer are not automatically fresh clusters. If sufficient independently authored, auditable clusters are unavailable, stop rather than claim financial validation.
+
+Compare the candidate with both an ordinary metadata solver and a frozen workflow under identical source access, model/tool limits and execution budgets. Persist the actual model-generated skill artifact, hash/version it, and have an independent executor invoke it on later tasks. Include ablations disabling persistence and disabling skill invocation. Prompt variants alone do not satisfy this gate; failure to beat the matched ordinary solver leaves the skill-utility claim unsupported.
+
+Freeze the practical improvement margin delta, the wrong-acceptance noninferiority margin eta, quality scoring and abstention scoring before confirmation. A positive result must meet both the quality-improvement and wrong-acceptance constraints against the registered comparators; report rejection, abstention and cost even if the gate fails. No numerical delta, eta or scoring weights have yet been frozen.
+
+Choose the number of independent clusters from a documented power or precision analysis using development-only assumptions, then freeze the stopping rule and task/candidate budgets. Do not stop when a favorable result appears. Use one previously unseen confirmation batch for a frozen candidate; any multi-round extension requires fresh independent clusters and preallocated error spending with justified conditional validity. Reusing exposed confirmation data is a separate stress test, not evidence for that guarantee. Cluster counts, stopping values and error allocations for this financial study remain to be specified and executed.
 
 ## Target positioning
 
@@ -77,7 +97,7 @@ The paper is best positioned as a reproducible methodology / evaluation paper fo
 - EvolveTrade, arXiv:2609.17632: experience-driven prompt-policy refinement for LLM trading agents.
 - SHARP, arXiv:2605.06822: bounded, auditable rubric evolution with attribution and walk-forward validation.
 - EvoTS-Agent, arXiv:2608.17933: validation-guided self-evolution for financial time-series change-point detection.
-- Cameron & Miller (2015): cluster-robust inference.
+- Cameron & Miller (2015): cluster-robust inference; bibliographic metadata rechecked in Iteration 13, full text not audited.
 - Bailey & López de Prado (2014): deflated Sharpe ratio.
 
 All citations and numerical claims must be checked against primary sources before submission.

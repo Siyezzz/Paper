@@ -24,6 +24,7 @@ Use EMAS as a structural exemplar, not text to copy:
 Every manuscript claim receives one status:
 - supported_by_experiment
 - supported_by_primary_source
+- supported_by_analysis (state the derivation and assumptions; never label an analytic guarantee as an executed experiment)
 - hypothesis
 - unsupported_remove_or_qualify
 

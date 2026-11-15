@@ -6,7 +6,7 @@ How should paired evidence for an evolving financial research workflow be evalua
 
 ## One proposed contribution
 
-A **cluster-aware paired promotion gate** for financial-agent workflow evolution. Candidate and baseline are run on the same tasks; paired differences are aggregated using the pre-registered task-cluster structure before a workflow revision is promoted.
+A **cluster- and search-aware Gaussian calibration study** for financial-agent workflow promotion. Matched controls compare task/cluster inference and unadjusted/Bonferroni thresholds in independent and shared-baseline fixed candidate banks. The broader fresh-confirmation protocol is a specification with a conditional analytic error bound, not an executed adaptive-evolution result.
 
 This adapts established clustered-inference ideas to an EMAS/SEA-style workflow-evolution setting. It does not claim to invent self-evolving agents, paired validation, recurrence gating, or cluster-robust inference.
 
@@ -29,7 +29,8 @@ See docs/EMAS_CRITICAL_READING.md, docs/WRITING_PROTOCOL.md, and docs/ITERATION_
 - Gaussian results are simulated; the contract fixtures are constructed; the source-grounded micro-pilot combines observed revenue with constructed scenarios. None establishes financial performance.
 - SEA source code has been inspected; its runtime is not yet integrated.
 - Iteration 12 adds a fixed independent all-null candidate-bank experiment with five matched inference/search controls, complete p-value banks and pointwise Monte Carlo intervals; see `paper/MAIN.md` Section 5.6 and `experiments/artifacts/iteration12_search/`. It does not test adaptive validation reuse, positive-effect power or real model-generated skills.
-- The latest related-work recheck and its processed-text inspection limits are in `docs/NOVELTY_AUDIT_2026-11-14.md`.
+- Iteration 13 adds frozen shared-baseline Gaussian candidate banks with separate null-error and positive-effect endpoints; see `paper/MAIN.md` Section 5.7 and `experiments/artifacts/iteration13_shared/`. At rho=.8, K=20, s=.5, cluster Bonferroni false promotion is .03760 and any-true-promotion power at effect .2 is .16290. This is not adaptive validation reuse or financial/LLM evidence.
+- The latest related-work recheck and its inspection limits are in `docs/NOVELTY_AUDIT_2026-11-15.md`.
 - Current paper is a methodological pilot, not submission-ready.
 - Iteration 9 independently rechecks Dream-RSI, RRSI, FactorMiner and SkillsBench against current primary pages; see `docs/NOVELTY_AUDIT_2026-11-12.md` for versions and inspection limits.
 - A constructed deterministic financial skill-contract pilot has been executed; see `paper/CONTRACT_PILOT.md`. Its policies are hand-written, its dates and financial values are test fixtures, and it must not be described as real LLM or observed financial evidence. The ordinary metadata solver outperforms the conservative contract on one convertible-scale case.

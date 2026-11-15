@@ -2,7 +2,7 @@
 
 This ledger counts research-design and manuscript iterations, not hidden model updates or autonomous learning events. An iteration is counted only when a concrete decision, experiment, or manuscript artifact changes and is recorded.
 
-**Current count: 13 completed iterations (0–12).**
+**Current count: 14 completed iterations (0–13).**
 **Current manuscript status: focused methodological draft; not submission-ready.**
 
 | Iteration | Stage | Main action | Outcome | Status |
@@ -19,7 +19,31 @@ This ledger counts research-design and manuscript iterations, not hidden model u
 | 9 | Reproduction and applicability pilot, 2026-11-12 | Reproduced the 20,000-replication pilot, independently verified four requested arXiv records, added fixed deterministic financial contract fixtures and seven policies, corrected bibliography numbering | Fourteen constructed evaluation cases: naive/validation-only 6 correct and 7 wrong accepted; contract 6 correct and 0 wrong accepted, with one unnecessary abstention; ordinary metadata solver 7 correct and 0 wrong accepted. All 15 final tests pass. | Previous revision |
 | 10 | Cluster-count sensitivity, 2026-11-12 | Re-ran the frozen Gaussian cluster-gate grid at 6 and 24 independent clusters, retaining five tasks per cluster, 20,000 replications, seed 20261105, ICCs and effects | At rho=0.8 under the null, task-level rejection was 0.227 (6 clusters) and 0.214 (24), versus 0.052 and 0.048 for cluster means. At effect=0.2, rho=0.8, cluster-mean power was 0.115 and 0.267. Direction persists; power depends strongly on independent-cluster count. | Previous revision |
 | 11 | Source-grounded applicability and API audit, 2026-11-13 | Added a source-locked Microsoft revenue micro-pilot, audited inherited API failures, rechecked requested related work, and tightened manuscript claims | Provenance improved, but ordinary metadata validation still dominates the conservative contract; no evolutionary advantage or real-model evidence | Previous revision |
-| 12 | Fixed-bank null-search ablation, 2026-11-14 | Reproduced prior experiments and added five matched inference/search controls on a frozen independent all-null candidate bank | Cluster-unit correction and candidate multiplicity control are both needed in this Gaussian model; no adaptive-reuse or financial-agent benefit demonstrated | Current revision; not submission-ready |
+| 12 | Fixed-bank null-search ablation, 2026-11-14 | Reproduced prior experiments and added five matched inference/search controls on a frozen independent all-null candidate bank | Cluster-unit correction and candidate multiplicity control are both needed in this Gaussian model; no adaptive-reuse or financial-agent benefit demonstrated | Previous revision |
+| 13 | Shared-baseline null/power ablation, 2026-11-15 | Reproduced prior evidence, audited 144 events and 20 covariance entries, and evaluated a frozen shared-baseline candidate bank | Valid cluster Bonferroni is conservative in the stated example and has limited modest-effect power; no adaptive-reuse or financial-skill advantage demonstrated | Current revision; not submission-ready |
+
+### Iteration 13 evidence and critique — 2026-11-15
+
+- Parent: `245b317d6740c6093d5cb24234afe5169c654a64`; local and remote main matched before work. Existing untracked iteration12 reproduction JSON and `multi_model_api/` were preserved and excluded.
+- Reproduction: baseline Gaussian, constructed contract and source-grounded micro-pilot JSON exactly match prior outputs; 33 prior and 40 expanded offline tests pass. Frozen p-values exactly reproduce the complete shared-baseline report. Commands, environment, input hashes and output hashes are in `experiments/artifacts/iteration13_shared/reproduction_manifest.json`.
+- Frozen executed design: seed 20261115, 20,000 replications, 12×5 tasks, rho {0,.5,.8}, s {0,.5}, effects {0,.2}, K {1,5,20}; task/cluster × unadjusted/Bonferroni. The earlier planning sketch also mentioned effect .4; the grid was narrowed before generating the frozen bank, and no .4 data were generated or inspected. Configuration is author-frozen, not externally preregistered, and has no independent UTC freeze receipt. Config hash `c044e149728d8259d51a43a5d57ca9e0f2f250d5442015ead24658e0b310c2a6`; raw-bank hash `d36442972a228fa7510f53140cb04f1e1ee67f11fa9ce1191f36d51a5cbb4376`.
+- At rho=.8, K=20, s=.5, null false promotion is task unadjusted .75750, cluster unadjusted .35675, task Bonferroni .50520 and cluster Bonferroni .03760 (pointwise Wilson 95% [.03505,.04033]). At effect .2, cluster Bonferroni any-true-promotion power is .16290 ([.15785,.16808]), versus .26205 for independent candidates. All candidates in a cell share one effect; no mixed-null or selected-candidate precision claim follows.
+- Audit: all 144 reported event counts/rates and 20 covariance checks pass against the saved bank and design. At s=.5, rho=.8, cluster Bonferroni null rates for K=1/5/20 are .04825/.04070/.03760; effect-.2 powers are .17840/.17075/.16290. Both decline along this particular prefix grid; this is not a universal monotonicity claim about shared dependence or candidate count.
+- Claim update: shared baseline dependence changes familywise rates but does not repair invalid task inference; valid Gaussian cluster tests plus Bonferroni remain conservative in the shared example and may miss modest improvements. This is fixed-bank simulation, not adaptive reuse, a novel inference theorem or financial utility. Ordinary metadata validation still outperforms the conservative contract in prior pilots.
+- Manuscript: added MAIN Section 5.7; updated README, research specification and plan. The original proposal remains preserved. Bibliography metadata, including Cameron and Miller (2015), was rechecked; this was not a full-text Cameron–Miller audit. An uncompleted EMAS section-level recheck was explicitly qualified after local cached-text access was denied. Four requested records and text-inspection limits are tracked in the dated novelty audit.
+- Operational incident: the lead's relative-path baseline command ran from the parent workspace and failed before producing output (exit 2); the formal reproduction harness fixes cwd to the repository and succeeds. No failed attempt is counted as evidence.
+- Cost: this experiment made zero API calls and read no credentials. Actual account expenditure is unknown; USD 10/day remains an effort target, not claimed spend.
+- Readiness: methodological pilot only. Workshop categories remain qualitative fits; no current call/deadline was verified. Next: frozen adaptive-reuse stress test, then independently authored multi-issuer/source-vintage holdout tasks and genuine persisted model-generated skills against equal-budget ordinary validators. Report conditional-validity assumptions and negative results.
+
+### Claim / evidence / status after Iteration 13
+
+| Claim | Evidence | Status |
+|---|---|---|
+| Sampling-unit and multiplicity corrections matter in the specified Gaussian models | Reproduced single-revision, independent-bank and shared-baseline simulations; `paper/MAIN.md` 5.4, 5.6–5.7 | Executed; model-specific |
+| Total error spending bounds any false promotion | Conditional validity of every round's test and a union bound; `PAPER_DRAFT.md` 3.3 | Analytic guarantee under stated assumptions; not an executed adaptive protocol |
+| The conservative applicability contract improves on ordinary validation | Constructed fixtures and one-issuer arithmetic micro-pilot; ordinary metadata solver performs better | Negative finding; no skill-evolution benefit |
+| The gate remains valid under adaptive validation reuse | No executed adaptive-reuse experiment | Planned; unsupported empirically |
+| Persisted model-generated skills improve financial task quality | No generated skill persisted and invoked by an independent executor | Planned; unexecuted |
 
 ### Iteration 12 evidence and critique — 2026-11-14
 

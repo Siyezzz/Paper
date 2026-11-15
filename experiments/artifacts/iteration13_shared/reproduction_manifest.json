@@ -1,0 +1,156 @@
+{
+  "started_utc": "2026-11-15T05:25:41.850484+00:00",
+  "cwd": "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "git_head": "245b317d6740c6093d5cb24234afe5169c654a64",
+  "inputs_sha256_before_execution": {
+    "experiments/simulate_cluster_gate.py": "e203f7e6ea178b09a492737ea78f23e00b497dd3086ebcabc5de81efcb4f03c7",
+    "experiments/test_simulation.py": "3211efc3fa5bf720a16ad240c8b865613b257cd68bdd6dc2f6a44a3e6551d2e5",
+    "experiments/financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments/financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+    "experiments/test_financial_contract.py": "5285f6dd3b2ca58c0a2c5ca460ade96aa946c3c5af2cc94746b222315ea1916d",
+    "experiments/source_grounded_pilot.py": "4388ac7dc6ff8512d2272f232d98ecd680fef284de6af994ee21d522579d84ba",
+    "experiments/source_grounded_config.json": "d761891d35a612f5783d7ed15c6d196831b3eb66df5e045cfcff686ef861c6a4",
+    "experiments/test_source_grounded.py": "db77082c056e471439506ae3ddd38fcd9e0648f766e56228d7a55fe4d01b7457",
+    "experiments/simulate_null_search.py": "28c8e482a33db01d59c65ca9507ffa1920ea83204ff36427eb173a92fcfd8dd8",
+    "experiments/test_null_search.py": "5a9b8c87c0bf3ed6cfc6b8839e03019723f0c260979620227cde7e8ad2c4c8c0",
+    "experiments/null_search_config.json": "aa914541ebc68860e1463576cee34c42255a288bcaae5a5633dd8ecd19a8233f",
+    "experiments/simulate_shared_baseline.py": "f24b847856596cb3b37dfd2aeb14ca713f475b38960420ca910f36902580c179",
+    "experiments/test_shared_baseline.py": "b6d4da4c6045b5c7e3dce5e0591d74577dc0d279ccb05e217abea3d60b4a91b1",
+    "experiments/shared_baseline_config.json": "c044e149728d8259d51a43a5d57ca9e0f2f250d5442015ead24658e0b310c2a6",
+    "experiments/reproduce_shared_baseline.py": "7a6512ac1dadda0b25ab49fad8b5ce0c9cd39516ef55351e43c0b409c8a858d7",
+    "experiments/artifacts/source_grounded/msft_ar24.html": "2b49e38b25f3bea8634b603ad5db64ba0803f27e27f93cc406884e6990974065",
+    "experiments/artifacts/source_grounded/msft_fy24_income.html": "2a7f6972bdeb213a7fede5e8774710024a231a076411d2ac77d071fb9980c88a",
+    "experiments/artifacts/source_grounded/msft_fy24_release.html": "2dd641e699f292aad771a8743ccb627ad01f9198f7789fcc4fb4ce0abc4d8b1f"
+  },
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_cluster_gate.py",
+        "--reps",
+        "20000",
+        "--clusters",
+        "12",
+        "--tasks-per-cluster",
+        "5",
+        "--seed",
+        "20261105",
+        "--out",
+        "experiments/artifacts/iteration13_shared/baseline_reproduction.json"
+      ],
+      "started_utc": "2026-11-15T05:25:42.196082+00:00",
+      "ended_utc": "2026-11-15T05:25:49.972593+00:00",
+      "returncode": 0,
+      "output": "baseline_stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/financial_contract_pilot.py",
+        "--out",
+        "experiments/artifacts/iteration13_shared/financial_contract_results.json"
+      ],
+      "started_utc": "2026-11-15T05:25:49.973033+00:00",
+      "ended_utc": "2026-11-15T05:25:50.957057+00:00",
+      "returncode": 0,
+      "output": "contract_stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/source_grounded_pilot.py",
+        "--out",
+        "experiments/artifacts/iteration13_shared/source_grounded_results.json"
+      ],
+      "started_utc": "2026-11-15T05:25:50.957149+00:00",
+      "ended_utc": "2026-11-15T05:25:52.004640+00:00",
+      "returncode": 0,
+      "output": "source_grounded_stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments",
+        "-v"
+      ],
+      "started_utc": "2026-11-15T05:25:52.004825+00:00",
+      "ended_utc": "2026-11-15T05:26:01.154568+00:00",
+      "returncode": 0,
+      "output": "test_results.txt"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_shared_baseline.py",
+        "--config",
+        "experiments/shared_baseline_config.json",
+        "--out-dir",
+        "experiments/artifacts/iteration13_shared"
+      ],
+      "started_utc": "2026-11-15T05:26:01.154800+00:00",
+      "ended_utc": "2026-11-15T05:26:57.857191+00:00",
+      "returncode": 0,
+      "output": "shared_stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_shared_baseline.py",
+        "--config",
+        "experiments/shared_baseline_config.json",
+        "--out-dir",
+        "experiments/artifacts/iteration13_shared",
+        "--verify-only"
+      ],
+      "started_utc": "2026-11-15T05:26:57.857392+00:00",
+      "ended_utc": "2026-11-15T05:27:05.408885+00:00",
+      "returncode": 0,
+      "output": "raw_verification.txt"
+    }
+  ],
+  "api_calls": 0,
+  "credentials_read": false,
+  "exclusions": "Untracked iteration12 reproduction JSON and multi_model_api directory not opened, hashed or modified.",
+  "evidence_note": "Author-designed configuration frozen before simulation; not externally preregistered.",
+  "existing_evidence_comparison": {
+    "baseline_reproduction.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    },
+    "financial_contract_results.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    },
+    "source_grounded_results.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    }
+  },
+  "inputs_unchanged": true,
+  "artifacts_sha256": {
+    "baseline_reproduction.json": "6ce41c50e29da3d1d6c7a1582b4483ba9a48e69ca10dff23e84e4e2ca8253373",
+    "baseline_stdout.txt": "9ce945193a22ce0b9e31c2f105d4409bd594404bb79a004bed4fe584ec28caaa",
+    "candidate_pvalues.npz": "d36442972a228fa7510f53140cb04f1e1ee67f11fa9ce1191f36d51a5cbb4376",
+    "contract_stdout.txt": "88329f5f6a5e13e94ea04366eaa0d25d9b6ea22d912a090bcbf5cec7b676b166",
+    "financial_contract_results.json": "c8fe52cfea8a933fb440a4d4134e293a220bd9d93cda1c84fc166a8ca7dd3b5f",
+    "frozen_config.json": "c044e149728d8259d51a43a5d57ca9e0f2f250d5442015ead24658e0b310c2a6",
+    "prior_tests.txt": "018bcac33b391d47cff7ab7bc402168c474f4445b44b41f3f7a328f89df2029c",
+    "raw_verification.txt": "4b85c14e12e7ad84217b2638e3fc83e4e98d93d828875766bc49901946d609e6",
+    "shared_baseline_results.json": "bc8d78008c21143342c7ab87b15e2a8bc9de412811fa6764ed97062c54572157",
+    "shared_stdout.txt": "2a3a7a841d7fc75e0e4ca3e3da18a8d3922488b44e52654eed52483ac00d1504",
+    "source_grounded_results.json": "ad6b1282d6d09e9ac8f40111a59d88660be6d2e34e179a884988ca753ed6efa6",
+    "source_grounded_stdout.txt": "748c29f5e8de4847a4a150dbc9f4fc9bdab2e14c8fe2e8cce56e1c6299d40f0a",
+    "test_results.txt": "467bfca95adc008a7a4a797c6dd1a9daef7b98c9d0bac4b9bc800f839cc50dd6"
+  },
+  "ended_utc": "2026-11-15T05:27:05.833573+00:00"
+}

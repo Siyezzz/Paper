@@ -1,0 +1,11 @@
+{
+  "seed": 20261115,
+  "replications": 20000,
+  "clusters": 12,
+  "tasks_per_cluster": 5,
+  "rhos": [0.0, 0.5, 0.8],
+  "baseline_variance_fractions": [0.0, 0.5],
+  "effects": [0.0, 0.2],
+  "candidate_budgets": [1, 5, 20],
+  "alpha": 0.05
+}

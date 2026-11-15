@@ -1,0 +1,1802 @@
+[
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 991,
+        "replications": 20000,
+        "rate": 0.04955,
+        "monte_carlo_se": 0.001534516169676944,
+        "pointwise_wilson_95_ci": [
+          0.04662795118239311,
+          0.05264505410055154
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 1012,
+        "replications": 20000,
+        "rate": 0.0506,
+        "monte_carlo_se": 0.0015498328942179541,
+        "pointwise_wilson_95_ci": [
+          0.047647750219849766,
+          0.05372485178737707
+        ]
+      },
+      "task_bonferroni": {
+        "events": 991,
+        "replications": 20000,
+        "rate": 0.04955,
+        "monte_carlo_se": 0.001534516169676944,
+        "pointwise_wilson_95_ci": [
+          0.04662795118239311,
+          0.05264505410055154
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 1012,
+        "replications": 20000,
+        "rate": 0.0506,
+        "monte_carlo_se": 0.0015498328942179541,
+        "pointwise_wilson_95_ci": [
+          0.047647750219849766,
+          0.05372485178737707
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.050000000000000044,
+      "cluster_bonferroni": 0.050000000000000044
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 4616,
+        "replications": 20000,
+        "rate": 0.2308,
+        "monte_carlo_se": 0.0029793569776043957,
+        "pointwise_wilson_95_ci": [
+          0.2250125956022276,
+          0.2366907966103791
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 4563,
+        "replications": 20000,
+        "rate": 0.22815,
+        "monte_carlo_se": 0.002967301615104201,
+        "pointwise_wilson_95_ci": [
+          0.22238672482951052,
+          0.2340176851741935
+        ]
+      },
+      "task_bonferroni": {
+        "events": 969,
+        "replications": 20000,
+        "rate": 0.04845,
+        "monte_carlo_se": 0.0015182654165197863,
+        "pointwise_wilson_95_ci": [
+          0.045559990800755165,
+          0.05151343696151292
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 976,
+        "replications": 20000,
+        "rate": 0.0488,
+        "monte_carlo_se": 0.001523459221640015,
+        "pointwise_wilson_95_ci": [
+          0.04589975115015081,
+          0.05187354218687801
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.22621906250000023,
+      "cluster_bonferroni": 0.04900995010000009
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 12873,
+        "replications": 20000,
+        "rate": 0.64365,
+        "monte_carlo_se": 0.003386478093093177,
+        "pointwise_wilson_95_ci": [
+          0.6369856189308101,
+          0.6502592091102712
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 12841,
+        "replications": 20000,
+        "rate": 0.64205,
+        "monte_carlo_se": 0.0033898510107377875,
+        "pointwise_wilson_95_ci": [
+          0.6353793173519711,
+          0.6486661252044896
+        ]
+      },
+      "task_bonferroni": {
+        "events": 975,
+        "replications": 20000,
+        "rate": 0.04875,
+        "monte_carlo_se": 0.0015227185803686773,
+        "pointwise_wilson_95_ci": [
+          0.04585121135293896,
+          0.051822101187695466
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 1011,
+        "replications": 20000,
+        "rate": 0.05055,
+        "monte_carlo_se": 0.0015491077673938634,
+        "pointwise_wilson_95_ci": [
+          0.04759918006122787,
+          0.053673441149604574
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.6415140775914581,
+      "cluster_bonferroni": 0.04883012474683324
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9058,
+        "replications": 20000,
+        "rate": 0.4529,
+        "monte_carlo_se": 0.003519812423979437,
+        "pointwise_wilson_95_ci": [
+          0.4460109958168633,
+          0.45980709397962183
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 8466,
+        "replications": 20000,
+        "rate": 0.4233,
+        "monte_carlo_se": 0.003493687951148471,
+        "pointwise_wilson_95_ci": [
+          0.4164678682803694,
+          0.43016159005063703
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9058,
+        "replications": 20000,
+        "rate": 0.4529,
+        "monte_carlo_se": 0.003519812423979437,
+        "pointwise_wilson_95_ci": [
+          0.4460109958168633,
+          0.45980709397962183
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 8466,
+        "replications": 20000,
+        "rate": 0.4233,
+        "monte_carlo_se": 0.003493687951148471,
+        "pointwise_wilson_95_ci": [
+          0.4164678682803694,
+          0.43016159005063703
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19040,
+        "replications": 20000,
+        "rate": 0.952,
+        "monte_carlo_se": 0.0015115554902152954,
+        "pointwise_wilson_95_ci": [
+          0.9489496184381266,
+          0.9548767809671547
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 18743,
+        "replications": 20000,
+        "rate": 0.93715,
+        "monte_carlo_se": 0.0017160984456026987,
+        "pointwise_wilson_95_ci": [
+          0.9337018356986786,
+          0.9404302671774691
+        ]
+      },
+      "task_bonferroni": {
+        "events": 13815,
+        "replications": 20000,
+        "rate": 0.69075,
+        "monte_carlo_se": 0.0032681373708888066,
+        "pointwise_wilson_95_ci": [
+          0.6843084478951704,
+          0.6971182903494255
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 12036,
+        "replications": 20000,
+        "rate": 0.6018,
+        "monte_carlo_se": 0.003461479163594662,
+        "pointwise_wilson_95_ci": [
+          0.5949966995207496,
+          0.6085642019382276
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 20000,
+        "replications": 20000,
+        "rate": 1.0,
+        "monte_carlo_se": 0.0,
+        "pointwise_wilson_95_ci": [
+          0.9998079639438954,
+          0.9999999999999999
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 20000,
+        "replications": 20000,
+        "rate": 1.0,
+        "monte_carlo_se": 0.0,
+        "pointwise_wilson_95_ci": [
+          0.9998079639438954,
+          0.9999999999999999
+        ]
+      },
+      "task_bonferroni": {
+        "events": 17286,
+        "replications": 20000,
+        "rate": 0.8643,
+        "monte_carlo_se": 0.0024216266227476114,
+        "pointwise_wilson_95_ci": [
+          0.8594836804479609,
+          0.8689764020815611
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 14841,
+        "replications": 20000,
+        "rate": 0.74205,
+        "monte_carlo_se": 0.003093636997936248,
+        "pointwise_wilson_95_ci": [
+          0.7359405046188193,
+          0.7480665307264204
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 3545,
+        "replications": 20000,
+        "rate": 0.17725,
+        "monte_carlo_se": 0.0027003003305188108,
+        "pointwise_wilson_95_ci": [
+          0.1720196335009371,
+          0.18260432577327837
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 912,
+        "replications": 20000,
+        "rate": 0.0456,
+        "monte_carlo_se": 0.0014751379596498763,
+        "pointwise_wilson_95_ci": [
+          0.04279500487108835,
+          0.04857951749669953
+        ]
+      },
+      "task_bonferroni": {
+        "events": 3545,
+        "replications": 20000,
+        "rate": 0.17725,
+        "monte_carlo_se": 0.0027003003305188108,
+        "pointwise_wilson_95_ci": [
+          0.1720196335009371,
+          0.18260432577327837
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 912,
+        "replications": 20000,
+        "rate": 0.0456,
+        "monte_carlo_se": 0.0014751379596498763,
+        "pointwise_wilson_95_ci": [
+          0.04279500487108835,
+          0.04857951749669953
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.050000000000000044,
+      "cluster_bonferroni": 0.050000000000000044
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 12422,
+        "replications": 20000,
+        "rate": 0.6211,
+        "monte_carlo_se": 0.0034302681382072744,
+        "pointwise_wilson_95_ci": [
+          0.6143541477807357,
+          0.6277993410864757
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 4460,
+        "replications": 20000,
+        "rate": 0.223,
+        "monte_carlo_se": 0.0029433909016642694,
+        "pointwise_wilson_95_ci": [
+          0.21728456251399242,
+          0.22882182546108953
+        ]
+      },
+      "task_bonferroni": {
+        "events": 7650,
+        "replications": 20000,
+        "rate": 0.3825,
+        "monte_carlo_se": 0.0034365225883151124,
+        "pointwise_wilson_95_ci": [
+          0.3757877126887603,
+          0.3892574157844243
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 995,
+        "replications": 20000,
+        "rate": 0.04975,
+        "monte_carlo_se": 0.0015374481698580932,
+        "pointwise_wilson_95_ci": [
+          0.04682217018525079,
+          0.052850758283271425
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.22621906250000023,
+      "cluster_bonferroni": 0.04900995010000009
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19567,
+        "replications": 20000,
+        "rate": 0.97835,
+        "monte_carlo_se": 0.0010291082911919414,
+        "pointwise_wilson_95_ci": [
+          0.9762392271383746,
+          0.9802770519667501
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 12772,
+        "replications": 20000,
+        "rate": 0.6386,
+        "monte_carlo_se": 0.0033969842507730295,
+        "pointwise_wilson_95_ci": [
+          0.631916003124625,
+          0.6452307644806227
+        ]
+      },
+      "task_bonferroni": {
+        "events": 13389,
+        "replications": 20000,
+        "rate": 0.66945,
+        "monte_carlo_se": 0.0033263094977767776,
+        "pointwise_wilson_95_ci": [
+          0.6628985574706974,
+          0.6759363615098888
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 954,
+        "replications": 20000,
+        "rate": 0.0477,
+        "monte_carlo_se": 0.0015070618766328077,
+        "pointwise_wilson_95_ci": [
+          0.04483207763642848,
+          0.05074163817992376
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.6415140775914581,
+      "cluster_bonferroni": 0.04883012474683324
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9723,
+        "replications": 20000,
+        "rate": 0.48615,
+        "monte_carlo_se": 0.003534177255741426,
+        "pointwise_wilson_95_ci": [
+          0.4792264641878582,
+          0.493078855210896
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 4219,
+        "replications": 20000,
+        "rate": 0.21095,
+        "monte_carlo_se": 0.0028848751922743556,
+        "pointwise_wilson_95_ci": [
+          0.20535152699953044,
+          0.21665948904450363
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9723,
+        "replications": 20000,
+        "rate": 0.48615,
+        "monte_carlo_se": 0.003534177255741426,
+        "pointwise_wilson_95_ci": [
+          0.4792264641878582,
+          0.493078855210896
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 4219,
+        "replications": 20000,
+        "rate": 0.21095,
+        "monte_carlo_se": 0.0028848751922743556,
+        "pointwise_wilson_95_ci": [
+          0.20535152699953044,
+          0.21665948904450363
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19252,
+        "replications": 20000,
+        "rate": 0.9626,
+        "monte_carlo_se": 0.001341663892336676,
+        "pointwise_wilson_95_ci": [
+          0.9598803034327675,
+          0.9651420248081245
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 13898,
+        "replications": 20000,
+        "rate": 0.6949,
+        "monte_carlo_se": 0.0032558715423062993,
+        "pointwise_wilson_95_ci": [
+          0.688481684199909,
+          0.7012434601454213
+        ]
+      },
+      "task_bonferroni": {
+        "events": 17359,
+        "replications": 20000,
+        "rate": 0.86795,
+        "monte_carlo_se": 0.002393875492794059,
+        "pointwise_wilson_95_ci": [
+          0.8631873490288658,
+          0.8725713316374467
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 5440,
+        "replications": 20000,
+        "rate": 0.272,
+        "monte_carlo_se": 0.003146553670287542,
+        "pointwise_wilson_95_ci": [
+          0.2658770890975023,
+          0.2782104793440815
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 20000,
+        "replications": 20000,
+        "rate": 1.0,
+        "monte_carlo_se": 0.0,
+        "pointwise_wilson_95_ci": [
+          0.9998079639438954,
+          0.9999999999999999
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 19801,
+        "replications": 20000,
+        "rate": 0.99005,
+        "monte_carlo_se": 0.0007018189759475022,
+        "pointwise_wilson_95_ci": [
+          0.98857726918284,
+          0.9913345162785719
+        ]
+      },
+      "task_bonferroni": {
+        "events": 19888,
+        "replications": 20000,
+        "rate": 0.9944,
+        "monte_carlo_se": 0.0005276665613813353,
+        "pointwise_wilson_95_ci": [
+          0.9932665999766979,
+          0.9953435147710257
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 6589,
+        "replications": 20000,
+        "rate": 0.32945,
+        "monte_carlo_se": 0.0033234973860377867,
+        "pointwise_wilson_95_ci": [
+          0.3229693597107746,
+          0.3359961437879628
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 4346,
+        "replications": 20000,
+        "rate": 0.2173,
+        "monte_carlo_se": 0.0029161679478383953,
+        "pointwise_wilson_95_ci": [
+          0.21163899542304654,
+          0.22306958176307495
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 937,
+        "replications": 20000,
+        "rate": 0.04685,
+        "monte_carlo_se": 0.0014942402333627616,
+        "pointwise_wilson_95_ci": [
+          0.04400735261717353,
+          0.049866689660474105
+        ]
+      },
+      "task_bonferroni": {
+        "events": 4346,
+        "replications": 20000,
+        "rate": 0.2173,
+        "monte_carlo_se": 0.0029161679478383953,
+        "pointwise_wilson_95_ci": [
+          0.21163899542304654,
+          0.22306958176307495
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 937,
+        "replications": 20000,
+        "rate": 0.04685,
+        "monte_carlo_se": 0.0014942402333627616,
+        "pointwise_wilson_95_ci": [
+          0.04400735261717353,
+          0.049866689660474105
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.050000000000000044,
+      "cluster_bonferroni": 0.050000000000000044
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 14251,
+        "replications": 20000,
+        "rate": 0.71255,
+        "monte_carlo_se": 0.0032001757568921115,
+        "pointwise_wilson_95_ci": [
+          0.7062374229616648,
+          0.7187809425108851
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 4479,
+        "replications": 20000,
+        "rate": 0.22395,
+        "monte_carlo_se": 0.0029478500428278234,
+        "pointwise_wilson_95_ci": [
+          0.21822564321070523,
+          0.2297803798958701
+        ]
+      },
+      "task_bonferroni": {
+        "events": 10420,
+        "replications": 20000,
+        "rate": 0.521,
+        "monte_carlo_se": 0.003532414188625111,
+        "pointwise_wilson_95_ci": [
+          0.5140732262835959,
+          0.5279187082020478
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 1003,
+        "replications": 20000,
+        "rate": 0.05015,
+        "monte_carlo_se": 0.0015432915716092018,
+        "pointwise_wilson_95_ci": [
+          0.047210648502146166,
+          0.05326212633753116
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.22621906250000023,
+      "cluster_bonferroni": 0.04900995010000009
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19870,
+        "replications": 20000,
+        "rate": 0.9935,
+        "monte_carlo_se": 0.0005682319068830943,
+        "pointwise_wilson_95_ci": [
+          0.9922875978181341,
+          0.9945228625944907
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 12870,
+        "replications": 20000,
+        "rate": 0.6435,
+        "monte_carlo_se": 0.0033867960523184743,
+        "pointwise_wilson_95_ci": [
+          0.6368350247324673,
+          0.6501098609194306
+        ]
+      },
+      "task_bonferroni": {
+        "events": 17177,
+        "replications": 20000,
+        "rate": 0.85885,
+        "monte_carlo_se": 0.0024619776349512194,
+        "pointwise_wilson_95_ci": [
+          0.8539556716176012,
+          0.8636065041049324
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 1008,
+        "replications": 20000,
+        "rate": 0.0504,
+        "monte_carlo_se": 0.0015469298626634629,
+        "pointwise_wilson_95_ci": [
+          0.04745347452539701,
+          0.053519204296252273
+        ]
+      }
+    },
+    "independent_cluster_exact_fwer": {
+      "cluster_unadjusted": 0.6415140775914581,
+      "cluster_bonferroni": 0.04883012474683324
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9781,
+        "replications": 20000,
+        "rate": 0.48905,
+        "monte_carlo_se": 0.003534685965542059,
+        "pointwise_wilson_95_ci": [
+          0.48212491051765866,
+          0.49597929507196997
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 3474,
+        "replications": 20000,
+        "rate": 0.1737,
+        "monte_carlo_se": 0.002678883256134914,
+        "pointwise_wilson_95_ci": [
+          0.16851227689933307,
+          0.17901304583088073
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9781,
+        "replications": 20000,
+        "rate": 0.48905,
+        "monte_carlo_se": 0.003534685965542059,
+        "pointwise_wilson_95_ci": [
+          0.48212491051765866,
+          0.49597929507196997
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 3474,
+        "replications": 20000,
+        "rate": 0.1737,
+        "monte_carlo_se": 0.002678883256134914,
+        "pointwise_wilson_95_ci": [
+          0.16851227689933307,
+          0.17901304583088073
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19269,
+        "replications": 20000,
+        "rate": 0.96345,
+        "monte_carlo_se": 0.0013269155493097512,
+        "pointwise_wilson_95_ci": [
+          0.9607590214039452,
+          0.9659629803756515
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 12338,
+        "replications": 20000,
+        "rate": 0.6169,
+        "monte_carlo_se": 0.0034375455633343975,
+        "pointwise_wilson_95_ci": [
+          0.6101406950317227,
+          0.62361440693836
+        ]
+      },
+      "task_bonferroni": {
+        "events": 17872,
+        "replications": 20000,
+        "rate": 0.8936,
+        "monte_carlo_se": 0.0021803559342456,
+        "pointwise_wilson_95_ci": [
+          0.8892507373847485,
+          0.8977980918318857
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 4395,
+        "replications": 20000,
+        "rate": 0.21975,
+        "monte_carlo_se": 0.002927968045419895,
+        "pointwise_wilson_95_ci": [
+          0.21406540486011974,
+          0.22554223134932685
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.0,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 20000,
+        "replications": 20000,
+        "rate": 1.0,
+        "monte_carlo_se": 0.0,
+        "pointwise_wilson_95_ci": [
+          0.9998079639438954,
+          0.9999999999999999
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 19590,
+        "replications": 20000,
+        "rate": 0.9795,
+        "monte_carlo_se": 0.0010019917664332368,
+        "pointwise_wilson_95_ci": [
+          0.9774420817490553,
+          0.9813737556731404
+        ]
+      },
+      "task_bonferroni": {
+        "events": 19974,
+        "replications": 20000,
+        "rate": 0.9987,
+        "monte_carlo_se": 0.0002547852036520143,
+        "pointwise_wilson_95_ci": [
+          0.998095808650383,
+          0.9991126545872582
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 5241,
+        "replications": 20000,
+        "rate": 0.26205,
+        "monte_carlo_se": 0.003109499939700916,
+        "pointwise_wilson_95_ci": [
+          0.2560016009801629,
+          0.2681897889789373
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 1048,
+        "replications": 20000,
+        "rate": 0.0524,
+        "monte_carlo_se": 0.001575662400389119,
+        "pointwise_wilson_95_ci": [
+          0.04939681423822419,
+          0.05557509643920068
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 977,
+        "replications": 20000,
+        "rate": 0.04885,
+        "monte_carlo_se": 0.001524199421007632,
+        "pointwise_wilson_95_ci": [
+          0.04594829181213581,
+          0.05192498232128739
+        ]
+      },
+      "task_bonferroni": {
+        "events": 1048,
+        "replications": 20000,
+        "rate": 0.0524,
+        "monte_carlo_se": 0.001575662400389119,
+        "pointwise_wilson_95_ci": [
+          0.04939681423822419,
+          0.05557509643920068
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 977,
+        "replications": 20000,
+        "rate": 0.04885,
+        "monte_carlo_se": 0.001524199421007632,
+        "pointwise_wilson_95_ci": [
+          0.04594829181213581,
+          0.05192498232128739
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 3340,
+        "replications": 20000,
+        "rate": 0.167,
+        "monte_carlo_se": 0.002637337672729831,
+        "pointwise_wilson_95_ci": [
+          0.16189496192154687,
+          0.1722329340918188
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 3360,
+        "replications": 20000,
+        "rate": 0.168,
+        "monte_carlo_se": 0.002643633862697329,
+        "pointwise_wilson_95_ci": [
+          0.16288243407347822,
+          0.17324507786777524
+        ]
+      },
+      "task_bonferroni": {
+        "events": 801,
+        "replications": 20000,
+        "rate": 0.04005,
+        "monte_carlo_se": 0.0013864702935872807,
+        "pointwise_wilson_95_ci": [
+          0.03741972083580883,
+          0.04285693313220182
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 795,
+        "replications": 20000,
+        "rate": 0.03975,
+        "monte_carlo_se": 0.0013814835775353973,
+        "pointwise_wilson_95_ci": [
+          0.03712954423484117,
+          0.04254722495480314
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 6798,
+        "replications": 20000,
+        "rate": 0.3399,
+        "monte_carlo_se": 0.003349387929159595,
+        "pointwise_wilson_95_ci": [
+          0.3333666236171334,
+          0.34649486632803134
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 6994,
+        "replications": 20000,
+        "rate": 0.3497,
+        "monte_carlo_se": 0.003372016533174178,
+        "pointwise_wilson_95_ci": [
+          0.34312040364435653,
+          0.3563373223941086
+        ]
+      },
+      "task_bonferroni": {
+        "events": 648,
+        "replications": 20000,
+        "rate": 0.0324,
+        "monte_carlo_se": 0.0012520031948841026,
+        "pointwise_wilson_95_ci": [
+          0.03003450793419727,
+          0.03494508418547177
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 716,
+        "replications": 20000,
+        "rate": 0.0358,
+        "monte_carlo_se": 0.001313741983800472,
+        "pointwise_wilson_95_ci": [
+          0.03331296064826568,
+          0.03846532562622185
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9004,
+        "replications": 20000,
+        "rate": 0.4502,
+        "monte_carlo_se": 0.0035179536665510534,
+        "pointwise_wilson_95_ci": [
+          0.44331515635915425,
+          0.4571039704320337
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 8399,
+        "replications": 20000,
+        "rate": 0.41995,
+        "monte_carlo_se": 0.003489928348118339,
+        "pointwise_wilson_95_ci": [
+          0.41312587814738844,
+          0.4268048668251939
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9004,
+        "replications": 20000,
+        "rate": 0.4502,
+        "monte_carlo_se": 0.0035179536665510534,
+        "pointwise_wilson_95_ci": [
+          0.44331515635915425,
+          0.4571039704320337
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 8399,
+        "replications": 20000,
+        "rate": 0.41995,
+        "monte_carlo_se": 0.003489928348118339,
+        "pointwise_wilson_95_ci": [
+          0.41312587814738844,
+          0.4268048668251939
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 15914,
+        "replications": 20000,
+        "rate": 0.7957,
+        "monte_carlo_se": 0.002850977990093926,
+        "pointwise_wilson_95_ci": [
+          0.7900556487598048,
+          0.8012307811166147
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 15572,
+        "replications": 20000,
+        "rate": 0.7786,
+        "monte_carlo_se": 0.002935830717190622,
+        "pointwise_wilson_95_ci": [
+          0.7727926800673138,
+          0.7843003174422246
+        ]
+      },
+      "task_bonferroni": {
+        "events": 10072,
+        "replications": 20000,
+        "rate": 0.5036,
+        "monte_carlo_se": 0.0035354422637061973,
+        "pointwise_wilson_95_ci": [
+          0.49667063450288396,
+          0.5105279828375122
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 9050,
+        "replications": 20000,
+        "rate": 0.4525,
+        "monte_carlo_se": 0.0035195436493954727,
+        "pointwise_wilson_95_ci": [
+          0.4456115992675973,
+          0.4594066441577327
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.0,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 18713,
+        "replications": 20000,
+        "rate": 0.93565,
+        "monte_carlo_se": 0.001735065956959562,
+        "pointwise_wilson_95_ci": [
+          0.9321649702288509,
+          0.938967708755465
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 18610,
+        "replications": 20000,
+        "rate": 0.9305,
+        "monte_carlo_se": 0.0017981900622570464,
+        "pointwise_wilson_95_ci": [
+          0.9268923095672811,
+          0.9339423473884129
+        ]
+      },
+      "task_bonferroni": {
+        "events": 10187,
+        "replications": 20000,
+        "rate": 0.50935,
+        "monte_carlo_se": 0.0035349156814554997,
+        "pointwise_wilson_95_ci": [
+          0.5024205620805064,
+          0.5162758468452444
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 8908,
+        "replications": 20000,
+        "rate": 0.4454,
+        "monte_carlo_se": 0.0035143907011031083,
+        "pointwise_wilson_95_ci": [
+          0.43852305939731007,
+          0.4522979109400166
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 3528,
+        "replications": 20000,
+        "rate": 0.1764,
+        "monte_carlo_se": 0.002695209082798587,
+        "pointwise_wilson_95_ci": [
+          0.17117977183227304,
+          0.18174451390323784
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 1002,
+        "replications": 20000,
+        "rate": 0.0501,
+        "monte_carlo_se": 0.0015425626405433266,
+        "pointwise_wilson_95_ci": [
+          0.04716208578848323,
+          0.053210708254799705
+        ]
+      },
+      "task_bonferroni": {
+        "events": 3528,
+        "replications": 20000,
+        "rate": 0.1764,
+        "monte_carlo_se": 0.002695209082798587,
+        "pointwise_wilson_95_ci": [
+          0.17117977183227304,
+          0.18174451390323784
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 1002,
+        "replications": 20000,
+        "rate": 0.0501,
+        "monte_carlo_se": 0.0015425626405433266,
+        "pointwise_wilson_95_ci": [
+          0.04716208578848323,
+          0.053210708254799705
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 8865,
+        "replications": 20000,
+        "rate": 0.44325,
+        "monte_carlo_se": 0.0035126872725877553,
+        "pointwise_wilson_95_ci": [
+          0.4363768099676779,
+          0.4501449861246899
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 3439,
+        "replications": 20000,
+        "rate": 0.17195,
+        "monte_carlo_se": 0.002668175383103592,
+        "pointwise_wilson_95_ci": [
+          0.1667835924544603,
+          0.17724240240194986
+        ]
+      },
+      "task_bonferroni": {
+        "events": 5537,
+        "replications": 20000,
+        "rate": 0.27685,
+        "monte_carlo_se": 0.003163890623109465,
+        "pointwise_wilson_95_ci": [
+          0.27069218854073696,
+          0.28309351715110254
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 856,
+        "replications": 20000,
+        "rate": 0.0428,
+        "monte_carlo_se": 0.0014312260478345133,
+        "pointwise_wilson_95_ci": [
+          0.040081542924243665,
+          0.045694054845458396
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 13826,
+        "replications": 20000,
+        "rate": 0.6913,
+        "monte_carlo_se": 0.00326652958045691,
+        "pointwise_wilson_95_ci": [
+          0.6848614925273089,
+          0.6976650344776256
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 7135,
+        "replications": 20000,
+        "rate": 0.35675,
+        "monte_carlo_se": 0.0033873251799908435,
+        "pointwise_wilson_95_ci": [
+          0.35013905430801123,
+          0.3634159640220627
+        ]
+      },
+      "task_bonferroni": {
+        "events": 7307,
+        "replications": 20000,
+        "rate": 0.36535,
+        "monte_carlo_se": 0.0034049183360251095,
+        "pointwise_wilson_95_ci": [
+          0.3587029310552642,
+          0.3720487842546448
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 720,
+        "replications": 20000,
+        "rate": 0.036,
+        "monte_carlo_se": 0.001317269904006009,
+        "pointwise_wilson_95_ci": [
+          0.033506013762999234,
+          0.038672195697065856
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9708,
+        "replications": 20000,
+        "rate": 0.4854,
+        "monte_carlo_se": 0.0035340263156914947,
+        "pointwise_wilson_95_ci": [
+          0.4784769039667259,
+          0.4923287034861124
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 4281,
+        "replications": 20000,
+        "rate": 0.21405,
+        "monte_carlo_se": 0.002900280999317135,
+        "pointwise_wilson_95_ci": [
+          0.20842074698976282,
+          0.21978907843072337
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9708,
+        "replications": 20000,
+        "rate": 0.4854,
+        "monte_carlo_se": 0.0035340263156914947,
+        "pointwise_wilson_95_ci": [
+          0.4784769039667259,
+          0.4923287034861124
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 4281,
+        "replications": 20000,
+        "rate": 0.21405,
+        "monte_carlo_se": 0.002900280999317135,
+        "pointwise_wilson_95_ci": [
+          0.20842074698976282,
+          0.21978907843072337
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 16415,
+        "replications": 20000,
+        "rate": 0.82075,
+        "monte_carlo_se": 0.0027121894983573695,
+        "pointwise_wilson_95_ci": [
+          0.8153727642508443,
+          0.8260040446191647
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 10379,
+        "replications": 20000,
+        "rate": 0.51895,
+        "monte_carlo_se": 0.0035329937553015855,
+        "pointwise_wilson_95_ci": [
+          0.5120224843550666,
+          0.5258702374784071
+        ]
+      },
+      "task_bonferroni": {
+        "events": 13538,
+        "replications": 20000,
+        "rate": 0.6769,
+        "monte_carlo_se": 0.0033068594617854568,
+        "pointwise_wilson_95_ci": [
+          0.6703852366925108,
+          0.6833468209508392
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 4210,
+        "replications": 20000,
+        "rate": 0.2105,
+        "monte_carlo_se": 0.0028826181675691977,
+        "pointwise_wilson_95_ci": [
+          0.2049060356150617,
+          0.2162051532614228
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.5,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 18937,
+        "replications": 20000,
+        "rate": 0.94685,
+        "monte_carlo_se": 0.0015862704293404708,
+        "pointwise_wilson_95_ci": [
+          0.9436542702026662,
+          0.9498741071739929
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 15275,
+        "replications": 20000,
+        "rate": 0.76375,
+        "monte_carlo_se": 0.0030036306156050545,
+        "pointwise_wilson_95_ci": [
+          0.7578126900456139,
+          0.769586010934791
+        ]
+      },
+      "task_bonferroni": {
+        "events": 15598,
+        "replications": 20000,
+        "rate": 0.7799,
+        "monte_carlo_se": 0.0029296415309726887,
+        "pointwise_wilson_95_ci": [
+          0.774104556980593,
+          0.7855879412351997
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 4067,
+        "replications": 20000,
+        "rate": 0.20335,
+        "monte_carlo_se": 0.0028460391555633945,
+        "pointwise_wilson_95_ci": [
+          0.19782907796500426,
+          0.20898485702708258
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 1,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 4451,
+        "replications": 20000,
+        "rate": 0.22255,
+        "monte_carlo_se": 0.0029412709625262342,
+        "pointwise_wilson_95_ci": [
+          0.21683880256074853,
+          0.22836775824678388
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 965,
+        "replications": 20000,
+        "rate": 0.04825,
+        "monte_carlo_se": 0.0015152877202036584,
+        "pointwise_wilson_95_ci": [
+          0.04536586122239952,
+          0.05130764335429101
+        ]
+      },
+      "task_bonferroni": {
+        "events": 4451,
+        "replications": 20000,
+        "rate": 0.22255,
+        "monte_carlo_se": 0.0029412709625262342,
+        "pointwise_wilson_95_ci": [
+          0.21683880256074853,
+          0.22836775824678388
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 965,
+        "replications": 20000,
+        "rate": 0.04825,
+        "monte_carlo_se": 0.0015152877202036584,
+        "pointwise_wilson_95_ci": [
+          0.04536586122239952,
+          0.05130764335429101
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 5,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 10544,
+        "replications": 20000,
+        "rate": 0.5272,
+        "monte_carlo_se": 0.00353029857094269,
+        "pointwise_wilson_95_ci": [
+          0.5202761809991995,
+          0.5341133722393484
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 3389,
+        "replications": 20000,
+        "rate": 0.16945,
+        "monte_carlo_se": 0.0026527033145453713,
+        "pointwise_wilson_95_ci": [
+          0.16431438627732786,
+          0.17471256875936286
+        ]
+      },
+      "task_bonferroni": {
+        "events": 7529,
+        "replications": 20000,
+        "rate": 0.37645,
+        "monte_carlo_se": 0.0034258969445971374,
+        "pointwise_wilson_95_ci": [
+          0.36975969426379385,
+          0.3831877578456696
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 814,
+        "replications": 20000,
+        "rate": 0.0407,
+        "monte_carlo_se": 0.0013972027411939902,
+        "pointwise_wilson_95_ci": [
+          0.03804857786187194,
+          0.04352782645926576
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.0,
+    "candidate_budget": 20,
+    "endpoint": "familywise_false_promotion",
+    "methods": {
+      "task_unadjusted": {
+        "events": 15150,
+        "replications": 20000,
+        "rate": 0.7575,
+        "monte_carlo_se": 0.0030306249355537217,
+        "pointwise_wilson_95_ci": [
+          0.7515109995108911,
+          0.763390101920215
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 7135,
+        "replications": 20000,
+        "rate": 0.35675,
+        "monte_carlo_se": 0.0033873251799908435,
+        "pointwise_wilson_95_ci": [
+          0.35013905430801123,
+          0.3634159640220627
+        ]
+      },
+      "task_bonferroni": {
+        "events": 10104,
+        "replications": 20000,
+        "rate": 0.5052,
+        "monte_carlo_se": 0.003535342699088732,
+        "pointwise_wilson_95_ci": [
+          0.49827052233204794,
+          0.5121274804929686
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 752,
+        "replications": 20000,
+        "rate": 0.0376,
+        "monte_carlo_se": 0.0013451066872185269,
+        "pointwise_wilson_95_ci": [
+          0.035051194809705755,
+          0.0403264001349798
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 1,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 9840,
+        "replications": 20000,
+        "rate": 0.492,
+        "monte_carlo_se": 0.0035350813286259765,
+        "pointwise_wilson_95_ci": [
+          0.48507356933711687,
+          0.4989295032397808
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 3568,
+        "replications": 20000,
+        "rate": 0.1784,
+        "monte_carlo_se": 0.0027071520090308928,
+        "pointwise_wilson_95_ci": [
+          0.1731559883995436,
+          0.18376752919174288
+        ]
+      },
+      "task_bonferroni": {
+        "events": 9840,
+        "replications": 20000,
+        "rate": 0.492,
+        "monte_carlo_se": 0.0035350813286259765,
+        "pointwise_wilson_95_ci": [
+          0.48507356933711687,
+          0.4989295032397808
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 3568,
+        "replications": 20000,
+        "rate": 0.1784,
+        "monte_carlo_se": 0.0027071520090308928,
+        "pointwise_wilson_95_ci": [
+          0.1731559883995436,
+          0.18376752919174288
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 5,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 16539,
+        "replications": 20000,
+        "rate": 0.82695,
+        "monte_carlo_se": 0.0026749177323798206,
+        "pointwise_wilson_95_ci": [
+          0.821644598835382,
+          0.8321298287875312
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 9205,
+        "replications": 20000,
+        "rate": 0.46025,
+        "monte_carlo_se": 0.003524343467229038,
+        "pointwise_wilson_95_ci": [
+          0.45335070623478946,
+          0.4671645606316709
+        ]
+      },
+      "task_bonferroni": {
+        "events": 14281,
+        "replications": 20000,
+        "rate": 0.71405,
+        "monte_carlo_se": 0.0031951729022073284,
+        "pointwise_wilson_95_ci": [
+          0.7077469372888312,
+          0.7202708520755503
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 3415,
+        "replications": 20000,
+        "rate": 0.17075,
+        "monte_carlo_se": 0.0026607746757288564,
+        "pointwise_wilson_95_ci": [
+          0.16559832278052555,
+          0.17602813296241931
+        ]
+      }
+    }
+  },
+  {
+    "baseline_variance_fraction": 0.5,
+    "rho": 0.8,
+    "effect": 0.2,
+    "candidate_budget": 20,
+    "endpoint": "any_true_promotion_power",
+    "methods": {
+      "task_unadjusted": {
+        "events": 19005,
+        "replications": 20000,
+        "rate": 0.95025,
+        "monte_carlo_se": 0.0015374481698580927,
+        "pointwise_wilson_95_ci": [
+          0.9471492417167285,
+          0.9531778298147492
+        ]
+      },
+      "cluster_unadjusted": {
+        "events": 14155,
+        "replications": 20000,
+        "rate": 0.70775,
+        "monte_carlo_se": 0.0032158975224655406,
+        "pointwise_wilson_95_ci": [
+          0.7014075401508786,
+          0.7140126688678099
+        ]
+      },
+      "task_bonferroni": {
+        "events": 16634,
+        "replications": 20000,
+        "rate": 0.8317,
+        "monte_carlo_se": 0.0026455161122170474,
+        "pointwise_wilson_95_ci": [
+          0.8264512919431641,
+          0.836821311337216
+        ]
+      },
+      "cluster_bonferroni": {
+        "events": 3258,
+        "replications": 20000,
+        "rate": 0.1629,
+        "monte_carlo_se": 0.002611164395437407,
+        "pointwise_wilson_95_ci": [
+          0.15784702916071935,
+          0.16808244154830632
+        ]
+      }
+    }
+  }
+]

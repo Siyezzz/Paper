@@ -1,0 +1,393 @@
+{
+  "benchmark": "source-grounded deterministic arithmetic micro-pilot with constructed scenarios",
+  "config": {
+    "version": "1.0.0",
+    "company": "Microsoft Corporation (MSFT)",
+    "retrieved_on": "2026-11-13",
+    "decimal_precision": 50,
+    "oracle_decimal_places": 12,
+    "oracle_base_million_usd": "211915",
+    "oracle_current_million_usd": "245122",
+    "oracle_growth_numerator": "3320700",
+    "oracle_growth_denominator": "211915",
+    "publication_date": "2024-07-30",
+    "publication_date_basis": "Dated FY24 Q4 company release contains both exact annual revenue values; not a claim about annual-report HTML publication time or earliest public availability.",
+    "date_rule": "available_at <= decision_at; date-only equality is an explicit convention, not intraday evidence",
+    "policies": [
+      "naive_frozen",
+      "contract",
+      "from_scratch_metadata_solver"
+    ],
+    "sources": [
+      {
+        "file": "msft_ar24.html",
+        "url": "https://microsoft.com/investor/reports/ar24",
+        "sha256": "2b49e38b25f3bea8634b603ad5db64ba0803f27e27f93cc406884e6990974065"
+      },
+      {
+        "file": "msft_fy24_income.html",
+        "url": "https://microsoft.com/en-us/Investor/earnings/FY-2024-Q4/income-statements",
+        "sha256": "2a7f6972bdeb213a7fede5e8774710024a231a076411d2ac77d071fb9980c88a"
+      },
+      {
+        "file": "msft_fy24_release.html",
+        "url": "https://microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-webcast",
+        "sha256": "2dd641e699f292aad771a8743ccb627ad01f9198f7789fcc4fb4ce0abc4d8b1f"
+      }
+    ],
+    "cases": [
+      {
+        "id": "S01",
+        "scenario": "source_values_after_publication",
+        "decision_at": "2024-07-31",
+        "expected_available": true,
+        "constructed_scale_conversion": false
+      },
+      {
+        "id": "S02",
+        "scenario": "constructed_decision_before_selected_publication",
+        "decision_at": "2024-07-29",
+        "expected_available": false,
+        "constructed_scale_conversion": false
+      },
+      {
+        "id": "S03",
+        "scenario": "constructed_equivalent_current_unit_billion_usd",
+        "decision_at": "2024-07-31",
+        "expected_available": true,
+        "constructed_scale_conversion": true
+      }
+    ],
+    "claims_excluded": [
+      "LLM experiment",
+      "blind holdout",
+      "independently authored benchmark",
+      "observed market contract changes",
+      "point-in-time archived web snapshots",
+      "earliest publication proof",
+      "population-level effectiveness"
+    ]
+  },
+  "pre_execution_lock": {
+    "config_sha256": "d761891d35a612f5783d7ed15c6d196831b3eb66df5e045cfcff686ef861c6a4",
+    "sources": [
+      {
+        "file": "msft_ar24.html",
+        "url": "https://microsoft.com/investor/reports/ar24",
+        "sha256": "2b49e38b25f3bea8634b603ad5db64ba0803f27e27f93cc406884e6990974065",
+        "bytes": 486883,
+        "excerpts": [
+          {
+            "needle": "Total revenue",
+            "normalized_text_offset": 152273,
+            "quote": "In millions, except per share amounts) Year Ended June 30, 2024 2023 2022 Revenue: Product $ 64,773 $ 64,699 $ 72,732 Service and other 180,349 147,216 125,538 Total revenue 245,122 211,915 198,270 Cost of revenue: Product 15,272 17,804 19,064 Service and other 58,842 48,059 43,586 Total cost of revenue 74,114 65,863 62,650 Gross margin 171,008 146,052 135,620 Research and development 29,510 27,195 24,512 Sales and marketing 24,456 22,759 21,825 General and administrative 7,609 7,575 5,900 Opera"
+          },
+          {
+            "needle": "Year Ended June 30, 2024 2023 2022",
+            "normalized_text_offset": 30681,
+            "quote": "chase program. We repurchased the following shares of common stock under the share repurchase programs: (In millions) Shares Amount Shares Amount Shares Amount Year Ended June 30, 2024 2023 2022 First Quarter 11 $ 3,560 17 $ 4,600 21 $ 6,200 Second Quarter 7 2,800 20 4,600 20 6,233 Third Quarter 7 2,800 18 4,600 26 7,800 Fourth Quarter 7 2,800 14 4,600 28 7,800 Total 32 $ 11,960 69 $ 18,400 95 $ 28,033 All repurchases were made using cash resources. Shares repurchased during the first quarter of"
+          }
+        ],
+        "normalized_text_sha256": "4e9d43ea9a97d1b1c6a3c52bebee0fdb4a773c180f45df1a60f78959781cd8e9"
+      },
+      {
+        "file": "msft_fy24_income.html",
+        "url": "https://microsoft.com/en-us/Investor/earnings/FY-2024-Q4/income-statements",
+        "sha256": "2a7f6972bdeb213a7fede5e8774710024a231a076411d2ac77d071fb9980c88a",
+        "bytes": 198763,
+        "excerpts": [
+          {
+            "needle": "Total revenue",
+            "normalized_text_offset": 4323,
+            "quote": "stomerExcludingAssessedTax<br/>us-gaap:ServiceOtherMember Service and other 180,349 147,216 125,538 us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax Total revenue 245,122 211,915 198,270 Cost of revenue: Cost of revenue: us-gaap:CostOfGoodsAndServicesSold<br/>us-gaap:ProductMember Product 15,272 17,804 19,064 us-gaap:CostOfGoodsAndServicesSold<br/>us-gaap:ServiceOtherMember Service and other 58,842 48,059 43,586 us-gaap:CostOfGoodsAndServicesSold Total cost of revenue 74,114 65,863 62"
+          },
+          {
+            "needle": "Year Ended June 30, 2024 2023 2022",
+            "normalized_text_offset": 3956,
+            "quote": " flex: 0 0 100%; max-width: 100%; position: relative; overflow-wrap: break-word; } Table Power BI --> Income Statements (In millions, except per share amounts) Year Ended June 30, 2024 2023 2022 Revenue: Revenue: us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax<br/>us-gaap:ProductMember Product $ 64,773 $ 64,699 $ 72,732 us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax<br/>us-gaap:ServiceOtherMember Service and other 180,349 147,216 125,538 us-gaap:RevenueFromContractWithCu"
+          }
+        ],
+        "normalized_text_sha256": "8925a7c40a18d5799499981b77b734b8db5a4f6a017e09ad20111fc9a1f8b2cb"
+      },
+      {
+        "file": "msft_fy24_release.html",
+        "url": "https://microsoft.com/en-us/investor/earnings/fy-2024-q4/press-release-webcast",
+        "sha256": "2dd641e699f292aad771a8743ccb627ad01f9198f7789fcc4fb4ce0abc4d8b1f",
+        "bytes": 662800,
+        "excerpts": [
+          {
+            "needle": "July 30, 2024",
+            "normalized_text_offset": 4218,
+            "quote": "n; clip: rect(0, 0, 0, 0); border: 0 } Press Release & Webcast Earnings Release FY24 Q4 Microsoft Cloud Strength Drives Fourth Quarter Results REDMOND, Wash. — July 30, 2024 — Microsoft Corp. today announced the following results for the quarter ended June 30, 2024, as compared to the corresponding period of last fiscal year: · Revenue was $64.7 billion and increased 15% (up 16% in constant currency) · Operating income was $27.9 billion and increased 15% (up 16% in constant currency) · Net incom"
+          },
+          {
+            "needle": "Total revenue 64,727 56,189 245,122 211,915",
+            "normalized_text_offset": 19700,
+            "quote": "nded June 30, Twelve Months Ended June 30, 2024 2023 2024 2023 Revenue: Product $13,217 $16,853 $64,773 $64,699 Service and other 51,510 39,336 180,349 147,216 Total revenue 64,727 56,189 245,122 211,915 Cost of revenue: Product 1,438 3,871 15,272 17,804 Service and other 18,246 12,924 58,842 48,059 Total cost of revenue 19,684 16,795 74,114 65,863 Gross margin 45,043 39,394 171,008 146,052 Research and development 8,056 6,739 29,510 27,195 Sales and marketing 6,816 6,204 24,456 22,759 General a"
+          },
+          {
+            "needle": "Twelve Months Ended June 30",
+            "normalized_text_offset": 8036,
+            "quote": " Additional information regarding our non-GAAP definition is provided below. All growth comparisons relate to the corresponding period in the last fiscal year. Twelve Months Ended June 30, ($ in millions, except per share amounts) Revenue Operating Income Net Income Diluted Earnings per Share 2023 As Reported (GAAP) $211,915 $88,523 $72,361 $9.68 Severance, hardware-related impairment, and lease consolidation costs - 1,171 946 0.13 2023 As Adjusted (non-GAAP) $211,915 $89,694 $73,307 $9.81 2024 "
+          }
+        ],
+        "normalized_text_sha256": "e2f3b80d65c7bcf69bf3a0edb8fa9e5c045f08bd624898fc34edda311f6a1fd1"
+      }
+    ],
+    "frozen": {
+      "freeze_at": "2024-12-31",
+      "admitted": true,
+      "admission_validation_correct": 3,
+      "config_sha256": "32d17dc7480850f4a3ed53ce6b36ea29d2664a9c9e91af2b1550ca1636be4f94",
+      "discovery_sha256": "276e0a7554d5d757ca1d60bb5820de93c57260bdd71fe3a74daebf09bfeac208",
+      "validation_sha256": "b19af663c5681aa9f7845cac06e3365bbccfcd29c5208ca2279b7b0083d59f95",
+      "policy_source_sha256": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75"
+    },
+    "items": [
+      {
+        "id": "S01",
+        "scenario": "source_values_after_publication",
+        "decision_at": "2024-07-31",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "211915",
+          "start": "2022-07-01",
+          "end": "2023-06-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "245122",
+          "start": "2023-07-01",
+          "end": "2024-06-30"
+        },
+        "provenance": "observed annual revenue; analyst-selected decision date, not an observed trading decision"
+      },
+      {
+        "id": "S02",
+        "scenario": "constructed_decision_before_selected_publication",
+        "decision_at": "2024-07-29",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "211915",
+          "start": "2022-07-01",
+          "end": "2023-06-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "245122",
+          "start": "2023-07-01",
+          "end": "2024-06-30"
+        },
+        "provenance": "observed annual revenue; analyst-selected decision date, not an observed trading decision"
+      },
+      {
+        "id": "S03",
+        "scenario": "constructed_equivalent_current_unit_billion_usd",
+        "decision_at": "2024-07-31",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "211915",
+          "start": "2022-07-01",
+          "end": "2023-06-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "fiscal_july_june",
+          "available_at": "2024-07-30",
+          "value": "245.122",
+          "start": "2023-07-01",
+          "end": "2024-06-30"
+        },
+        "provenance": "observed annual revenue; analyst-selected decision date, not an observed trading decision; constructed equivalent representation, not an observed unit change"
+      }
+    ],
+    "expected": {
+      "S01": "15.669962013071",
+      "S02": null,
+      "S03": "15.669962013071"
+    },
+    "implementation_sha256": {
+      "source_grounded_pilot.py": "4388ac7dc6ff8512d2272f232d98ecd680fef284de6af994ee21d522579d84ba",
+      "financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+      "financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+      "financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+      "source_grounded_config.json": "d761891d35a612f5783d7ed15c6d196831b3eb66df5e045cfcff686ef861c6a4",
+      "test_source_grounded.py": "db77082c056e471439506ae3ddd38fcd9e0648f766e56228d7a55fe4d01b7457"
+    }
+  },
+  "pre_execution_lock_sha256": "539e78700827915e4d37e261122c070c853a25284af992e694da5731ed6ba5a3",
+  "environment": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python_executable_sha256": "ec8139feb5012b12a531196f257fddf53668f0109918d5d44ffa195cf352fdd6"
+  },
+  "results": {
+    "naive_frozen": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 1,
+        "wrong_accepted_answers": 2,
+        "abstentions": 0,
+        "safe_abstentions": 0,
+        "unnecessary_abstentions": 0,
+        "coverage": 1.0,
+        "correct_answer_rate": 0.3333333333333333,
+        "coverage_conditioned_accuracy": 0.3333333333333333
+      },
+      "cases": [
+        {
+          "id": "S01",
+          "scenario": "source_values_after_publication",
+          "answer": "15.669962013071278578675412311540004246985819786240",
+          "expected": "15.669962013071",
+          "correct_answer": true,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "S02",
+          "scenario": "constructed_decision_before_selected_publication",
+          "answer": "15.669962013071278578675412311540004246985819786240",
+          "expected": null,
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "S03",
+          "scenario": "constructed_equivalent_current_unit_billion_usd",
+          "answer": "-99.884330037986928721421324587688459995753014180214",
+          "expected": "15.669962013071",
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        }
+      ]
+    },
+    "contract": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 1,
+        "wrong_accepted_answers": 0,
+        "abstentions": 2,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 1,
+        "coverage": 0.3333333333333333,
+        "correct_answer_rate": 0.3333333333333333,
+        "coverage_conditioned_accuracy": 1.0
+      },
+      "cases": [
+        {
+          "id": "S01",
+          "scenario": "source_values_after_publication",
+          "answer": "15.669962013071278578675412311540004246985819786240",
+          "expected": "15.669962013071",
+          "correct_answer": true,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "S02",
+          "scenario": "constructed_decision_before_selected_publication",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability"
+          ]
+        },
+        {
+          "id": "S03",
+          "scenario": "constructed_equivalent_current_unit_billion_usd",
+          "answer": null,
+          "expected": "15.669962013071",
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit"
+          ]
+        }
+      ]
+    },
+    "from_scratch_metadata_solver": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 2,
+        "wrong_accepted_answers": 0,
+        "abstentions": 1,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.6666666666666666,
+        "correct_answer_rate": 0.6666666666666666,
+        "coverage_conditioned_accuracy": 1.0
+      },
+      "cases": [
+        {
+          "id": "S01",
+          "scenario": "source_values_after_publication",
+          "answer": "15.669962013071278578675412311540004246985819786240",
+          "expected": "15.669962013071",
+          "correct_answer": true,
+          "event": "metadata_solver_answer",
+          "reasons": []
+        },
+        {
+          "id": "S02",
+          "scenario": "constructed_decision_before_selected_publication",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "S03",
+          "scenario": "constructed_equivalent_current_unit_billion_usd",
+          "answer": "15.669962013071278578675412311540004246985819786240",
+          "expected": "15.669962013071",
+          "correct_answer": true,
+          "event": "metadata_solver_answer",
+          "reasons": []
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "LLM experiment",
+    "blind holdout",
+    "independently authored benchmark",
+    "observed market contract changes",
+    "point-in-time archived web snapshots",
+    "earliest publication proof",
+    "population-level effectiveness",
+    "one company and one annual pair; cases are dependent",
+    "July 30 is selected release availability, not earliest publication proof",
+    "both years use the same selected release vintage; no historical web archive",
+    "date-only availability, exact annual windows, no restatement or FX resolution",
+    "oracle independently implemented but authored by the same researcher who can inspect policies",
+    "original constructed fixtures still supply admission; no source-grounded training or policy learning"
+  ]
+}
