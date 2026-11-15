@@ -68,7 +68,7 @@ At s=.5 and rho=.8, the shared-baseline cluster Bonferroni null rates for K=1/5/
 | Claim | Evidence | Status |
 |---|---|---|
 | Gaussian sampling-unit × multiplicity calibration | Reproduced simulations and saved p-value banks, `paper/MAIN.md` 5.6–5.7 | Executed; model-specific |
-| Sequential familywise error bound | Conditional validity plus an error-spending union bound | Analytic guarantee under assumptions; not an empirical adaptive-reuse result |
+| Sequential familywise error bound | Conditional validity plus an error-spending union bound | supported_by_analysis; conditional guarantee, not an empirical adaptive-reuse result |
 | Applicability contract beats ordinary metadata validation | Constructed and one-issuer pilots favor the ordinary solver | Negative finding |
 | Adaptive validation reuse is controlled | No adaptive-reuse run | Planned; unexecuted |
 | Genuine persisted generated skills improve quality | No independent executor invocation | Planned; unexecuted |

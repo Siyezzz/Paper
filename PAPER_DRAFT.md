@@ -114,7 +114,7 @@ The final paper should contain a false-promotion calibration figure, a power-ver
 | Claim | Evidence | Status |
 |---|---|---|
 | Gaussian cluster and multiplicity calibration | Executed single-revision, independent-bank and shared-baseline experiments | Supported only in the stated models |
-| Any-false-promotion error bound | Conditional validity and error-spending union bound, Section 3.3 | Analytic guarantee under assumptions |
+| Any-false-promotion error bound | Conditional validity and error-spending union bound, Section 3.3 | supported_by_analysis; conditional guarantee |
 | Conservative contract exceeds ordinary metadata validation | Constructed and one-issuer pilots favor the ordinary solver | Negative result |
 | Adaptive validation reuse is reliable | No executed adaptive-reuse study | Planned; unexecuted |
 | Persisted generated skills improve financial research | No independently executed persisted generated skill | Planned; unexecuted |
