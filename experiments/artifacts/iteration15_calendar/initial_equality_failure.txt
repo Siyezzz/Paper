@@ -1,0 +1,6 @@
+
+STDERR
+Traceback (most recent call last):
+  File "C:\Users\pc\WorkBuddy\2026-11-11-17-16-35\Paper-ssh\experiments\calendar_validator_development.py", line 188, in <module>
+    raise AssertionError('full result equality reproduction failed')
+AssertionError: full result equality reproduction failed

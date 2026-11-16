@@ -1,0 +1,132 @@
+{
+  "started_utc": "2026-11-16T04:06:00.994842+00:00",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "parent_commit": "ee10e1c76daebada8b6ffd267476587c35b47181",
+  "api_calls": 0,
+  "actual_spend": "unknown; no billing access",
+  "runs": [
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_cluster_gate.py",
+        "--reps",
+        "20000",
+        "--clusters",
+        "12",
+        "--tasks-per-cluster",
+        "5",
+        "--seed",
+        "20261105",
+        "--out",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\baseline_reproduction.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_1.txt",
+      "transcript_sha256": "64723ffe9ec412d22a78ad06f2c82cf807501360f0b7c1a2235c7261bef0fc70"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/financial_contract_pilot.py",
+        "--out",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\contract_reproduction.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_2.txt",
+      "transcript_sha256": "ce654e7a82c95c6db2254741191a50cde72131ed03ce6dcc056115203ea4b87f"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/source_grounded_pilot.py",
+        "--out",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\source_reproduction.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_3.txt",
+      "transcript_sha256": "1c212b81f8cc9fc961697ef1b1928e406f395d6db1a5aa075de99ce6c172955e"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_null_search.py",
+        "--config",
+        "experiments/null_search_config.json",
+        "--out-dir",
+        "experiments/artifacts/iteration12_search",
+        "--verify-only"
+      ],
+      "exit_code": 0,
+      "transcript": "command_4.txt",
+      "transcript_sha256": "e528c538f5ee2f1bcac14836a29b48035ee77ee6f4d0570530c18553ccec8679"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/simulate_shared_baseline.py",
+        "--config",
+        "experiments/shared_baseline_config.json",
+        "--out-dir",
+        "experiments/artifacts/iteration13_shared",
+        "--verify-only"
+      ],
+      "exit_code": 0,
+      "transcript": "command_5.txt",
+      "transcript_sha256": "e201031db3adb5ce4b68d7f1faabd4036a010407496ece99e8119c6e133194a4"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments",
+        "-v"
+      ],
+      "exit_code": 0,
+      "transcript": "command_6.txt",
+      "transcript_sha256": "91511e7b20ad262843a4412604dad22fee402843e2c3346c75fec8f33276c354"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/calendar_validator_development.py",
+        "--out",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\final_results.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_7.txt",
+      "transcript_sha256": "27eebd1ba595c624b5848dc7256bc6a6b45ee179db0c0bb46309abdc6271db5d"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/calendar_validator_development.py",
+        "--out",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\final_reproduction.json",
+        "--reproduce",
+        "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh\\experiments\\artifacts\\iteration15_calendar\\final_results.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_8.txt",
+      "transcript_sha256": "4f14ba0714e69ecbd1497e7ecb3fb03a40bfa0df67ff599c1130bb20a615d5bc"
+    }
+  ],
+  "historical_comparisons": {
+    "baseline_reproduction.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    },
+    "contract_reproduction.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    },
+    "source_reproduction.json": {
+      "full_json_equal": true,
+      "results_equal": true
+    }
+  },
+  "ended_utc": "2026-11-16T04:06:56.433785+00:00"
+}

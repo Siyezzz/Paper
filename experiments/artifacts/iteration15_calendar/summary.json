@@ -1,0 +1,70 @@
+{
+  "design": "iteration15 calendar-aware ordinary-validator DEVELOPMENT comparison",
+  "pre_execution_lock_sha256": "40972f97703f756cf3f015a870d922eaf5b934ac761c363256dc6973a4ee932d",
+  "metrics": {
+    "from_scratch_metadata_solver": {
+      "n": 9,
+      "correct_answers": 2,
+      "wrong_accepted_answers": 0,
+      "abstentions": 7,
+      "safe_abstentions": 3,
+      "unnecessary_abstentions": 4,
+      "coverage": 0.2222222222222222,
+      "correct_answer_rate": 0.2222222222222222,
+      "coverage_conditioned_accuracy": 1.0
+    },
+    "contract": {
+      "n": 9,
+      "correct_answers": 1,
+      "wrong_accepted_answers": 0,
+      "abstentions": 8,
+      "safe_abstentions": 3,
+      "unnecessary_abstentions": 5,
+      "coverage": 0.1111111111111111,
+      "correct_answer_rate": 0.1111111111111111,
+      "coverage_conditioned_accuracy": 1.0
+    },
+    "calendar_ordinary": {
+      "n": 9,
+      "correct_answers": 6,
+      "wrong_accepted_answers": 0,
+      "abstentions": 3,
+      "safe_abstentions": 3,
+      "unnecessary_abstentions": 0,
+      "coverage": 0.6666666666666666,
+      "correct_answer_rate": 0.6666666666666666,
+      "coverage_conditioned_accuracy": 1.0
+    },
+    "calendar_no_availability": {
+      "n": 9,
+      "correct_answers": 6,
+      "wrong_accepted_answers": 3,
+      "abstentions": 0,
+      "safe_abstentions": 0,
+      "unnecessary_abstentions": 0,
+      "coverage": 1.0,
+      "correct_answer_rate": 0.6666666666666666,
+      "coverage_conditioned_accuracy": 0.6666666666666666
+    },
+    "calendar_no_unit_normalization": {
+      "n": 9,
+      "correct_answers": 3,
+      "wrong_accepted_answers": 3,
+      "abstentions": 3,
+      "safe_abstentions": 3,
+      "unnecessary_abstentions": 0,
+      "coverage": 0.6666666666666666,
+      "correct_answer_rate": 0.3333333333333333,
+      "coverage_conditioned_accuracy": 0.5
+    }
+  },
+  "equality_reproduced": true,
+  "limitations": [
+    "Previously exposed sources and nine dependent scenarios from three annual pairs; author-visible development only.",
+    "Handwritten ordinary rules, no evolution, LLM, holdout, population-effect or threshold-proof claim.",
+    "Date-only selected release availability, not earliest publication or historical archive proof.",
+    "Week-year starts are inferred metadata; duration acceptance is an author rule, not source fact.",
+    "Reported annual growth may compare unequal 52/53-week years; constant-duration task rejects unequal lengths.",
+    "Only USD GAAP total revenue, three issuer conventions and enumerated positive scales; no FX/restatement resolution."
+  ]
+}

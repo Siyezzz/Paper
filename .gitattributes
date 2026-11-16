@@ -2,3 +2,7 @@
 experiments/artifacts/source_grounded/*.html -text
 # Keep source snapshots, locked JSON, and hashed transcripts byte-exact.
 experiments/artifacts/iteration14_financial/* -text -whitespace
+experiments/artifacts/iteration15_calendar/* -text -whitespace
+experiments/calendar_validator_development.py -text
+experiments/test_calendar_validator.py -text
+experiments/calendar_validator_config.json -text

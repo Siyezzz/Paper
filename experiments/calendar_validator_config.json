@@ -1,0 +1,12 @@
+{
+  "version": "iteration15-development-1",
+  "design": "Author-visible handwritten ordinary-validator development comparison on previously exposed source-grounded cases; no evolution, LLM, blind holdout, or preregistration.",
+  "precision": 50,
+  "decimal_places": 12,
+  "task_semantics": "reported_adjacent_fiscal_year_growth",
+  "calendar_days": [365, 366],
+  "week_calendar_days": [364, 371],
+  "duration_rule_basis": "Author acceptance rules for full calendar years and 52/53-week annual windows; not source-verified week counts, not proven broad thresholds.",
+  "known_scales": ["1", "1000", "1000000", "1000000000"],
+  "policies": ["from_scratch_metadata_solver", "contract", "calendar_ordinary", "calendar_no_availability", "calendar_no_unit_normalization"]
+}
