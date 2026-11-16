@@ -110,12 +110,25 @@ def run(config_path=CONFIG, source_dir=ARTIFACTS):
                 'items': deepcopy(items), 'expected': expected,
                 'implementation_sha256': {p.name: sha(p.read_bytes()) for p in [Path(__file__), ROOT/'financial_contract_pilot.py', ROOT/'financial_contract_fixtures.py', ROOT/'financial_contract_config.json', ROOT/'source_grounded_config.json', ROOT/'test_source_grounded.py']}}
         lock_hash = sha(json.dumps(lock, sort_keys=True).encode())
+        def verify_disk_inputs():
+            disk_config, disk_evidence, disk_hash, disk_values = load_inputs(config_path, source_dir)
+            if (disk_config, disk_evidence, disk_hash, disk_values) != (config, evidence, config_hash, values):
+                raise AssertionError('fixed disk inputs changed during scoring')
+            for filename, expected_hash in lock['implementation_sha256'].items():
+                if sha((ROOT / filename).read_bytes()) != expected_hash:
+                    raise AssertionError('implementation changed during scoring: ' + filename)
+
         results = {}
         quantum = Decimal(1).scaleb(-config['oracle_decimal_places'])
         for policy in config['policies']:
             rows = []
             for item in items:
-                answer, event, reasons = execute(deepcopy(item), policy, deepcopy(frozen))
+                verify_disk_inputs()
+                execution_item, execution_frozen = deepcopy(item), deepcopy(frozen)
+                answer, event, reasons = execute(execution_item, policy, execution_frozen)
+                if execution_item != item or execution_frozen != frozen:
+                    raise AssertionError('executor mutated fixed actual inputs')
+                verify_disk_inputs()
                 target = expected[item['id']]
                 correct = answer is not None and target is not None and Decimal(answer).quantize(quantum) == Decimal(target)
                 rows.append({'id': item['id'], 'scenario': item['scenario'], 'answer': answer, 'expected': target,

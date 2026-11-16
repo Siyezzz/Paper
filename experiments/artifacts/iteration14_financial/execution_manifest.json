@@ -1,0 +1,95 @@
+{
+  "started_utc": "2026-11-16T02:46:47.276851+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+  "cwd": "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh",
+  "runs": [
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/source_grounded_pilot.py",
+        "--out",
+        "experiments/artifacts/iteration14_financial/source_reference_after_lock_fix.json"
+      ],
+      "exit_code": 0,
+      "transcript": "command_1.txt",
+      "transcript_sha256": "1c212b81f8cc9fc961697ef1b1928e406f395d6db1a5aa075de99ce6c172955e"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "experiments/financial_issuer_transfer.py"
+      ],
+      "exit_code": 0,
+      "transcript": "command_2.txt",
+      "transcript_sha256": "80f08a200affedabb862030614b859ac682ce7db95bb68f0c07f112a4f0eb02c"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments",
+        "-p",
+        "test*financial*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "transcript": "command_3.txt",
+      "transcript_sha256": "f434e9058d12f60fe1cab044be1df2c94a2d4ae99aff91396c1ecefea20400b7"
+    },
+    {
+      "argv": [
+        "C:\\Users\\pc\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments",
+        "-p",
+        "test_source_grounded.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "transcript": "command_4.txt",
+      "transcript_sha256": "9a3319542ba591dfcb887c8a566c6a0a8819fc467afd012e59607b23c8eeb1bd"
+    }
+  ],
+  "reference_comparison": {
+    "results_equal": true,
+    "full_json_equal": false,
+    "reason": "源锁修复修改implementation_sha256及pre_execution_lock；结果不变"
+  },
+  "design_receipt": "design_receipt.json",
+  "source_reference_comparison": {
+    "results_equal": true,
+    "full_json_equal": false,
+    "explanation": "旧source runner源锁修复改变implementation_sha与pre_execution_lock；策略输出不变。"
+  },
+  "reported_by_team_lead_before_lock_fix": {
+    "verification": "三组既有JSON完全相等、40测试通过；第12/13轮--verify-only完整报告通过。",
+    "extra_validator": "validate_shared_baseline.py因已有receipt防覆盖退出，无修改。",
+    "provenance": "主代理消息报告；本收据未重跑这些历史验证；不得与修改后source全JSON一致混同。"
+  },
+  "design_timing": {
+    "claim": "任务定义先写入再下载来源，执行前冻结；作者已见政策与公开摘要。",
+    "limitation": "当时未写UTC收据；当前收据不能证明下载前冻结，不补造历史时间。",
+    "receipt_utc": "2026-11-16T02:47:09.425668+00:00"
+  },
+  "input_sha256": {
+    "experiments\\financial_issuer_transfer.py": "811f81b1ac3ee276e06dfd2757bfcdef6f45e158b3054515f4544407c693ba7f",
+    "experiments\\source_grounded_pilot.py": "f3a4c1443846db928ca089034d6af14d4f258d4dd57690b794068f4d34cad76c",
+    "experiments\\test_financial_issuer_transfer.py": "788a1f40ae18028ab3a4dca0b785188eb7349abd753c0184910d8d9e1004e71d",
+    "experiments\\test_source_grounded.py": "3b8a3ee918b6a4116d35b8c16e2b27c9f8b21a1492b686d8b49c7fd24cc0a276",
+    "experiments\\financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments\\financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments\\financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+    "experiments\\artifacts\\iteration14_financial\\task_definition.json": "ff10deecf85dc95ce0f6452c6b90000887a677a4c742de3ce233e3160daf6a31",
+    "experiments\\artifacts\\iteration14_financial\\source_config.json": "4fd17c0eeecc8cb393dfa7d4a836de858d2463b3e820663f64df881165f701df",
+    "experiments\\artifacts\\iteration14_financial\\nvda_release.html": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+    "experiments\\artifacts\\iteration14_financial\\intc_release.html": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5",
+    "experiments\\artifacts\\iteration14_financial\\reproduce.py": "5b65f3504b274f8eabc38ce3f46edcaf50101565db5835d3b21806ae5fc6b56b"
+  }
+}

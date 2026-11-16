@@ -1,2 +1,4 @@
 # Preserve the exact archived HTTP response bytes used by SHA256 source locks.
 experiments/artifacts/source_grounded/*.html -text
+# Keep source snapshots, locked JSON, and hashed transcripts byte-exact.
+experiments/artifacts/iteration14_financial/* -text -whitespace

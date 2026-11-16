@@ -52,6 +52,31 @@ class SourceGroundedPilotTests(unittest.TestCase):
         with patch.object(pilot, 'execute', side_effect=checked):
             pilot.run()
 
+    def test_actual_executor_input_mutation_is_detected(self):
+        original = pilot.execute
+        def mutate(item, policy, frozen):
+            result = original(item, policy, frozen)
+            item['current']['value'] = '1'
+            return result
+        with patch.object(pilot, 'execute', side_effect=mutate):
+            with self.assertRaisesRegex(AssertionError, 'mutated fixed actual inputs'):
+                pilot.run()
+
+    def test_disk_source_mutation_during_execution_is_detected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory)
+            for entry in self.result['config']['sources']:
+                (target / entry['file']).write_bytes((pilot.ARTIFACTS / entry['file']).read_bytes())
+            original = pilot.execute
+            def mutate(item, policy, frozen):
+                result = original(item, policy, frozen)
+                path = target / self.result['config']['sources'][0]['file']
+                path.write_bytes(path.read_bytes() + b'changed during execution')
+                return result
+            with patch.object(pilot, 'execute', side_effect=mutate):
+                with self.assertRaisesRegex(ValueError, 'SHA256 mismatch'):
+                    pilot.run(source_dir=target)
+
     def test_solver_comparison(self):
         naive = self.result['results']['naive_frozen']['cases']
         contract = self.result['results']['contract']['cases']

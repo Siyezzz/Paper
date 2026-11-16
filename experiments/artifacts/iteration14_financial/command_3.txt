@@ -1,0 +1,26 @@
+
+STDERR
+test_ablation_exposes_each_boundary (test_financial_contract.FinancialContractTests.test_ablation_exposes_each_boundary) ... ok
+test_abstentions_do_not_inflate_answer_accuracy (test_financial_contract.FinancialContractTests.test_abstentions_do_not_inflate_answer_accuracy) ... ok
+test_chronological_split_rejected (test_financial_contract.FinancialContractTests.test_chronological_split_rejected) ... ok
+test_duplicate_ids_and_cross_split_overlap_rejected (test_financial_contract.FinancialContractTests.test_duplicate_ids_and_cross_split_overlap_rejected) ... ok
+test_exact_decimal_growth_and_safe_scale_invariance (test_financial_contract.FinancialContractTests.test_exact_decimal_growth_and_safe_scale_invariance) ... ok
+test_future_validation_publication_is_leakage (test_financial_contract.FinancialContractTests.test_future_validation_publication_is_leakage) ... ok
+test_heldout_cannot_enter_admission (test_financial_contract.FinancialContractTests.test_heldout_cannot_enter_admission) ... ok
+test_heldout_changes_cannot_change_frozen_policy (test_financial_contract.FinancialContractTests.test_heldout_changes_cannot_change_frozen_policy) ... ok
+test_independent_solver_normalizes_scale_and_rejects_currency (test_financial_contract.FinancialContractTests.test_independent_solver_normalizes_scale_and_rejects_currency) ... ok
+test_policy_has_no_access_to_expected_answers (test_financial_contract.FinancialContractTests.test_policy_has_no_access_to_expected_answers) ... ok
+test_post_decision_unavailable_but_post_freeze_available_valid (test_financial_contract.FinancialContractTests.test_post_decision_unavailable_but_post_freeze_available_valid) ... ok
+test_reproducible_run (test_financial_contract.FinancialContractTests.test_reproducible_run) ... ok
+test_runtime_revocation_is_local_and_recovery_is_possible (test_financial_contract.FinancialContractTests.test_runtime_revocation_is_local_and_recovery_is_possible) ... ok
+test_disk_config_mutated_after_first_execution_fails (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_disk_config_mutated_after_first_execution_fails) ... ok
+test_integer_oracle_rounding_and_sign (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_integer_oracle_rounding_and_sign) ... ok
+test_labels_not_given_to_executor (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_labels_not_given_to_executor) ... ok
+test_mutating_actual_inputs_is_detected (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_mutating_actual_inputs_is_detected) ... ok
+test_original_policies_reveal_fiscal_calendar_limit (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_original_policies_reveal_fiscal_calendar_limit) ... ok
+test_wrong_source_value_fails_even_if_hash_updated (test_financial_issuer_transfer.FinancialIssuerTransferTests.test_wrong_source_value_fails_even_if_hash_updated) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.642s
+
+OK

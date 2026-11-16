@@ -1,0 +1,18 @@
+{
+  "version": "1",
+  "design": "作者设计外部发行人迁移检查；作者已见政策与公开来源摘要；非盲法、非独立作者holdout、非预注册",
+  "frozen_before_execution": true,
+  "issuers": ["NVDA", "INTC"],
+  "annual_pairs": {"NVDA": ["FY2025", "FY2024"], "INTC": ["FY2024", "FY2023"]},
+  "scenarios_per_issuer": [
+    {"suffix": "01", "scenario": "observed_fiscal_annual_values_after_selected_release", "decision_offset_days": 1, "answerable": true, "unit_conversion": false},
+    {"suffix": "02", "scenario": "constructed_decision_before_selected_release", "decision_offset_days": -1, "answerable": false, "unit_conversion": false},
+    {"suffix": "03", "scenario": "constructed_equivalent_current_billion_usd", "decision_offset_days": 1, "answerable": true, "unit_conversion": true}
+  ],
+  "oracle_rule": "相邻公司报告财年全年收入百分比变化，按来源所列财年结束日期；不要求月日完全相等，不声称恒定周长；独立Fraction整数有理数并按12位小数ROUND_HALF_EVEN；发布前以选定发行日期为不可用约定",
+  "policies": ["naive_frozen", "contract", "from_scratch_metadata_solver"],
+  "precision": 50,
+  "decimal_places": 12,
+  "selection_note": "选择可获取全年精确表格的两家新发行人；未依据执行结果选择；财年周历已由来源摘要可见，不声称盲法",
+  "source_rules": "动态下载公司原始HTML，保存原始字节、哈希、最终URL、抓取时间、报告发布日期和抽取上下文；不调用模型或付费API"
+}

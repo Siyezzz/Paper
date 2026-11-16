@@ -77,6 +77,10 @@ At s=.5 and rho=.8, the shared-baseline cluster Bonferroni null rates for K=1/5/
 
 No successful scorable live LLM-agent experiment, historical portfolio backtest, or end-to-end SEA runtime integration has been completed. Iteration 11 adds a minimal source-grounded arithmetic task from one annual revenue pair reported by Microsoft, with author-designed temporal/unit scenarios; it is not an independently authored benchmark or evidence of observed drift. No empirical claim about investment performance may be added.
 
+## Iteration 14: executed external-issuer failure check
+
+Two new issuer pairs (NVIDIA FY2025/FY2024 and Intel FY2024/FY2023) now extend the source-grounded arithmetic coverage using company-hosted releases and unchanged handwritten policies (`paper/ISSUER_TRANSFER_CHECK.md`). Scenarios remain author-designed, and their timing/unit changes remain constructed. This is neither an independently authored benchmark nor blind confirmation. Moving week-calendar year endpoints expose an exact-anniversary limitation shared by the conservative contract and ordinary metadata solver. The earlier ordinary-solver advantage on the Microsoft/constructed cases must not be generalized across reporting conventions. Any week-calendar-aware validator revision must be developed separately and tested once on new unseen issuer/source families; these exposed tasks can only be development/regression evidence. The newer primary-source audit (`docs/NOVELTY_AUDIT_2026-11-16.md`) also confirms existing schema and network-field checks in SkillsBench; generic metadata validation is insufficient novelty.
+
 ## Next financial-task falsification gate (planned, not executed)
 
 Before opening an unseen confirmation set, an independent author must assemble multi-issuer, multi-vintage tasks with source-availability dates, archived source snapshots and content hashes. Declare the target population and independence assumptions; additional tasks from an exposed issuer are not automatically fresh clusters. If sufficient independently authored, auditable clusters are unavailable, stop rather than claim financial validation.

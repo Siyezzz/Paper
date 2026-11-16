@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-11-16T02:56:43.978227+00:00",
+  "issuer_results_equal": true,
+  "issuer_lock_equal": true,
+  "manifest_input_hashes": {
+    "experiments\\financial_issuer_transfer.py": true,
+    "experiments\\source_grounded_pilot.py": true,
+    "experiments\\test_financial_issuer_transfer.py": true,
+    "experiments\\test_source_grounded.py": true,
+    "experiments\\financial_contract_pilot.py": true,
+    "experiments\\financial_contract_fixtures.py": true,
+    "experiments\\financial_contract_config.json": true,
+    "experiments\\artifacts\\iteration14_financial\\task_definition.json": true,
+    "experiments\\artifacts\\iteration14_financial\\source_config.json": true,
+    "experiments\\artifacts\\iteration14_financial\\nvda_release.html": true,
+    "experiments\\artifacts\\iteration14_financial\\intc_release.html": true,
+    "experiments\\artifacts\\iteration14_financial\\reproduce.py": true
+  },
+  "offline_suite": {
+    "command": "python -m unittest discover -s C:/Users/pc/WorkBuddy/2026-11-11-17-16-35/Paper-ssh/experiments -p test*.py -v",
+    "tests": 48,
+    "status": "OK",
+    "elapsed_seconds_reported": 15.108,
+    "provenance": "independent team-lead invocation; captured command output, not rerun by this receipt writer"
+  }
+}

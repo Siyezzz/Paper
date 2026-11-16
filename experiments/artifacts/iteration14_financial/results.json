@@ -1,0 +1,740 @@
+{
+  "benchmark": "author-designed external issuer transfer check; deterministic handwritten policies",
+  "pre_execution_lock": {
+    "definition": {
+      "version": "1",
+      "design": "作者设计外部发行人迁移检查；作者已见政策与公开来源摘要；非盲法、非独立作者holdout、非预注册",
+      "frozen_before_execution": true,
+      "issuers": [
+        "NVDA",
+        "INTC"
+      ],
+      "annual_pairs": {
+        "NVDA": [
+          "FY2025",
+          "FY2024"
+        ],
+        "INTC": [
+          "FY2024",
+          "FY2023"
+        ]
+      },
+      "scenarios_per_issuer": [
+        {
+          "suffix": "01",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "decision_offset_days": 1,
+          "answerable": true,
+          "unit_conversion": false
+        },
+        {
+          "suffix": "02",
+          "scenario": "constructed_decision_before_selected_release",
+          "decision_offset_days": -1,
+          "answerable": false,
+          "unit_conversion": false
+        },
+        {
+          "suffix": "03",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "decision_offset_days": 1,
+          "answerable": true,
+          "unit_conversion": true
+        }
+      ],
+      "oracle_rule": "相邻公司报告财年全年收入百分比变化，按来源所列财年结束日期；不要求月日完全相等，不声称恒定周长；独立Fraction整数有理数并按12位小数ROUND_HALF_EVEN；发布前以选定发行日期为不可用约定",
+      "policies": [
+        "naive_frozen",
+        "contract",
+        "from_scratch_metadata_solver"
+      ],
+      "precision": 50,
+      "decimal_places": 12,
+      "selection_note": "选择可获取全年精确表格的两家新发行人；未依据执行结果选择；财年周历已由来源摘要可见，不声称盲法",
+      "source_rules": "动态下载公司原始HTML，保存原始字节、哈希、最终URL、抓取时间、报告发布日期和抽取上下文；不调用模型或付费API"
+    },
+    "source_config": {
+      "sources": [
+        {
+          "ticker": "NVDA",
+          "company": "NVIDIA Corporation",
+          "annual_label_needle": "Fiscal 2025 Summary GAAP ($ in millions, except earnings per share) FY25 FY24",
+          "file": "nvda_release.html",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025?page=31",
+          "sha256": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+          "publication_date": "2025-02-26",
+          "date_needle": "February 26, 2025",
+          "unit_needle": "(In millions, except per share data)",
+          "window_needle": "January 26, January 28, January 26, January 28, 2025 2024 2025 2024",
+          "row_pattern": "Revenue \\$ 39,331 \\$ 22,103 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+          "oracle_current": "130497",
+          "oracle_base": "60922",
+          "base_end": "2024-01-28",
+          "current_end": "2025-01-26",
+          "base_start": "2023-01-30",
+          "current_start": "2024-01-29",
+          "convention": "issuer_fiscal_week_calendar"
+        },
+        {
+          "ticker": "INTC",
+          "company": "Intel Corporation",
+          "annual_label_needle": "Full-Year 2024 Financial Results GAAP Non-GAAP 2024 2023",
+          "file": "intc_release.html",
+          "url": "https://www.intc.com/news-events/press-releases/detail/1726/intel-reports-fourth-quarter-and-full-year-2024-financial?utm_source=in_materials",
+          "sha256": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5",
+          "publication_date": "2025-01-30",
+          "date_needle": "Jan 30, 2025",
+          "unit_needle": "(In Millions, Except Per Share Amounts; Unaudited)",
+          "window_needle": "Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023",
+          "row_pattern": "Net revenue \\$ 14,260 \\$ 15,406 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+          "oracle_current": "53101",
+          "oracle_base": "54228",
+          "base_end": "2023-12-30",
+          "current_end": "2024-12-28",
+          "base_start": "2023-01-01",
+          "current_start": "2023-12-31",
+          "convention": "issuer_fiscal_week_calendar"
+        }
+      ],
+      "availability_basis": "选定含全年精确表格的公司稿发布日期；非最早公开可得性证明；date-only",
+      "window_basis": "结束日期来自收入表；开始日期是分析者构造的相邻财政窗口标签，未核验公司原文weeks，不能声称52周为来源事实；任务比较公司报告相邻财年收入，不做日均化或恒定周长增长声明",
+      "retrieval": "2026-11-16，curl -L --fail获取原始HTML；NVIDIA investor域返回HTTP403后改用同公司newsroom；无历史网页归档"
+    },
+    "sources": [
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "annual_label_needle": "Fiscal 2025 Summary GAAP ($ in millions, except earnings per share) FY25 FY24",
+        "file": "nvda_release.html",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025?page=31",
+        "sha256": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+        "publication_date": "2025-02-26",
+        "date_needle": "February 26, 2025",
+        "unit_needle": "(In millions, except per share data)",
+        "window_needle": "January 26, January 28, January 26, January 28, 2025 2024 2025 2024",
+        "row_pattern": "Revenue \\$ 39,331 \\$ 22,103 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+        "oracle_current": "130497",
+        "oracle_base": "60922",
+        "base_end": "2024-01-28",
+        "current_end": "2025-01-26",
+        "base_start": "2023-01-30",
+        "current_start": "2024-01-29",
+        "convention": "issuer_fiscal_week_calendar",
+        "bytes": 399279,
+        "normalized_sha256": "767288117fb96b3572c95f07647e774020cea171b70f5bf47a8cbe2e024522c3",
+        "excerpts": [
+          {
+            "needle": "Fiscal 2025 Summary GAAP ($ in millions, except earnings per share) FY25 FY24",
+            "normalized_offset": 3187,
+            "quote": "e $22,066 $20,010 $12,839 Up 10% Up 72% Diluted earnings per share* $0.89 $0.81 $0.52 Up 10% Up 71% Fiscal 2025 Summary GAAP ($ in millions, except earnings per share) FY25 FY24 Y/Y Revenue $130,497 $60,922 Up 114% Gross margin 75.0% 72.7% Up 2.3 pts Operating expenses $16,405 $11,329 Up 45% Operating inco"
+          },
+          {
+            "needle": "February 26, 2025",
+            "normalized_offset": 1060,
+            "quote": "lion, up 16% from Q3 and up 93% from a year ago Record full-year revenue of $130.5 billion, up 114% February 26, 2025 NVIDIA (NASDAQ: NVDA) today reported revenue for the fourth quarter ended January 26, 2025, of $39.3 billion, up 12% from the pre"
+          },
+          {
+            "needle": "(In millions, except per share data)",
+            "normalized_offset": 11426,
+            "quote": "AP measures used by other companies. NVIDIA CORPORATION CONDENSED CONSOLIDATED STATEMENTS OF INCOME (In millions, except per share data) (Unaudited) Three Months Ended Twelve Months Ended January 26, January 28, January 26, January 28, 2025 2024 2025 2024 Revenue $ "
+          },
+          {
+            "needle": "January 26, January 28, January 26, January 28, 2025 2024 2025 2024",
+            "normalized_offset": 11514,
+            "quote": "S OF INCOME (In millions, except per share data) (Unaudited) Three Months Ended Twelve Months Ended January 26, January 28, January 26, January 28, 2025 2024 2025 2024 Revenue $ 39,331 $ 22,103 $ 130,497 $ 60,922 Cost of revenue 10,608 5,312 32,639 16,621 Gross profit 28,723 16,791 97,858 44,301 "
+          },
+          {
+            "needle": "Twelve Months Ended",
+            "normalized_offset": 11494,
+            "quote": "NSOLIDATED STATEMENTS OF INCOME (In millions, except per share data) (Unaudited) Three Months Ended Twelve Months Ended January 26, January 28, January 26, January 28, 2025 2024 2025 2024 Revenue $ 39,331 $ 22,103 $ 130,497 $ 60,922 Cost of revenue "
+          },
+          {
+            "needle": "Revenue $ 39,331 $ 22,103 $ 130,497 $ 60,922",
+            "normalized_offset": 11582,
+            "quote": "onths Ended Twelve Months Ended January 26, January 28, January 26, January 28, 2025 2024 2025 2024 Revenue $ 39,331 $ 22,103 $ 130,497 $ 60,922 Cost of revenue 10,608 5,312 32,639 16,621 Gross profit 28,723 16,791 97,858 44,301 Operating expenses Research and development 3"
+          }
+        ]
+      },
+      {
+        "ticker": "INTC",
+        "company": "Intel Corporation",
+        "annual_label_needle": "Full-Year 2024 Financial Results GAAP Non-GAAP 2024 2023",
+        "file": "intc_release.html",
+        "url": "https://www.intc.com/news-events/press-releases/detail/1726/intel-reports-fourth-quarter-and-full-year-2024-financial?utm_source=in_materials",
+        "sha256": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5",
+        "publication_date": "2025-01-30",
+        "date_needle": "Jan 30, 2025",
+        "unit_needle": "(In Millions, Except Per Share Amounts; Unaudited)",
+        "window_needle": "Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023",
+        "row_pattern": "Net revenue \\$ 14,260 \\$ 15,406 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+        "oracle_current": "53101",
+        "oracle_base": "54228",
+        "base_end": "2023-12-30",
+        "current_end": "2024-12-28",
+        "base_start": "2023-01-01",
+        "current_start": "2023-12-31",
+        "convention": "issuer_fiscal_week_calendar",
+        "bytes": 475758,
+        "normalized_sha256": "2a3f42062e0073dc011151ec778c63a8d9d2878b78817f1e1c220fa5532cd509",
+        "excerpts": [
+          {
+            "needle": "Full-Year 2024 Financial Results GAAP Non-GAAP 2024 2023",
+            "normalized_offset": 3612,
+            "quote": "n cash from operations. Full reconciliations between GAAP and non-GAAP measures are provided below. Full-Year 2024 Financial Results GAAP Non-GAAP 2024 2023 vs. 2023 2024 2023 vs. 2023 Revenue ($B) $53.1 $54.2 down 2% Gross margin 32.7% 40.0% down 7.3 ppts 36.0% 43.6% down 7.6 ppts R&D"
+          },
+          {
+            "needle": "Jan 30, 2025",
+            "normalized_offset": 970,
+            "quote": "rts Presentations Intel Reports Fourth-Quarter and Full-Year 2024 Financial Results Download as PDF Jan 30, 2025 • 4:01 PM EST Related Documents Audio Earnings Webcast Earnings Presentation PDF Prepared Remarks PDF 10-K Filing PDF HTML XBRL Z"
+          },
+          {
+            "needle": "(In Millions, Except Per Share Amounts; Unaudited)",
+            "normalized_offset": 18513,
+            "quote": "tion Consolidated Statements of Income and Other Information Three Months Ended Twelve Months Ended (In Millions, Except Per Share Amounts; Unaudited) Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023 Net revenue $ 14,260 $ 15,406 $ 53,101 $ 54,228 Cost of sales 8,676 8,359 35,"
+          },
+          {
+            "needle": "Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023",
+            "normalized_offset": 18564,
+            "quote": "formation Three Months Ended Twelve Months Ended (In Millions, Except Per Share Amounts; Unaudited) Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023 Net revenue $ 14,260 $ 15,406 $ 53,101 $ 54,228 Cost of sales 8,676 8,359 35,756 32,517 Gross margin 5,584 7,047 17,345 21,711 Re"
+          },
+          {
+            "needle": "Twelve Months Ended",
+            "normalized_offset": 18493,
+            "quote": "thers. Intel Corporation Consolidated Statements of Income and Other Information Three Months Ended Twelve Months Ended (In Millions, Except Per Share Amounts; Unaudited) Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023 Net revenue $ 14,260 $ 15,"
+          },
+          {
+            "needle": "Net revenue $ 14,260 $ 15,406 $ 53,101 $ 54,228",
+            "normalized_offset": 18616,
+            "quote": " Millions, Except Per Share Amounts; Unaudited) Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023 Net revenue $ 14,260 $ 15,406 $ 53,101 $ 54,228 Cost of sales 8,676 8,359 35,756 32,517 Gross margin 5,584 7,047 17,345 21,711 Research and development 3,876 3,987 16,546 16,046"
+          }
+        ]
+      }
+    ],
+    "disk_sha256": {
+      "artifacts\\iteration14_financial\\task_definition.json": "ff10deecf85dc95ce0f6452c6b90000887a677a4c742de3ce233e3160daf6a31",
+      "artifacts\\iteration14_financial\\source_config.json": "4fd17c0eeecc8cb393dfa7d4a836de858d2463b3e820663f64df881165f701df",
+      "artifacts\\iteration14_financial\\nvda_release.html": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+      "artifacts\\iteration14_financial\\intc_release.html": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5",
+      "financial_issuer_transfer.py": "811f81b1ac3ee276e06dfd2757bfcdef6f45e158b3054515f4544407c693ba7f",
+      "financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+      "financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+      "financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56"
+    },
+    "items": [
+      {
+        "id": "NVDA01",
+        "issuer": "NVDA",
+        "scenario": "observed_fiscal_annual_values_after_selected_release",
+        "decision_at": "2025-02-27",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "60922",
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "130497",
+          "start": "2024-01-29",
+          "end": "2025-01-26"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts"
+      },
+      {
+        "id": "NVDA02",
+        "issuer": "NVDA",
+        "scenario": "constructed_decision_before_selected_release",
+        "decision_at": "2025-02-25",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "60922",
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "130497",
+          "start": "2024-01-29",
+          "end": "2025-01-26"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts"
+      },
+      {
+        "id": "NVDA03",
+        "issuer": "NVDA",
+        "scenario": "constructed_equivalent_current_billion_usd",
+        "decision_at": "2025-02-27",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "60922",
+          "start": "2023-01-30",
+          "end": "2024-01-28"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-02-26",
+          "value": "130.497",
+          "start": "2024-01-29",
+          "end": "2025-01-26"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts; constructed equivalent current billion-USD representation"
+      },
+      {
+        "id": "INTC01",
+        "issuer": "INTC",
+        "scenario": "observed_fiscal_annual_values_after_selected_release",
+        "decision_at": "2025-01-31",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "54228",
+          "start": "2023-01-01",
+          "end": "2023-12-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "53101",
+          "start": "2023-12-31",
+          "end": "2024-12-28"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts"
+      },
+      {
+        "id": "INTC02",
+        "issuer": "INTC",
+        "scenario": "constructed_decision_before_selected_release",
+        "decision_at": "2025-01-29",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "54228",
+          "start": "2023-01-01",
+          "end": "2023-12-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "53101",
+          "start": "2023-12-31",
+          "end": "2024-12-28"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts"
+      },
+      {
+        "id": "INTC03",
+        "issuer": "INTC",
+        "scenario": "constructed_equivalent_current_billion_usd",
+        "decision_at": "2025-01-31",
+        "base": {
+          "currency": "USD",
+          "scale": "1000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "54228",
+          "start": "2023-01-01",
+          "end": "2023-12-30"
+        },
+        "current": {
+          "currency": "USD",
+          "scale": "1000000000",
+          "metric": "GAAP_total_revenue",
+          "convention": "issuer_fiscal_week_calendar",
+          "available_at": "2025-01-30",
+          "value": "53.101",
+          "start": "2023-12-31",
+          "end": "2024-12-28"
+        },
+        "provenance": "observed company annual values; constructed decision date; inferred fiscal starts; constructed equivalent current billion-USD representation"
+      }
+    ],
+    "frozen": {
+      "freeze_at": "2024-12-31",
+      "admitted": true,
+      "admission_validation_correct": 3,
+      "config_sha256": "32d17dc7480850f4a3ed53ce6b36ea29d2664a9c9e91af2b1550ca1636be4f94",
+      "discovery_sha256": "276e0a7554d5d757ca1d60bb5820de93c57260bdd71fe3a74daebf09bfeac208",
+      "validation_sha256": "b19af663c5681aa9f7845cac06e3365bbccfcd29c5208ca2279b7b0083d59f95",
+      "policy_source_sha256": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75"
+    },
+    "oracle_targets": {
+      "NVDA01": "114.203407635994",
+      "NVDA02": null,
+      "NVDA03": "114.203407635994",
+      "INTC01": "-2.078262152394",
+      "INTC02": null,
+      "INTC03": "-2.078262152394"
+    }
+  },
+  "pre_execution_lock_sha256": "49cda219dcb0fb56ffe26b9f04a4d1cd1192169d82062ca718d0e3f54e66f087",
+  "results": {
+    "naive_frozen": {
+      "metrics": {
+        "n": 6,
+        "correct_answers": 2,
+        "wrong_accepted_answers": 4,
+        "abstentions": 0,
+        "safe_abstentions": 0,
+        "unnecessary_abstentions": 0,
+        "coverage": 1.0,
+        "correct_answer_rate": 0.3333333333333333,
+        "coverage_conditioned_accuracy": 0.3333333333333333
+      },
+      "cases": [
+        {
+          "id": "NVDA01",
+          "issuer": "NVDA",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected": "114.203407635994",
+          "correct_answer": true,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "NVDA02",
+          "issuer": "NVDA",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected": null,
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "NVDA03",
+          "issuer": "NVDA",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": "-99.785796592364006434457174748038475427595942352516",
+          "expected": "114.203407635994",
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "INTC01",
+          "issuer": "INTC",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected": "-2.078262152394",
+          "correct_answer": true,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "INTC02",
+          "issuer": "INTC",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected": null,
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        },
+        {
+          "id": "INTC03",
+          "issuer": "INTC",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": "-99.902078262152393597403555358855203953677067197758",
+          "expected": "-2.078262152394",
+          "correct_answer": false,
+          "event": "skill_answer",
+          "reasons": []
+        }
+      ],
+      "by_issuer": {
+        "NVDA": {
+          "n": 3,
+          "correct_answers": 1,
+          "wrong_accepted_answers": 2,
+          "abstentions": 0,
+          "safe_abstentions": 0,
+          "unnecessary_abstentions": 0,
+          "coverage": 1.0,
+          "correct_answer_rate": 0.3333333333333333,
+          "coverage_conditioned_accuracy": 0.3333333333333333
+        },
+        "INTC": {
+          "n": 3,
+          "correct_answers": 1,
+          "wrong_accepted_answers": 2,
+          "abstentions": 0,
+          "safe_abstentions": 0,
+          "unnecessary_abstentions": 0,
+          "coverage": 1.0,
+          "correct_answer_rate": 0.3333333333333333,
+          "coverage_conditioned_accuracy": 0.3333333333333333
+        }
+      }
+    },
+    "contract": {
+      "metrics": {
+        "n": 6,
+        "correct_answers": 0,
+        "wrong_accepted_answers": 0,
+        "abstentions": 6,
+        "safe_abstentions": 2,
+        "unnecessary_abstentions": 4,
+        "coverage": 0.0,
+        "correct_answer_rate": 0.0,
+        "coverage_conditioned_accuracy": null
+      },
+      "cases": [
+        {
+          "id": "NVDA01",
+          "issuer": "NVDA",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": null,
+          "expected": "114.203407635994",
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ]
+        },
+        {
+          "id": "NVDA02",
+          "issuer": "NVDA",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability",
+            "period"
+          ]
+        },
+        {
+          "id": "NVDA03",
+          "issuer": "NVDA",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": null,
+          "expected": "114.203407635994",
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit",
+            "period"
+          ]
+        },
+        {
+          "id": "INTC01",
+          "issuer": "INTC",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": null,
+          "expected": "-2.078262152394",
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ]
+        },
+        {
+          "id": "INTC02",
+          "issuer": "INTC",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability",
+            "period"
+          ]
+        },
+        {
+          "id": "INTC03",
+          "issuer": "INTC",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": null,
+          "expected": "-2.078262152394",
+          "correct_answer": false,
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit",
+            "period"
+          ]
+        }
+      ],
+      "by_issuer": {
+        "NVDA": {
+          "n": 3,
+          "correct_answers": 0,
+          "wrong_accepted_answers": 0,
+          "abstentions": 3,
+          "safe_abstentions": 1,
+          "unnecessary_abstentions": 2,
+          "coverage": 0.0,
+          "correct_answer_rate": 0.0,
+          "coverage_conditioned_accuracy": null
+        },
+        "INTC": {
+          "n": 3,
+          "correct_answers": 0,
+          "wrong_accepted_answers": 0,
+          "abstentions": 3,
+          "safe_abstentions": 1,
+          "unnecessary_abstentions": 2,
+          "coverage": 0.0,
+          "correct_answer_rate": 0.0,
+          "coverage_conditioned_accuracy": null
+        }
+      }
+    },
+    "from_scratch_metadata_solver": {
+      "metrics": {
+        "n": 6,
+        "correct_answers": 0,
+        "wrong_accepted_answers": 0,
+        "abstentions": 6,
+        "safe_abstentions": 2,
+        "unnecessary_abstentions": 4,
+        "coverage": 0.0,
+        "correct_answer_rate": 0.0,
+        "coverage_conditioned_accuracy": null
+      },
+      "cases": [
+        {
+          "id": "NVDA01",
+          "issuer": "NVDA",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": null,
+          "expected": "114.203407635994",
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "NVDA02",
+          "issuer": "NVDA",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "NVDA03",
+          "issuer": "NVDA",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": null,
+          "expected": "114.203407635994",
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "INTC01",
+          "issuer": "INTC",
+          "scenario": "observed_fiscal_annual_values_after_selected_release",
+          "answer": null,
+          "expected": "-2.078262152394",
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "INTC02",
+          "issuer": "INTC",
+          "scenario": "constructed_decision_before_selected_release",
+          "answer": null,
+          "expected": null,
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        },
+        {
+          "id": "INTC03",
+          "issuer": "INTC",
+          "scenario": "constructed_equivalent_current_billion_usd",
+          "answer": null,
+          "expected": "-2.078262152394",
+          "correct_answer": false,
+          "event": "metadata_solver_abstain",
+          "reasons": []
+        }
+      ],
+      "by_issuer": {
+        "NVDA": {
+          "n": 3,
+          "correct_answers": 0,
+          "wrong_accepted_answers": 0,
+          "abstentions": 3,
+          "safe_abstentions": 1,
+          "unnecessary_abstentions": 2,
+          "coverage": 0.0,
+          "correct_answer_rate": 0.0,
+          "coverage_conditioned_accuracy": null
+        },
+        "INTC": {
+          "n": 3,
+          "correct_answers": 0,
+          "wrong_accepted_answers": 0,
+          "abstentions": 3,
+          "safe_abstentions": 1,
+          "unnecessary_abstentions": 2,
+          "coverage": 0.0,
+          "correct_answer_rate": 0.0,
+          "coverage_conditioned_accuracy": null
+        }
+      }
+    }
+  },
+  "environment": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "argv": [
+      "experiments/financial_issuer_transfer.py"
+    ],
+    "working_directory": "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh",
+    "python_executable_sha256": "ec8139feb5012b12a531196f257fddf53668f0109918d5d44ffa195cf352fdd6"
+  },
+  "limitations": [
+    "two new issuers, one annual pair each; three dependent scenarios per issuer",
+    "author-visible policies and sources; neither blinded nor independent-author holdout",
+    "selected release date is a convention, not earliest publication proof; date-only",
+    "current web snapshots, not historical archives; no filing-vintage or restatement proof",
+    "fiscal starts are analyst-constructed labels, not source-verified week counts; adjacent reported fiscal years compared without per-day or constant-week normalization",
+    "source extraction is issuer-specific, hand-authored, not an evaluated autonomous extraction model",
+    "all policies unchanged; constructed admission fixtures still apply; no learned evolution",
+    "no model-generated programs, live LLM API, market decisions, timing/cost advantage or population-effect claim"
+  ]
+}

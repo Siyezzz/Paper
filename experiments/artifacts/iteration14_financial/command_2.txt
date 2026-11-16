@@ -1,0 +1,37 @@
+{
+  "naive_frozen": {
+    "n": 6,
+    "correct_answers": 2,
+    "wrong_accepted_answers": 4,
+    "abstentions": 0,
+    "safe_abstentions": 0,
+    "unnecessary_abstentions": 0,
+    "coverage": 1.0,
+    "correct_answer_rate": 0.3333333333333333,
+    "coverage_conditioned_accuracy": 0.3333333333333333
+  },
+  "contract": {
+    "n": 6,
+    "correct_answers": 0,
+    "wrong_accepted_answers": 0,
+    "abstentions": 6,
+    "safe_abstentions": 2,
+    "unnecessary_abstentions": 4,
+    "coverage": 0.0,
+    "correct_answer_rate": 0.0,
+    "coverage_conditioned_accuracy": null
+  },
+  "from_scratch_metadata_solver": {
+    "n": 6,
+    "correct_answers": 0,
+    "wrong_accepted_answers": 0,
+    "abstentions": 6,
+    "safe_abstentions": 2,
+    "unnecessary_abstentions": 4,
+    "coverage": 0.0,
+    "correct_answer_rate": 0.0,
+    "coverage_conditioned_accuracy": null
+  }
+}
+
+STDERR

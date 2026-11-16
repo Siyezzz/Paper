@@ -1,0 +1,11 @@
+{
+ "recorded_at_utc":"2026-11-16T02:36:24.683849+00:00",
+ "receipt_type":"事后记录当前定义与原始工具操作顺序；不冒充下载前生成的UTC收据或预注册",
+ "task_definition_creation_utc_from_windows_stat":"2026-11-16T02:20:54.599839+00:00",
+ "snapshot_creation_utc_from_windows_stat":{"nvda_release.html":"2026-11-16T02:22:05.184275+00:00","intc_release.html":"2026-11-16T02:22:08.860494+00:00"},
+ "current_task_definition_sha256":"ff10deecf85dc95ce0f6452c6b90000887a677a4c742de3ce233e3160daf6a31",
+ "chronology":"工具记录中任务定义首次写入早于curl下载；无同期冻结UTC收据，文件创建时间仅辅助线索。作者先看过政策和来源搜索摘要。首次执行后，仅将未核实52/53周措辞收紧为按来源财年结束日期，案例数、发行人、可答标签、日期偏移、数值、政策和精度未改。当前定义不能声称原封未动的执行前预注册。",
+ "unchanged_task_elements":"NVDA与INTC，每家3任务，正常年度可答、构造发布前不可答、等价单位可答；三政策不变；12位小数oracle",
+ "pre_policy_fix_reference":"source_reference.json在source锁修复前运行；source_reference_after_lock_fix.json在修复后运行。results应相等，implementation及pre_execution_lock哈希因源码和测试修改而不同。",
+ "team_lead_prior_reproduction":"主代理报告锁修复前三组既有JSON完整相等、40测试通过、iteration12/13 verify-only完整报告通过；额外validate_shared_baseline.py因已有receipt防覆盖退出且无修改。本分支未重新断言这些第三方报告的完整JSON相等。"
+}
