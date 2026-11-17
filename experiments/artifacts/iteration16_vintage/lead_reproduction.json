@@ -1,0 +1,466 @@
+{
+  "benchmark": "iteration16 frozen source-vintage check; same AI process, separate task author",
+  "freeze_receipt": {
+    "frozen_utc": "2026-11-17T02:26:36.780283+00:00",
+    "kind": "honest local freeze, not external preregistration",
+    "before_new_source_search_download_execution": true,
+    "sha256": {
+      "experiments/calendar_validator_development.py": "664420d89aa13435b65e4a5525bc692e10df1d41a1de356c5e3d6551fde38fa0",
+      "experiments/calendar_validator_config.json": "5244ee10231f86da7ee9980a79b3ccaf31ac0895916d5c81ccf6703e5f49bee3",
+      "experiments/financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+      "experiments/financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+      "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+      "experiments/test_calendar_validator.py": "2083d3132651b91ddbe432c7ddb8496ffa39ea48bbb901530185d3336b19d2ca",
+      "experiments/artifacts/iteration16_vintage/task_definition.json": "cf5efbe185716aac0efc5dcbe24dfa3a472227f1a2b3ae2cea08b76740a41a0e"
+    },
+    "prior_reproduction_manifest_sha256": "33404d413f92d9729bb7da4e0e7617486093137b99ac9dda39c35d02f63f5407"
+  },
+  "definition": {
+    "design": "Locally frozen separately authored source-vintage check; same AI research process, not independent researcher or blind holdout",
+    "selection": {
+      "issuer": "NVDA",
+      "reported_current_fiscal_year": 2026,
+      "reported_base_fiscal_year": 2025,
+      "source_rule": "Company-hosted NVIDIA full-year FY2026 results release, annual GAAP revenue and explicitly reported endpoints; choose first official matching release, no outcome-based switching"
+    },
+    "freeze_scope": "Unchanged iteration15 calendar validator/config and legacy policies/scoring; task definitions and source selection locked before new-source search/download and execution. Calendar label issue already observed in code before freeze.",
+    "semantics": "reported_adjacent_fiscal_year_growth; compare reported totals without duration normalization; preserve reported FY labels even when different from endpoint calendar year",
+    "scenarios": [
+      {
+        "id": "reported_native",
+        "decision_offset_days": 1,
+        "convert_current_to_billions": false,
+        "answerable": true
+      },
+      {
+        "id": "reported_converted",
+        "decision_offset_days": 1,
+        "convert_current_to_billions": true,
+        "answerable": true
+      },
+      {
+        "id": "before_selected_release",
+        "decision_offset_days": -1,
+        "convert_current_to_billions": false,
+        "answerable": false
+      }
+    ],
+    "availability": "Constructed decision dates relative to selected release date; both records available_at selected release, not earliest historical availability",
+    "period_starts": "Use explicit source-verified endpoints; base_start is inferred one day after FY2024 endpoint in already archived company source; current_start one day after FY2025 endpoint. Mark inference, do not invent week counts.",
+    "scoring": "12 decimal places rational integer oracle using annual million-USD values; correct answer, wrong accepted answer, safe abstention, unnecessary abstention; same financial_contract_pilot.score",
+    "policies": [
+      "from_scratch_metadata_solver",
+      "contract",
+      "calendar_ordinary",
+      "calendar_no_availability",
+      "calendar_no_unit_normalization"
+    ],
+    "seed": null,
+    "failure_policy": "No baseline changes, tuning, case exclusion or source substitution after observed outcomes. If retrieval fails retain failure and run observed-data semantic negative-control audit labeled developmental.",
+    "claims_excluded": [
+      "external preregistration",
+      "independent researcher",
+      "blind holdout",
+      "earliest vintage",
+      "financial performance",
+      "LLM skill evolution",
+      "population generalization"
+    ]
+  },
+  "source": {
+    "file": "nvda_fy26_release.html",
+    "sha256": "d0bf3b6a01e11870a4e9935f9cb84bf899915c0f73632e77454af4705e5644a9",
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+    "publication_date": "2026-02-25",
+    "retrieval_date": "2026-11-17",
+    "row_pattern": "Fiscal 2026 Summary GAAP \\([^)]*\\) FY26 FY25 Y/Y Revenue \\$([0-9,]+) \\$([0-9,]+)",
+    "oracle_current": "215938",
+    "oracle_base": "130497",
+    "needles": [
+      "February 25, 2026",
+      "FY26 FY25 Y/Y Revenue $215,938 $130,497",
+      "Twelve Months Ended January 25, January 26, January 25, January 26, 2026 2025 2026 2025"
+    ],
+    "prior_endpoint_file": "experiments/artifacts/iteration14_financial/nvda_release.html",
+    "prior_endpoint_sha256": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+    "retrieval_route": "No connectors installed; domain_search schema excludes simple webpage lookup, so WebSearch located official company release; curl downloaded raw bytes.",
+    "retrieval_command": "curl -L --fail https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026 -o experiments/artifacts/iteration16_vintage/nvda_fy26_release.html",
+    "operational_failure": "Optional bs4 inspection failed with ModuleNotFoundError before execution; used existing standard-library normalization instead, no policy or task change."
+  },
+  "source_excerpts": [
+    {
+      "normalized_offset": 1059,
+      "quote": "llion, up 22% from Q3 and up 75% from a year ago Record full-year revenue of $215.9 billion, up 65% February 25, 2026 NVIDIA (NASDAQ: NVDA) today reported record revenue for the fourth quarter ended January 25, 2026, of $68.1 billion, up 20% from the previous quarter and up 73"
+    },
+    {
+      "normalized_offset": 3393,
+      "quote": "are $1.62 $1.30 $0.89 25 % 82 % Fiscal 2026 Summary GAAP ($ in millions, except earnings per share) FY26 FY25 Y/Y Revenue $215,938 $130,497 65 % Gross margin 71.1 % 75.0 % (3.9) pts Operating expenses $23,076 $16,405 41 % Operating income $130,387 $81,453 60 % Net income $120,067 $72,880 65 % Dilut"
+    },
+    {
+      "normalized_offset": 13449,
+      "quote": "NSOLIDATED STATEMENTS OF INCOME (In millions, except per share data) (Unaudited) Three Months Ended Twelve Months Ended January 25, January 26, January 25, January 26, 2026 2025 2026 2025 Revenue $ 68,127 $ 39,331 $ 215,938 $ 130,497 Cost of revenue 17,034 10,608 62,475 32,639 Gross profit 51,093 28,723 153,463 97,858 Operating expenses Research"
+    },
+    {
+      "basis": "prior company archive, inferred base start follows FY2024 endpoint",
+      "quote": "NSOLIDATED STATEMENTS OF INCOME (In millions, except per share data) (Unaudited) Three Months Ended Twelve Months Ended January 26, January 28, January 26, January 28, 2025 2024 2025 2024 Revenue $ 39,331 $ 22,103 $ 130,497 $ 60,922 Cost of revenue 1"
+    }
+  ],
+  "items": [
+    {
+      "id": "reported_native",
+      "issuer": "NVDA",
+      "scenario": "reported_native",
+      "task_semantics": "reported_adjacent_fiscal_year_growth",
+      "decision_at": "2026-02-26",
+      "base": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "130497",
+        "fiscal_year": 2025,
+        "start": "2024-01-29",
+        "end": "2025-01-26"
+      },
+      "current": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "215938",
+        "fiscal_year": 2026,
+        "start": "2025-01-27",
+        "end": "2026-01-25"
+      },
+      "provenance": "Observed annual totals/endpoints and reported FY labels; starts inferred from prior endpoints; selected-release availability and decisions constructed."
+    },
+    {
+      "id": "reported_converted",
+      "issuer": "NVDA",
+      "scenario": "reported_converted",
+      "task_semantics": "reported_adjacent_fiscal_year_growth",
+      "decision_at": "2026-02-26",
+      "base": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "130497",
+        "fiscal_year": 2025,
+        "start": "2024-01-29",
+        "end": "2025-01-26"
+      },
+      "current": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "215.938",
+        "fiscal_year": 2026,
+        "start": "2025-01-27",
+        "end": "2026-01-25"
+      },
+      "provenance": "Observed annual totals/endpoints and reported FY labels; starts inferred from prior endpoints; selected-release availability and decisions constructed."
+    },
+    {
+      "id": "before_selected_release",
+      "issuer": "NVDA",
+      "scenario": "before_selected_release",
+      "task_semantics": "reported_adjacent_fiscal_year_growth",
+      "decision_at": "2026-02-24",
+      "base": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "130497",
+        "fiscal_year": 2025,
+        "start": "2024-01-29",
+        "end": "2025-01-26"
+      },
+      "current": {
+        "issuer": "NVDA",
+        "currency": "USD",
+        "scale": "1000000",
+        "metric": "GAAP_total_revenue",
+        "convention": "issuer_fiscal_week_calendar",
+        "available_at": "2026-02-25",
+        "period_kind": "annual",
+        "value": "215938",
+        "fiscal_year": 2026,
+        "start": "2025-01-27",
+        "end": "2026-01-25"
+      },
+      "provenance": "Observed annual totals/endpoints and reported FY labels; starts inferred from prior endpoints; selected-release availability and decisions constructed."
+    }
+  ],
+  "oracle_targets": {
+    "reported_native": "65.473535790095",
+    "reported_converted": "65.473535790095",
+    "before_selected_release": null
+  },
+  "old_frozen_admission": {
+    "freeze_at": "2024-12-31",
+    "admitted": true,
+    "admission_validation_correct": 3,
+    "config_sha256": "32d17dc7480850f4a3ed53ce6b36ea29d2664a9c9e91af2b1550ca1636be4f94",
+    "discovery_sha256": "276e0a7554d5d757ca1d60bb5820de93c57260bdd71fe3a74daebf09bfeac208",
+    "validation_sha256": "b19af663c5681aa9f7845cac06e3365bbccfcd29c5208ca2279b7b0083d59f95",
+    "policy_source_sha256": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75"
+  },
+  "disk_sha256": {
+    "experiments\\frozen_source_vintage_check.py": "28155cbf1a3f9c16d35ce854e9eaf2a7c2043311b55841c138ef5876b7ddef8e",
+    "experiments\\artifacts\\iteration16_vintage\\source_config.json": "fd15ddffb69c61dde767d192d7181c4c3db75e9ce103155565efacec59d2841c",
+    "experiments\\artifacts\\iteration16_vintage\\nvda_fy26_release.html": "d0bf3b6a01e11870a4e9935f9cb84bf899915c0f73632e77454af4705e5644a9",
+    "experiments\\artifacts\\iteration16_vintage\\freeze_receipt.json": "a9e872069fd13e985483ec1879ec0e8d6c58e986ceed0f9d32e7b861f360cc6d",
+    "experiments\\calendar_validator_development.py": "664420d89aa13435b65e4a5525bc692e10df1d41a1de356c5e3d6551fde38fa0",
+    "experiments\\calendar_validator_config.json": "5244ee10231f86da7ee9980a79b3ccaf31ac0895916d5c81ccf6703e5f49bee3",
+    "experiments\\financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments\\financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+    "experiments\\financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments\\test_calendar_validator.py": "2083d3132651b91ddbe432c7ddb8496ffa39ea48bbb901530185d3336b19d2ca",
+    "experiments\\artifacts\\iteration16_vintage\\task_definition.json": "cf5efbe185716aac0efc5dcbe24dfa3a472227f1a2b3ae2cea08b76740a41a0e",
+    "experiments\\financial_issuer_transfer.py": "811f81b1ac3ee276e06dfd2757bfcdef6f45e158b3054515f4544407c693ba7f",
+    "experiments\\artifacts\\iteration16_vintage\\reproduce.py": "3d967d2a8f89475be4e9227d5d9b5fc8024e0bfef6c60e52db7cf653058e1148",
+    "experiments\\artifacts\\iteration14_financial\\nvda_release.html": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be"
+  },
+  "results": {
+    "from_scratch_metadata_solver": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 0,
+        "wrong_accepted_answers": 0,
+        "abstentions": 3,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 2,
+        "coverage": 0.0,
+        "correct_answer_rate": 0.0,
+        "coverage_conditioned_accuracy": null
+      },
+      "cases": [
+        {
+          "id": "reported_native",
+          "answer": null,
+          "expected": "65.473535790095",
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "reported_converted",
+          "answer": null,
+          "expected": "65.473535790095",
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "before_selected_release",
+          "answer": null,
+          "expected": null,
+          "event": "metadata_solver_abstain",
+          "reasons": [],
+          "correct_answer": false
+        }
+      ]
+    },
+    "contract": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 0,
+        "wrong_accepted_answers": 0,
+        "abstentions": 3,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 2,
+        "coverage": 0.0,
+        "correct_answer_rate": 0.0,
+        "coverage_conditioned_accuracy": null
+      },
+      "cases": [
+        {
+          "id": "reported_native",
+          "answer": null,
+          "expected": "65.473535790095",
+          "event": "invocation_revoked",
+          "reasons": [
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "reported_converted",
+          "answer": null,
+          "expected": "65.473535790095",
+          "event": "invocation_revoked",
+          "reasons": [
+            "unit",
+            "period"
+          ],
+          "correct_answer": false
+        },
+        {
+          "id": "before_selected_release",
+          "answer": null,
+          "expected": null,
+          "event": "invocation_revoked",
+          "reasons": [
+            "availability",
+            "period"
+          ],
+          "correct_answer": false
+        }
+      ]
+    },
+    "calendar_ordinary": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 2,
+        "wrong_accepted_answers": 0,
+        "abstentions": 1,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.6666666666666666,
+        "correct_answer_rate": 0.6666666666666666,
+        "coverage_conditioned_accuracy": 1.0
+      },
+      "cases": [
+        {
+          "id": "reported_native",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "reported_converted",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "before_selected_release",
+          "answer": null,
+          "expected": null,
+          "event": "ordinary_validator_abstain",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        }
+      ]
+    },
+    "calendar_no_availability": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 2,
+        "wrong_accepted_answers": 1,
+        "abstentions": 0,
+        "safe_abstentions": 0,
+        "unnecessary_abstentions": 0,
+        "coverage": 1.0,
+        "correct_answer_rate": 0.6666666666666666,
+        "coverage_conditioned_accuracy": 0.6666666666666666
+      },
+      "cases": [
+        {
+          "id": "reported_native",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "reported_converted",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "before_selected_release",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": null,
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": false
+        }
+      ]
+    },
+    "calendar_no_unit_normalization": {
+      "metrics": {
+        "n": 3,
+        "correct_answers": 1,
+        "wrong_accepted_answers": 1,
+        "abstentions": 1,
+        "safe_abstentions": 1,
+        "unnecessary_abstentions": 0,
+        "coverage": 0.6666666666666666,
+        "correct_answer_rate": 0.3333333333333333,
+        "coverage_conditioned_accuracy": 0.5
+      },
+      "cases": [
+        {
+          "id": "reported_native",
+          "answer": "65.473535790094791451144470754116952880142838532690",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": true
+        },
+        {
+          "id": "reported_converted",
+          "answer": "-99.834526464209905208548855529245883047119857161467",
+          "expected": "65.473535790095",
+          "event": "ordinary_validator_answer",
+          "reasons": [],
+          "correct_answer": false
+        },
+        {
+          "id": "before_selected_release",
+          "answer": null,
+          "expected": null,
+          "event": "ordinary_validator_abstain",
+          "reasons": [
+            "availability"
+          ],
+          "correct_answer": false
+        }
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python_executable_sha256": "ec8139feb5012b12a531196f257fddf53668f0109918d5d44ffa195cf352fdd6",
+    "seed": null,
+    "api_calls": 0
+  },
+  "limitations": [
+    "One new annual pair from a previously exposed issuer; not independent clusters.",
+    "Current company web snapshot; not historical archive or earliest-availability proof.",
+    "Starts inferred; decision dates, availability convention and unit change constructed.",
+    "Policies handwritten and unchanged; no learned skills or live LLM execution.",
+    "Source extraction and oracle transcription author-written; same AI research process; no blind or independent-researcher claim.",
+    "No population inference, market performance, threshold tuning or external preregistration."
+  ]
+}

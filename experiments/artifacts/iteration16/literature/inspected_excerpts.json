@@ -1,0 +1,74 @@
+{
+  "scope": "First-match bounded excerpts, not exhaustive absence checks",
+  "records": [
+    {
+      "file": "2609.14858v2_html.html",
+      "sha256": "097202797ced817e98dcade376d0c1d9f02342e3eb6b5053fc3dd89caf6f6d55",
+      "excerpts": [
+        {
+          "query": "simulator",
+          "found": true,
+          "excerpt": "ssue below: Description: Submit without GitHub Submit in GitHub Why HTML? Report Issue Back to Abstract Download PDF Contents Reading mode Colour theme Abstract 1 Introduction 2 Motivation: Discovery History as a Replay Simulator 3 Dream-RSI : RSI through Evolving Worlds Discovery trees and the shared decision interface. Online rollout. Offline evaluation. Replay objective. Policy improvement and selection. 4 Experiments 4.1 Kernel Engineering Results. 4.2 Mathematics Optimization Results. 4.3 Algorithm Engineering Main Results. Recursive Discovery Dynamics. 4.4 Harness Optimization Results. 5 Further Analysis Analysis of Replay World Accumulation Analysis of Historical Inductive Biases in Long-Horizon Discovery Analysis of Evolution of Exploration Behavior 6 Related Work AI-Driven Scientific and Algorithmic Discovery. Self-Evolving Agents. Memory, History, and Experience Reuse. 7 Conclusion References A AI Use Statement B Detailed Experimental Settings B.1 Evaluation Environments Lasso regularization-path discovery. GPU kernel engineering. Mathematical optimization. Harness optimization. B.2 Discovery Configuration B.3 Detailed Task Description C Results of PACEvolve ( Yan et al., 2026b ) on KernelBench D Prompts D.1 Exploration Prompt D.2 Replay-Based Policy Improvement Prompt E Discovered Programs E.1 Lasso Regularization Path E.2 ConvDiv License: arXiv.org perpetual non-exclusive license arXiv"
+        },
+        {
+          "query": "limitation",
+          "found": false,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "file": "2609.24972v3_html.html",
+      "sha256": "60749d4fa0a13ca745108df3e3ed6d686919acbe3f7723b149aa98ff28847ac8",
+      "excerpts": [
+        {
+          "query": "DomainGuard",
+          "found": true,
+          "excerpt": "gleright inside the band: no credit for score 11: c \u2190 [ w s \u0394 S \u2212 w c \u0394 C + w n \u03bd > 0 ] c\\leftarrow[w_{s}\\Delta S-w_{c}\\Delta C+w_{n}\\nu>0] \u22b3 \\triangleright Eq. ( 17 ): tokens saved or a new component 12: end if 13: g \u2190 DomainGuard \u200b ( H t , H \u2032 ) g\\leftarrow\\textsc{DomainGuard}(H_{t},H^{\\prime}) \u22b3 \\triangleright per-domain specific checks 14: if S ^ \u2032 \u2265 S \u22c6 \u2212 \u03b4 \\hat{S}^{\\prime}\\geq S^{\\star}-\\delta and c c and g g then \u22b3 \\triangleright Check if an edit passes all gates 15: \ud835\udc9c t \u2190 \ud835\udc9c t \u222a { H \u2032 } \\mathcal{A}_{t}\\leftarrow\\mathcal{A}_{t}\\cup\\{H^{\\prime}\\} 16: end if 17: end for 18: H t + 1 \u2190 arg \u2061 max H \u2032 \u2208 \ud835\udc9c t \u2061 S ^ \u2032 H_{t+1}\\leftarrow\\arg\\max_{H^{\\prime}\\in\\mathcal{A}_{t}}\\hat{S}^{\\prime} , or H t H_{t} if \ud835\udc9c t = \u2205 \\mathcal{A}_{t}=\\emptyset \u22b3 \\triangleright select the best edit from admissible ones 19: S \u22c6 \u2190 max \u2061 ( S \u22c6 , S ^ t + 1 ) S^{\\star}\\leftarrow\\max(S^{\\star},\\hat{S}_{t+1}) \u22b3 \\triangleright the floor never moves down 20: record each measured edit with a = 1 a=1 iff its candidate is H t + 1 \u2260 H t H_{t+1}\\neq H_{t} \u22b3 \\triangleright evidence for later rounds 21: return H t + 1 H_{t+1} D.2 Proposal-Side Bookkeeping Atomic edit representation. At round t t , the proposer drafts a pool E t E_{t} of atomic edits to H t H_{t} , and a candidate applies a subset of that pool. Write this subset as z t \u2208 { 0 , 1 } | E t | z_{t}\\in\\{0,1\\}^{|E_{t}|} , with z t , j = 1 z_{t,j}=1 when edit j j is included. T"
+        },
+        {
+          "query": "cost gate",
+          "found": false,
+          "excerpt": null
+        }
+      ]
+    },
+    {
+      "file": "2602.14670v2_html.html",
+      "sha256": "1f065520dd4179a59d4dd65170e2448eb80d299eaea8010b4ff8f63a5a475aaf",
+      "excerpts": [
+        {
+          "query": "forbidden regions",
+          "found": true,
+          "excerpt": "nowledge ( Shinn et al., 2023 ; Park et al., 2023 ) . The memory stores distilled structural patterns from historical mining sessions: successful patterns (factor templates that consistently pass quality thresholds) and forbidden regions (factor families with high mutual correlation to existing library members). Crucially, this memory maintains a global factor library perspective: the agent decides mining directions by considering how candidate factors complement the existing library, rather than optimizing individual factors in isolation. The agent adopts the Ralph Loop paradigm for self-evolution: retrieve relevant patterns from experience memory, generate candidate factors by invoking the mining skill with retrieved priors, evaluate candidates through parallel validation, and distill outcomes back into memory. This creates a positive feedback cycle where each mining session improves future exploration efficiency, enabling the agent to continuously refine its search strategy. Figure 1 . FactorMiner System Architecture. The Ralph Loop framework integrates three key components: (1) Experience Memory that stores successful patterns and forbidden regions from past mining sessions; (2) Agent Skill that encapsulates the multi-stage validation pipeline (IC screening, correlation checking, deduplication, and full validation); (3) Factor Library that grows dynamically while maintaining orthogonality cons"
+        },
+        {
+          "query": "admission",
+          "found": true,
+          "excerpt": "3 Effect of Experience Memory 4.4 Mining Efficiency Analysis 5 Discussion Experience memory as continual learning. 6 Conclusion 7 Limitations and Ethical Considerations Acknowledgements References A Operator Library and Admission Criteria B End-to-End Signal Correlations C Experience Memory: Forbidden Directions D Full Factor Library (110 factors) License: CC BY 4.0 arXiv:2602.14670v2 [q-fin.TR] 19 Aug 2026 FactorMiner: A Self-Evolving Agent with Skills and Experience Memory for Financial Alpha Discovery Conference: Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2; August 09\u201313, 2026; Jeju Island, Republic of Korea Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2 (KDD \u201926), August 09\u201313, 2026, Jeju Island, Republic of Korea DOI: 10.1145/3770855.3818978 ISBN: 979-8-4007-2259-2/2026/08 CCS: Information systems Data mining CCS: Computing methodologies Intelligent agents CCS: Applied computing Economics Yanlong Wang Affiliation: Tsinghua Shenzhen International Graduate School, Tsinghua University , Pengcheng Laboratory , Shenzhen , China email: wangyanl21@mails.tsinghua.edu.cn , Jian Xu Affiliation: Tsinghua Shenzhen International Graduate School, Tsinghua University , Shenzhen , China email: xujian20@mails.tsinghua.edu.cn , Hongkang Zhang Affiliation: Tsinghua Shenzhen International Graduate School, Tsinghua University , "
+        }
+      ]
+    },
+    {
+      "file": "2602.12670v4_html.html",
+      "sha256": "9def6d90571f74e7fba855c016c82eafdbcf8ac06345add69dcc66dcc64135ac",
+      "excerpts": [
+        {
+          "query": "task.md",
+          "found": true,
+          "excerpt": "e. Structural Patterns. A.3 Quality Indicators A.4 Implications for Benchmark Design Limitation: Benchmark vs. Ecosystem Gap. B Task Specification and Review Process B.1 Task Directory Structure B.2 Task Configuration ( task.md Frontmatter) B.3 Verification Infrastructure B.4 PR Review Process B.5 Contributor Checklist B.6 Maintainer Review Policy B.7 Automated CI Pipeline B.8 Benchmark Report Template B.9 Review Lifecycle B.10 Task Quality Criteria C The task.md Task Standard C.1 Document Structure C.2 Controlled Metadata Vocabulary C.3 Explicit Network Policy C.4 Verifier Strategies D Experimental Setup Details D.1 Setup overview Models. Metrics. D.2 Model and Harness Configurations D.3 Harness Descriptions Model Family Consideration. D.4 Agent Interface D.5 Skill Structure D.6 Self-Generated Skills Condition Configurations and accounting. D.6.1 Why self-generated Skills underperform: trajectory audit D.7 Software and Model Versions D.8 Container Environment D.9 Inference Configuration D.10 Experiment Orchestration E Task-Level Results F Skill Design Factors F.1 Skill Quantity F.2 Skill Complexity F.3 Failure Modes when Skills Hurt F.4 Skill-Author Patterns Audit G Confidence Interval Calculation H Complete Task List I Comprehensive Results Summary Key observations. I.1 Auxiliary Failure-Mode Snapshot J Task-Level Case Studies J.1 Success Case Studies Skills bridge domain-specific API gaps: sale"
+        },
+        {
+          "query": "applicability",
+          "found": true,
+          "excerpt": "table patterns: the Skill prescribes an unnecessarily heavyweight pipeline, displaces a stronger default strategy, or points the agent at a solver it cannot debug. The common cause is a single \u201ccorrect\u201d pipeline without applicability boundaries or lightweight fallbacks. Finding 6: Compact, focused Skills outperform exhaustive ones, and small models with Skills can match larger models without. Two design ablations (Appendix F ) refine the picture. First, Skill quantity : tasks paired with one Skill gain +18.0 pp, 2\u20133 Skills gain +19.0 pp, and \u2265 4 \\geq 4 Skills give only +10.1 pp, suggesting excess content creates overhead or conflicting guidance. Second, Skill complexity : compact and standard-length Skills (+19.0 and +21.5 pp) outperform detailed (+14.5 pp) and comprehensive documentation (+0.7 pp); focused procedural guidance beats exhaustive prose. Finally, scale: MiniMax M2.7 with Skills (34.9%) exceeds stronger no-Skills baselines such as OpenHands + GLM 5.1 (32.7%) and OpenHands + MiniMax M3 (29.7%), so Skills can partly compensate for model capacity on procedural tasks. 6 Discussion Skills close procedural gaps. Skills are most helpful when success depends on concrete procedures and verifier-facing details (steps, constraints, sanity checks), rather than broad conceptual knowledge. Gains are largest for specialized workflows or brittle formats, and smaller or negative when models already hav"
+        },
+        {
+          "query": "allowed_hosts",
+          "found": true,
+          "excerpt": "the standard makes egress explicit: access is declared with a single enumerated field, network_mode \u2208 \\in { no-network , public , allowlist }, rather than a coarse on/off boolean. The allowlist mode requires a non-empty allowed_hosts list\u2014a parse-time error otherwise\u2014so an allowlist declaration is never left under-specified. A task whose data is baked into the container image declares no-network ; a task that must reach a fixed external service declares allowlist with the specific hosts. C.4 Verifier Strategies A verifier strategy is selected by a type field, either in the verifier block of task.md or in an optional verifier/verifier.md manifest, where the same strategy is spelled script rather than test-script ( Table 4 ). Absent a manifest, the configuration\u2019s verifier.type selects the default test-script path, which runs verifier/test.sh and reads a pass/fail result from reward.txt (or a structured reward.json ); test-script is the only strategy the 87 tasks use, which keeps the measurement free of LLM-as-a-judge variance (\u00a7 3 ). The remaining strategies\u2014 llm-judge , reward-kit , and agent-judge / ors-episode \u2014exist for task classes whose correctness a deterministic script cannot decide; they are part of the standard but not of this benchmark. Unscored, stale, or rate-limited rows are treated as incomplete coverage; timeout rows enter only when healthy replacements are unavailable and are score"
+        }
+      ]
+    }
+  ]
+}

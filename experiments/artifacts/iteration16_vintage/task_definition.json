@@ -1,0 +1,14 @@
+{
+  "design": "Locally frozen separately authored source-vintage check; same AI research process, not independent researcher or blind holdout",
+  "selection": {"issuer": "NVDA", "reported_current_fiscal_year": 2026, "reported_base_fiscal_year": 2025, "source_rule": "Company-hosted NVIDIA full-year FY2026 results release, annual GAAP revenue and explicitly reported endpoints; choose first official matching release, no outcome-based switching"},
+  "freeze_scope": "Unchanged iteration15 calendar validator/config and legacy policies/scoring; task definitions and source selection locked before new-source search/download and execution. Calendar label issue already observed in code before freeze.",
+  "semantics": "reported_adjacent_fiscal_year_growth; compare reported totals without duration normalization; preserve reported FY labels even when different from endpoint calendar year",
+  "scenarios": [{"id":"reported_native","decision_offset_days":1,"convert_current_to_billions":false,"answerable":true},{"id":"reported_converted","decision_offset_days":1,"convert_current_to_billions":true,"answerable":true},{"id":"before_selected_release","decision_offset_days":-1,"convert_current_to_billions":false,"answerable":false}],
+  "availability": "Constructed decision dates relative to selected release date; both records available_at selected release, not earliest historical availability",
+  "period_starts": "Use explicit source-verified endpoints; base_start is inferred one day after FY2024 endpoint in already archived company source; current_start one day after FY2025 endpoint. Mark inference, do not invent week counts.",
+  "scoring": "12 decimal places rational integer oracle using annual million-USD values; correct answer, wrong accepted answer, safe abstention, unnecessary abstention; same financial_contract_pilot.score",
+  "policies": ["from_scratch_metadata_solver","contract","calendar_ordinary","calendar_no_availability","calendar_no_unit_normalization"],
+  "seed": null,
+  "failure_policy": "No baseline changes, tuning, case exclusion or source substitution after observed outcomes. If retrieval fails retain failure and run observed-data semantic negative-control audit labeled developmental.",
+  "claims_excluded": ["external preregistration","independent researcher","blind holdout","earliest vintage","financial performance","LLM skill evolution","population generalization"]
+}

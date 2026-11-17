@@ -1,0 +1,15 @@
+{
+  "frozen_utc": "2026-11-17T02:26:36.780283+00:00",
+  "kind": "honest local freeze, not external preregistration",
+  "before_new_source_search_download_execution": true,
+  "sha256": {
+    "experiments/calendar_validator_development.py": "664420d89aa13435b65e4a5525bc692e10df1d41a1de356c5e3d6551fde38fa0",
+    "experiments/calendar_validator_config.json": "5244ee10231f86da7ee9980a79b3ccaf31ac0895916d5c81ccf6703e5f49bee3",
+    "experiments/financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "experiments/financial_contract_config.json": "81d13d26c52b803b4fa2f107044b7d4702ef874d2ea853a183438802a7e96a56",
+    "experiments/financial_contract_fixtures.py": "904d49822af2dfc411d1735f6137721c9265a4cf80530988ae3306a1f9524de3",
+    "experiments/test_calendar_validator.py": "2083d3132651b91ddbe432c7ddb8496ffa39ea48bbb901530185d3336b19d2ca",
+    "experiments/artifacts/iteration16_vintage/task_definition.json": "cf5efbe185716aac0efc5dcbe24dfa3a472227f1a2b3ae2cea08b76740a41a0e"
+  },
+  "prior_reproduction_manifest_sha256": "33404d413f92d9729bb7da4e0e7617486093137b99ac9dda39c35d02f63f5407"
+}

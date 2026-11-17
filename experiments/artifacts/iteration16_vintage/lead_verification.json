@@ -1,0 +1,7 @@
+{
+  "tests_exit_code": 0,
+  "tests_transcript_sha256": "aa288a3e294fbf2355b1d363dca2146531df6e0e4b07aa22f0b72140224487fe",
+  "full_json_equal": true,
+  "table_source": "vintage_results.json",
+  "table_sha256": "0df523af7a35a02a38c7c59c298b8f71ca1c104243ed2e95e3496d198c2c8700"
+}

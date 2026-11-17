@@ -17,6 +17,10 @@ Existing systems already establish the feasibility of evidence-guided workflow e
 
 We focus instead on the reliability of the promotion decision. Our proposed contribution is a reproducible evaluation study of a cluster-aware, search-aware confirmation protocol. Its value must be demonstrated against established statistical alternatives and realistic financial research tasks. The current artifact combines a study specification with executed single-revision and fixed-bank simulations and separately labeled deterministic applicability checks; it is not evidence of end-to-end agent performance.
 
+The November 17 primary-source audit identifies FinSkillOps (arXiv:2609.19680v1) as a direct precedent for financial skill scope, targeted validation, protected regression, negative controls and replacement/retirement. These mechanisms are not our novelty; see `docs/NOVELTY_AUDIT_2026-11-17.md`. The present draft is a methodological specification plus executed diagnostics, not a competing end-to-end financial skill system. Ordinary-validator checks must remain separate from learned-skill utility and population generalization.
+
+Iteration 16 adds a separately labeled new-source-year check after freezing the stronger ordinary validator (`paper/FROZEN_SOURCE_VINTAGE_CHECK.md`; MAIN Section 5.10). It yields 2 correct answers, 0 wrong accepted and 1 safe abstention across three dependent NVIDIA scenarios. This is an ordinary-rule diagnostic on an exposed issuer, not a new independent financial cluster or successful LLM skill experiment.
+
 ## 2. Evaluation Setting
 
 Let W_(r-1) be the current workflow and W'_r a proposed revision at round r. Both use the same frozen foundation model, tool interfaces, and task inputs. The mutable state consists of prompts and bounded workflow edits. Discovery data may be used freely to diagnose failures and construct a candidate.

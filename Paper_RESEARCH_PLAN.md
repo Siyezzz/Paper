@@ -91,6 +91,12 @@ Freeze the practical improvement margin delta, the wrong-acceptance noninferiori
 
 Choose the number of independent clusters from a documented power or precision analysis using development-only assumptions, then freeze the stopping rule and task/candidate budgets. Do not stop when a favorable result appears. Use one previously unseen confirmation batch for a frozen candidate; any multi-round extension requires fresh independent clusters and preallocated error spending with justified conditional validity. Reusing exposed confirmation data is a separate stress test, not evidence for that guarantee. Cluster counts, stopping values and error allocations for this financial study remain to be specified and executed.
 
+## Iteration 16 positioning correction (2026-11-17)
+
+FinSkillOps (Ma, Tai, et al., arXiv:2609.19680v1) is a closer financial skill-lifecycle precedent than generic harness evolution. Its primary abstract explicitly covers scoped financial-QA patches, targeted validation, protected-case regression, negative controls, and replacement/retirement. These features cannot constitute our novelty simply because the application is financial. See `docs/NOVELTY_AUDIT_2026-11-17.md`; the current artifact is not a reproduction or controlled comparison with FinSkillOps. The candidate contribution remains an evaluation question, not a validated new lifecycle system. Next model experiments must distinguish ordinary executable validation from learned/persisted skill utility under matched generation and execution budgets, and expose regression and abstention alongside quality.
+
+The locally frozen Iteration 16 source-pair check (`paper/FROZEN_SOURCE_VINTAGE_CHECK.md`) adds one NVIDIA annual pair after freezing the ordinary validator. It yields 2 correct answers, 0 wrong accepted and 1 safe abstention; both ablations admit one wrong answer. This is same-process, author-visible evidence from a previously exposed issuer, not an independent blind holdout or generated-skill experiment. It supports retaining the ordinary validator as the next experiment's comparator, not claiming skill-lifecycle superiority.
+
 ## Target positioning
 
 The paper is best positioned as a reproducible methodology / evaluation paper for workshops in machine learning, agents, computational finance, or trustworthy AI. A full conference paper requires E2 and E3 at minimum; a stronger journal submission also needs E4 and direct comparison against the closest evolution systems.

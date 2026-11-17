@@ -6,3 +6,8 @@ experiments/artifacts/iteration15_calendar/* -text -whitespace
 experiments/calendar_validator_development.py -text
 experiments/test_calendar_validator.py -text
 experiments/calendar_validator_config.json -text
+# Preserve Iteration 16 raw sources and hashed evidence byte-exact.
+experiments/artifacts/iteration16_vintage/** -text -whitespace
+experiments/artifacts/iteration16/literature/** -text -whitespace
+experiments/frozen_source_vintage_check.py -text
+experiments/test_frozen_source_vintage.py -text

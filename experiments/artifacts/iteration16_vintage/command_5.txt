@@ -1,0 +1,3 @@
+Stored p-values exactly reproduce the complete JSON-value report.
+
+STDERR

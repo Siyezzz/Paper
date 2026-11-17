@@ -1,0 +1,14 @@
+{
+  "started_utc": "2026-11-17T02:36:53.223239+00:00",
+  "ended_utc": "2026-11-17T02:36:53.820116+00:00",
+  "argv": [
+    "experiments/frozen_source_vintage_check.py",
+    "--out",
+    "experiments/artifacts/iteration16_vintage/lead_reproduction.json",
+    "--reproduce",
+    "experiments/artifacts/iteration16_vintage/vintage_results.json"
+  ],
+  "cwd": "C:\\Users\\pc\\WorkBuddy\\2026-11-11-17-16-35\\Paper-ssh",
+  "output_sha256": "ccd9a1c4a4938241bccc1bcbcec7b53afe6172e8f2ab7508059f1441f97f9b5b",
+  "full_json_equal": true
+}
