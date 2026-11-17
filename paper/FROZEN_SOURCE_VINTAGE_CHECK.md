@@ -32,15 +32,6 @@ The ordinary calendar validator answers both available source cases correctly an
 
 `experiments/artifacts/iteration16_vintage/reproduce.py` adapted the Iteration 15 harness to a new output directory and ran eight commands without overwriting historical artifacts. All eight commands exited 0; the 57-test offline suite passed; three historical JSON comparisons were fully equal; and the Iteration 15 final calendar reference/reproduction comparison remained equal. The new result and execution receipt are `vintage_results.json` and `vintage_results.receipt.json`.
 
-Lead verification independently reproduced the complete new JSON report (`lead_reproduction.json` and its receipt). The expanded 60-test suite passes, including rejection of changed frozen-code bytes and tampered source bytes. `lead_tests.txt` and `lead_verification.json` retain the transcript and hashes; `results_table.md` is regenerated directly from `vintage_results.json`.
-
-Reproduce to a fresh output path (the script refuses to overwrite existing outputs):
-
-```bash
-python experiments/frozen_source_vintage_check.py --out experiments/artifacts/iteration16_vintage/new_reproduction.json --reproduce experiments/artifacts/iteration16_vintage/vintage_results.json
-python -m unittest discover -s experiments -v
-```
-
 Lead verification subsequently reproduced the entire new result JSON exactly, rather than only its policy metrics; `lead_reproduction.receipt.json` and `lead_verification.json` retain the checks. All 60 offline tests passed, including simulated frozen-code and source-byte tampering that must be rejected before execution (`lead_tests.txt`). The table is independently regenerated from `vintage_results.json` in `results_table.md`. The earlier 57-test count refers only to the historical reproduction stage.
 
 From the repository root, use a fresh output path because the runner refuses to overwrite existing results:
