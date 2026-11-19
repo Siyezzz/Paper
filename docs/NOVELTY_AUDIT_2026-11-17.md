@@ -1,5 +1,11 @@
 # 独立文献与新颖性审计 — 2026-11-17（Iteration 16）
 
+## 2026-11-19 补核（Iteration 17）
+
+直接重取 arXiv HTML 并核对页首和关键章节：[Dream-RSI v2](https://arxiv.org/html/2609.14858v2) §3 明确历史回放与新在线候选的区别。[RRSI v3](https://arxiv.org/html/2609.24972v3) §3.2–3.3 分别支持编辑预算及分数/成本筛选，§4 的五个 OOD 基准覆盖编码、工作空间和工程设计。[FactorMiner v2](https://arxiv.org/html/2602.14670v2) §3.2–3.4 区分复用的技能、经验和入库/被替换的因子。[SkillsBench v4](https://arxiv.org/html/2602.12670v4) §4、§5.1.1 与附录 D.6 区分精选技能与隔离会话自生成技能，使用同一确定性任务验证器。四个编号都匹配原文。仅核对可见章节，未复现作者指标或核验完整代码。
+
+[FinSkillOps v1](https://arxiv.org/html/2609.19680v1) 本轮首次成功打开正文。§3.1–3.3、表 5、附录 G–I 已明确报告期和实体对齐、从冻结注册表按适用性路由、版本取代和移除测试后的退役。表 13 记载 policy timeliness 是已知局限。所查正文未给出按决策时间查询权威源版本并处理源撤回消息缺失的规则。这个差异只界定待验证的题目。当前实验评估手写来源缓存策略，不能证明对 FinSkillOps 的优势或取得新颖性优先权。
+
 ## 0. 证据范围、来源时点与继承边界
 
 本轮核验日：2026-11-17。先读取 `docs/NOVELTY_AUDIT_2026-11-16.md` 与 `docs/ITERATION15_PRIMARY_RECHECK.md`，再直接访问四个 arXiv abs 页面与其当前版本 HTML；并尝试保存原始 HTML。四个指定 ID 与 abs 返回的标题、版本链接一致：

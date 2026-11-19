@@ -30,14 +30,16 @@ class FrozenSourceVintageTests(unittest.TestCase):
         self.assertIsNotNone(original)
 
     def test_source_hash_rejects_tampering(self):
-        source_path = pilot.HERE / 'source_config.json'
-        original = source_path.read_bytes()
-        try:
-            source_path.write_bytes(original + b' ')
-            with self.assertRaisesRegex(AssertionError, 'frozen bytes changed: experiments/artifacts/iteration16_vintage/source_config.json'):
+        source_path = pilot.HERE / 'nvda_fy26_release.html'
+        read_bytes = Path.read_bytes
+
+        def read_with_altered_source(path):
+            contents = read_bytes(path)
+            return contents + b' ' if path == source_path else contents
+
+        with patch.object(Path, 'read_bytes', read_with_altered_source):
+            with self.assertRaisesRegex(ValueError, 'source hash mismatch'):
                 pilot.run()
-        finally:
-            source_path.write_bytes(original)
 
     def test_raw_result_reproduction_is_exact(self):
         result_path = pilot.HERE / 'vintage_results.json'

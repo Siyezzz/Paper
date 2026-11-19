@@ -11,3 +11,6 @@ experiments/artifacts/iteration16_vintage/** -text -whitespace
 experiments/artifacts/iteration16/literature/** -text -whitespace
 experiments/frozen_source_vintage_check.py -text
 experiments/test_frozen_source_vintage.py -text
+experiments/source_version_replay.py -text
+experiments/source_version_replay.json -text
+experiments/artifacts/iteration17_replay/*.json -text

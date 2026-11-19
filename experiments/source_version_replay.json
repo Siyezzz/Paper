@@ -1,0 +1,17 @@
+{
+  "design": "Constructed replay on previously exposed financial source inputs. Withdrawal, replacement and notification delivery are hypothetical, not issuer events.",
+  "seed": null,
+  "initial": {"NVDA": "native", "INTC": "native"},
+  "steps": [
+    {"query": "NVDA"}, {"query": "INTC"}, {"query": "NVDA"}, {"query": "INTC"},
+    {"update": "NVDA", "version": null, "notify": true},
+    {"query": "NVDA"}, {"query": "INTC"}, {"query": "NVDA"}, {"query": "INTC"},
+    {"update": "NVDA", "version": "converted", "notify": true},
+    {"query": "NVDA"}, {"query": "INTC"},
+    {"update": "NVDA", "version": null, "notify": false},
+    {"query": "NVDA"}, {"query": "INTC"}
+  ],
+  "expected_query_versions": ["native", "native", "native", "native", null, "native", null, "native", "converted", "native", null, "native"],
+  "policies": ["always_read", "conditional_read", "selective_notification", "global_notification", "no_invalidation"],
+  "scoring": "Compare both arithmetic and provenance to independently specified expected versions. A withdrawal has no eligible source. Count metadata consultations and full payload reads separately. All answers use the existing calendar validator. Cache absence is not cached."
+}

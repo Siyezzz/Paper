@@ -1,0 +1,1130 @@
+{
+  "design": {
+    "design": "Constructed replay on previously exposed financial source inputs. Withdrawal, replacement and notification delivery are hypothetical, not issuer events.",
+    "seed": null,
+    "initial": {
+      "NVDA": "native",
+      "INTC": "native"
+    },
+    "steps": [
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      },
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      },
+      {
+        "update": "NVDA",
+        "version": null,
+        "notify": true
+      },
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      },
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      },
+      {
+        "update": "NVDA",
+        "version": "converted",
+        "notify": true
+      },
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      },
+      {
+        "update": "NVDA",
+        "version": null,
+        "notify": false
+      },
+      {
+        "query": "NVDA"
+      },
+      {
+        "query": "INTC"
+      }
+    ],
+    "expected_query_versions": [
+      "native",
+      "native",
+      "native",
+      "native",
+      null,
+      "native",
+      null,
+      "native",
+      "converted",
+      "native",
+      null,
+      "native"
+    ],
+    "policies": [
+      "always_read",
+      "conditional_read",
+      "selective_notification",
+      "global_notification",
+      "no_invalidation"
+    ],
+    "scoring": "Compare both arithmetic and provenance to independently specified expected versions. A withdrawal has no eligible source. Count metadata consultations and full payload reads separately. All answers use the existing calendar validator. Cache absence is not cached."
+  },
+  "sha256": {
+    "source_version_replay.py": "6635ca514e2cdbe966969a9aa275ff4ba5ba02d3a2a1c6f353ff2c08488256d9",
+    "source_version_replay.json": "7e9fd62d47a0b98cb726846d3fcc9d54794a7f93290367a03b3e6270aff5928a",
+    "calendar_validator_config.json": "5244ee10231f86da7ee9980a79b3ccaf31ac0895916d5c81ccf6703e5f49bee3",
+    "calendar_validator_development.py": "664420d89aa13435b65e4a5525bc692e10df1d41a1de356c5e3d6551fde38fa0",
+    "financial_issuer_transfer.py": "811f81b1ac3ee276e06dfd2757bfcdef6f45e158b3054515f4544407c693ba7f",
+    "financial_contract_pilot.py": "ec90edf018e7fd1e0c30a8a2685074e666b390c7da602d9d36cfc0a2af266a75",
+    "artifacts/iteration14_financial/source_config.json": "4fd17c0eeecc8cb393dfa7d4a836de858d2463b3e820663f64df881165f701df",
+    "artifacts/iteration14_financial/task_definition.json": "ff10deecf85dc95ce0f6452c6b90000887a677a4c742de3ce233e3160daf6a31",
+    "artifacts/iteration14_financial/nvda_release.html": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+    "artifacts/iteration14_financial/intc_release.html": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5"
+  },
+  "python": "3.13.14",
+  "model_calls": 0,
+  "archived_sources": [
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corporation",
+      "annual_label_needle": "Fiscal 2025 Summary GAAP ($ in millions, except earnings per share) FY25 FY24",
+      "file": "nvda_release.html",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025?page=31",
+      "sha256": "d623c5f2d81983c7e0db0293bba7c67700423c8e0d21e62d9b17488afddd18be",
+      "publication_date": "2025-02-26",
+      "date_needle": "February 26, 2025",
+      "unit_needle": "(In millions, except per share data)",
+      "window_needle": "January 26, January 28, January 26, January 28, 2025 2024 2025 2024",
+      "row_pattern": "Revenue \\$ 39,331 \\$ 22,103 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+      "oracle_current": "130497",
+      "oracle_base": "60922",
+      "base_end": "2024-01-28",
+      "current_end": "2025-01-26",
+      "base_start": "2023-01-30",
+      "current_start": "2024-01-29",
+      "convention": "issuer_fiscal_week_calendar"
+    },
+    {
+      "ticker": "INTC",
+      "company": "Intel Corporation",
+      "annual_label_needle": "Full-Year 2024 Financial Results GAAP Non-GAAP 2024 2023",
+      "file": "intc_release.html",
+      "url": "https://www.intc.com/news-events/press-releases/detail/1726/intel-reports-fourth-quarter-and-full-year-2024-financial?utm_source=in_materials",
+      "sha256": "229995fa3190839459604475a4e3bcc1e4d77663b9347204ee888580de41f2f5",
+      "publication_date": "2025-01-30",
+      "date_needle": "Jan 30, 2025",
+      "unit_needle": "(In Millions, Except Per Share Amounts; Unaudited)",
+      "window_needle": "Dec 28, 2024 Dec 30, 2023 Dec 28, 2024 Dec 30, 2023",
+      "row_pattern": "Net revenue \\$ 14,260 \\$ 15,406 \\$ ([\\d,]+) \\$ ([\\d,]+)",
+      "oracle_current": "53101",
+      "oracle_base": "54228",
+      "base_end": "2023-12-30",
+      "current_end": "2024-12-28",
+      "base_start": "2023-01-01",
+      "current_start": "2023-12-31",
+      "convention": "issuer_fiscal_week_calendar"
+    }
+  ],
+  "results": {
+    "always_read": {
+      "summary": {
+        "correct": 9,
+        "wrong_accepted": 0,
+        "safe_abstention": 3,
+        "unnecessary_abstention": 0,
+        "metadata_consults": 12,
+        "payload_reads": 9
+      },
+      "rows": [
+        {
+          "step": 1,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 2,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 3,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 4,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 5,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 6,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 7,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 8,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 9,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 10,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": "converted",
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 11,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": "converted",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 12,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 13,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": false,
+          "evicted": []
+        },
+        {
+          "step": 14,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 15,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        }
+      ]
+    },
+    "conditional_read": {
+      "summary": {
+        "correct": 9,
+        "wrong_accepted": 0,
+        "safe_abstention": 3,
+        "unnecessary_abstention": 0,
+        "metadata_consults": 12,
+        "payload_reads": 3
+      },
+      "rows": [
+        {
+          "step": 1,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 2,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 3,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 4,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 5,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 6,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 7,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 8,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 9,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 10,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": "converted",
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 11,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": "converted",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 12,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 13,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": false,
+          "evicted": []
+        },
+        {
+          "step": 14,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 15,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": false
+        }
+      ]
+    },
+    "selective_notification": {
+      "summary": {
+        "correct": 9,
+        "wrong_accepted": 1,
+        "safe_abstention": 2,
+        "unnecessary_abstention": 0,
+        "metadata_consults": 5,
+        "payload_reads": 3
+      },
+      "rows": [
+        {
+          "step": 1,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 2,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 3,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 4,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 5,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": true,
+          "evicted": [
+            "NVDA"
+          ]
+        },
+        {
+          "step": 6,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 7,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 8,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 9,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 10,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": "converted",
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 11,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": "converted",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 12,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 13,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": false,
+          "evicted": []
+        },
+        {
+          "step": 14,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": null,
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": null,
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 15,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        }
+      ]
+    },
+    "global_notification": {
+      "summary": {
+        "correct": 9,
+        "wrong_accepted": 1,
+        "safe_abstention": 2,
+        "unnecessary_abstention": 0,
+        "metadata_consults": 7,
+        "payload_reads": 5
+      },
+      "rows": [
+        {
+          "step": 1,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 2,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 3,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 4,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 5,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": true,
+          "evicted": [
+            "INTC",
+            "NVDA"
+          ]
+        },
+        {
+          "step": 6,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 7,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 8,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": null,
+          "expected_version": null,
+          "answer": null,
+          "expected_answer": null,
+          "outcome": "safe_abstention",
+          "reasons": [
+            "no_eligible_source"
+          ],
+          "metadata_consult": true,
+          "payload_read": false
+        },
+        {
+          "step": 9,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 10,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": "converted",
+          "notification_delivered": true,
+          "evicted": [
+            "INTC"
+          ]
+        },
+        {
+          "step": 11,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": "converted",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 12,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 13,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": false,
+          "evicted": []
+        },
+        {
+          "step": 14,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "converted",
+          "expected_version": null,
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": null,
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 15,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        }
+      ]
+    },
+    "no_invalidation": {
+      "summary": {
+        "correct": 8,
+        "wrong_accepted": 4,
+        "safe_abstention": 0,
+        "unnecessary_abstention": 0,
+        "metadata_consults": 2,
+        "payload_reads": 2
+      },
+      "rows": [
+        {
+          "step": 1,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 2,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": true,
+          "payload_read": true
+        },
+        {
+          "step": 3,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 4,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 5,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 6,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": null,
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": null,
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 7,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 8,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": null,
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": null,
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 9,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 10,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": "converted",
+          "notification_delivered": true,
+          "evicted": []
+        },
+        {
+          "step": 11,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": "converted",
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": "114.203407635994",
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 12,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 13,
+          "event": "update",
+          "issuer": "NVDA",
+          "new_version": null,
+          "notification_delivered": false,
+          "evicted": []
+        },
+        {
+          "step": 14,
+          "event": "query",
+          "issuer": "NVDA",
+          "version": "native",
+          "expected_version": null,
+          "answer": "114.20340763599356554282525196152457240405764748367",
+          "expected_answer": null,
+          "outcome": "wrong_accepted",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        },
+        {
+          "step": 15,
+          "event": "query",
+          "issuer": "INTC",
+          "version": "native",
+          "expected_version": "native",
+          "answer": "-2.0782621523935974035553588552039536770671977576160",
+          "expected_answer": "-2.078262152394",
+          "outcome": "correct",
+          "reasons": [],
+          "metadata_consult": false,
+          "payload_read": false
+        }
+      ]
+    }
+  }
+}
